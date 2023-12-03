@@ -23,7 +23,8 @@ To install the Ultibake addon, follow these steps:
 
 <a name="usage"></a>
 ## Usage
-*This section is left blank for you to fill out.*
+1. Add a bake set.
+
 
 <a name="features"></a>
 ## Features
