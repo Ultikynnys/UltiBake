@@ -23,6 +23,7 @@ To install the Ultibake addon, follow these steps:
 
 <a name="usage"></a>
 ## Usage
+![Ribbon view](./_media/1.png)
 1. Add a bake set.
 2. 
 
