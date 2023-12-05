@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Ultibake</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<a href="index.html" class="title">Ultibake</a>
+				<nav>
+					<ul>
+						<li><a href="index.html">Back</a></li>
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+				<section id="main" class="wrapper">
+					<div class="inner">
+						<h2 class="major">The Baking Sets</h2>
+						<span class="image fit"><img src="_media/22.png" alt="" /></span>
+						<p><strong>Baking sets</strong> are containers for information about the bake. It contains the following important information:</p>
+						<ol style="padding-bottom: 10px;">
+							<li><strong>Texture name</strong> </li>
+							<li><strong>Bake Path</strong></li>
+							<li><strong>File format</strong>. It's important to not use jpg or png with bakes that utilize the alpha channel, as this will cause problems</li>
+							<li><strong>Bake type</strong>. This defines what input node to use from the bsdf. Hovering over the selection will tell you exactly what input, unless it's a special one like AO or ColorID</li>
+							<li><strong>Pixel Margin Mode</strong>. Either extends the borders or uses the adjacent faces for padding.</li>
+							<li><strong>Pixel Margin</strong>. Extends the baked texture outwards (This should be the distance between UV islands)</li>
+							<li><strong>Dimensions of texture</strong>. You can toggle the fixed aspect ratio to make it non-square.</li>
+							<li><strong>Cage extrusion</strong>. How much to inflate the Low/Cage mesh (useful when using High to Low baking)</li>
+							<li><strong>Projected ray from high to low distance</strong>. If it exceeds the length it will make that projected ray black resulting in a black pixel in the bake.</li>
+							
+						</ol>
+						<p><strong>Note</strong>: if a bake set shares the name, path and file format with another bake set. This tells the baker to combine these into a single texture.</p>
+					</div>
+					<div class="inner">
+						<h2 class="major">10. Bake Units</h2>
+						<span class="image fit"><img src="_media/23.gif" alt="" /></span>
+						<p>
+						These contain information about what to use for the baking. You need at least a <strong>low object and its UV Map</strong>, the rest are optional.
+						
+						 <br>
+						 <br>
+						 <strong>The Isolation button</strong> next to low makes sure that nothing affects this object during the bake. This is useful for baking things like Ambient occlusion, as you don't want other objects to cast shadows
+						 on your bake in some situations.
+						 <br>
+						 <h2 class="major">Bake Unit Color Channels</h2>
+						 The <strong>Color Channel selector</strong> inside the bake units come in two modes. <strong>RGBA and RGB.</strong>
+						 <br>
+						 <span class="image fit"><img src="_media/24.gif" alt="" /></span>
+						 <br>
+						 <strong>RGBA</strong> enabling a channel means "Bake to this channel" The Image above shows this in action, where we are baking the metallic from multiple objects into the red channel.
+						   <br>
+
+							
+							<br>
+							<span class="image fit"><img src="_media/25.gif" alt="" /></span>
+							<strong>RGB</strong> enabling a channel means "Bake these channels from the Input" The image above shows us only baking the R and G channel from the normal Input, which is an actual use-case as you can derive the z-axis for a free channel.
+
+						</p>
+					</div>
+				</section>
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>© Ultikynnys. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
