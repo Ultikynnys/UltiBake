@@ -31,7 +31,7 @@
 <section id="main" class="wrapper">
 	<div class="inner">
 		<h2 class="major">Multi-Object Baking</h2>
-		<span class="image fit"><img src="_media/13.png" alt="" /></span>
+		<span class="image fit"><img src="https://github.com/Ultikynnys/UltiBake/tree/main/docs/_media/13.png" alt="" /></span>
 		<p>
 		Let's dive into some models I've created. In this instance, we have 5 low-poly objects and 2 high-poly objects. Our goal is to bake the high-poly objects onto their corresponding low-poly objects. I've named them with the suffixes _High and _Low for this example.
 		The remaining low-poly objects can be baked as usual. Note that I don't use the Low suffix for objects that don't have a corresponding High object. This helps keep the names as concise as possible.
@@ -39,20 +39,20 @@
 	</div>
 	<div class="inner">
 		<h2 class="major">High to Low Poly Baking: Part 1</h2>
-		<span class="image fit"><img src="_media/14.png" alt="" /></span>
+		<span class="image fit"><img src="https://github.com/Ultikynnys/UltiBake/tree/main/docs/_media/14.png" alt="" /></span>
 		<p>
 			The image above shows how High to Low baking is configured. In this case, we want to transfer the engravings from the white mesh to the low-poly mesh.
-			<p><span class="image left"><img src="_media/15.png" alt="" /></span>Just a heads up, I've moved the high-poly mesh to the side of the low-poly mesh for illustrative purposes. In practice, they should overlap in the same position. Also, be mindful of the material on the high-poly mesh, as you can
+			<p><span class="image left"><img src="https://github.com/Ultikynnys/UltiBake/tree/main/docs/_media/15.png" alt="" /></span>Just a heads up, I've moved the high-poly mesh to the side of the low-poly mesh for illustrative purposes. In practice, they should overlap in the same position. Also, be mindful of the material on the high-poly mesh, as you can
 			bake any attribute from the high-poly mesh to the low-poly one, including colors, not just mesh information like normals. That's why a material is required on the high-poly object. (For baking just mesh normals, use a principled bsdf node with nothing connected in the material on the high-poly mesh)
 			</p>
 		</p>
 	</div>
 	<div class="inner">
 		<h2 class="major">High to Low Poly Baking: Part 2</h2>
-		<span class="image fit"><img src="_media/16.gif" alt="" /></span>
+		<span class="image fit"><img src="https://github.com/Ultikynnys/UltiBake/tree/main/docs/_media/16.gif" alt="" /></span>
 		<p>
 			In this scenario, we're also packing the metallic mask into the Normal Alpha. You might notice that our texture contains other meshes unrelated to the crown. This is due to the Bake units inside the bake set.
-			<p><span class="image left"><img src="_media/17.gif" alt="" /></span>Pro tip: After baking, I'm reimporting the normal into Blender to apply it to the material on the mesh. It's always a good idea to check your textures in Blender after baking.
+			<p><span class="image left"><img src="https://github.com/Ultikynnys/UltiBake/tree/main/docs/_media/17.gif" alt="" /></span>Pro tip: After baking, I'm reimporting the normal into Blender to apply it to the material on the mesh. It's always a good idea to check your textures in Blender after baking.
 			</p>
 		</p>
 	</div>
@@ -62,14 +62,14 @@
 		<br>
 		
 		<h2 class="major">Baking the Character</h2>
-		<span class="image fit"><img src="_media/18.png" alt="" /></span>
+		<span class="image fit"><img src="https://github.com/Ultikynnys/UltiBake/tree/main/docs/_media/18.png" alt="" /></span>
 		<p>
 			Baking the character follows the same process as in the channel packing example. The only difference is that I'm using Subsurface instead of Metallic, as the character doesn't have any metallic parts.
 			<p>Note: It's important to remember that bake sets sharing the same Texture name, Path, and File format will be combined into a single texture. This is how we achieve automatic channel packing.
 			</p>
 		</p>
 		<h2 class="major">Troubleshooting AO Issues</h2>
-		<span class="image fit"><img src="_media/19.gif" alt="" /></span>
+		<span class="image fit"><img src="https://github.com/Ultikynnys/UltiBake/tree/main/docs/_media/19.gif" alt="" /></span>
 		<p>
 			In this example, the material on the character has the AO multiplied into the base color. This results in the bake getting darkened by other objects, like the visor in this case. By selecting "Isolated" on the bake Unit, we can ensure that no AO is received from other objects.
 		</p>
@@ -80,14 +80,14 @@
 		<br>
 		
 		<h2 class="major">Using Blender Scenes</h2>
-		<span class="image fit"><img src="_media/26.gif" alt="" /></span>
+		<span class="image fit"><img src="https://github.com/Ultikynnys/UltiBake/tree/main/docs/_media/26.gif" alt="" /></span>
 		<p>
 			Each Blender Scene has its own Baking Sets! This can make complicated scenes easier to bake, as the list of bake sets can get quite long, especially for characters.
 			<p>
 			</p>
 		</p>
 		<h2 class="major">Troubleshooting AO Issues</h2>
-		<span class="image fit"><img src="_media/19.gif" alt="" /></span>
+		<span class="image fit"><img src="https://github.com/Ultikynnys/UltiBake/tree/main/docs/_media/19.gif" alt="" /></span>
 		<p>
 			In this example, the material on the character has the AO multiplied into the base color. This results in the bake getting darkened by other objects, like the visor in this case. By selecting "Isolated" on the bake Unit, we can ensure that no AO is received from other objects.
 		</p>
