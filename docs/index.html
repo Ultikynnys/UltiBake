@@ -4,8 +4,21 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
+
+
 <html>
 	<head>
+		<style>
+			@font-face { 
+				font-family: Digtalt; 
+				src: url('assets/webfonts/Digitalt-04no.ttf'); 
+			} 
+			h1 {
+				font-family: Digtalt;
+			}
+		</style>
+		
+		
 		<title>Ultibake</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -16,7 +29,9 @@
 
 		<!-- Sidebar -->
 			<section id="sidebar">
+				<h1><p style="font-family:Digitalt">Ultibake</p></h1>
 				<div class="inner">
+					
 					<nav>
 						<ul>
 							<li><a href="#intro">What is this?</a></li>
@@ -29,11 +44,10 @@
 
 		<!-- Wrapper -->
 			<div id="wrapper">
-
 				<!-- Intro -->
 					<section id="intro" class="wrapper style1 fullscreen fade-up">
 						<div class="inner">
-							<h1>UltiBake</h1>
+							<h1>What is this?</h1>
 							<p><a href="http://html5up.net/license">UltiBake</a>
                 is a powerful and efficient texture baking tool designed specifically for Blender.
                 It aims to streamline and enhance the texture baking workflow within Blender,
@@ -42,8 +56,6 @@
 							</ul>
 						</div>
 					</section>
-
-
 				<!-- Two -->
         <section id="one" class="wrapper style3 fade-up">
           <div class="inner">
@@ -64,18 +76,22 @@
               </section>
               <section>
                 <span class="icon solid major fa-cog"></span>
-                <h3>PBR baking</h3>
-                <p>Ultibake utilizes the Principled BSDF node for its baking types, this means you bake exactly what you're plugging into the BSDF node</p>
+                <h3>PBR Baking</h3>
+                <p>UltiBake utilizes the Principled BSDF node for its baking types, giving you complete control over what gets baked, using principles you are already familiar with.
+					The addon expects each material to have a single Principled Bsdf node in the root of each material. For additional information about the shader graph, click the button below.
+				</p>
               </section>
+			  
               <section>
                 <span class="icon solid major fa-link"></span>
-                <h3>Custom Bake types</h3>
+                <h3>Custom Bake Types</h3>
                 <p>Non-default bakes like Ambient Occlusion,Curvature and ColorID are included with the list of BSDF Input bakes</p>
               </section>
               <section>
                 <span class="icon major fa-gem"></span>
-                <h3>High to Low baking</h3>
-                <p>Individually define what High object goes with which Low object</p>
+                <h3>High-to-Low Baking</h3>
+                <p>Individually define which High object goes with which Low object</p>
+				
               </section>
             </div>
             <ul class="actions">
@@ -90,7 +106,7 @@
 							<a href="#" class="image"><img src="https://raw.githubusercontent.com/Ultikynnys/UltiBake/main/docs/_media/1.png" alt="" data-position="center center" /></a>
 							<div class="content">
 								<div class="inner">
-									<h2>Quick start</h2>
+									<h2>Quick Start</h2>
 									<p>Learn the the essential functionality of the addon</p>
 									<ul class="actions">
 										<li><a href="Beginner.html" class="button">Learn more</a></li>
@@ -102,8 +118,8 @@
 							<a href="#" class="image"><img src="https://raw.githubusercontent.com/Ultikynnys/UltiBake/main/docs/_media/9.png" alt="" data-position="top center" /></a>
 							<div class="content">
 								<div class="inner">
-									<h2>intermediate</h2>
-									<p>Learn Channel packing and PBR baking</p>
+									<h2>Intermediate</h2>
+									<p>Learn Channel Packing and PBR baking</p>
 									<ul class="actions">
 										<li><a href="Intermediate.html" class="button">Learn more</a></li>
 									</ul>
