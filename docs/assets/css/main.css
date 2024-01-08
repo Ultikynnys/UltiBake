@@ -26,9 +26,10 @@
 
 /* Style for the iframe (optional) */
 .video-container iframe {
-	@media screen and (min-width: 2px) {height: 45vw; width: 100vw;}
-	@media screen and (min-width: 1500px) {height: 72vw; width: 100vw; }
-	@media screen and (min-width: 2500px) {height: 45vw; width: 100vw;}
+	@media screen and (min-width: 2px) {height: 49vw; width: 100vw;}
+	@media screen and (min-width: 1500px) {height: 37vw; width: 100vw; }
+	@media screen and (min-width: 2100px) {height: 25vw; width: 100vw;}
+	@media screen and (min-width: 2500px) {height: 11vw; width: 100vw;}
 	
 	
 
