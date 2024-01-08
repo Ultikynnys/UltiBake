@@ -10,7 +10,7 @@
 :root {
 	--gray: #202020;
 	--black: #000000;
-	--white: #ebebeb;
+	--white: #ffffff;
 	--selected: #ad75e2;
 	--fontsize: 16px;
   }
@@ -2258,7 +2258,7 @@ input, select, textarea {
 		input[type="checkbox"] + label,
 		input[type="radio"] + label {
 			text-decoration: none;
-			color: #585858;
+			color: #ffffff;
 			cursor: pointer;
 			display: inline-block;
 			font-size: 1em;
@@ -2281,11 +2281,12 @@ input, select, textarea {
 				font-family: 'Font Awesome 5 Free';
 				font-weight: 900;
 			}
+			
 
 			input[type="checkbox"] + label:before,
 			input[type="radio"] + label:before {
 				border-radius: 4px;
-				border: solid 1px #c300ff;
+				border: solid 1px #ffffff;
 				content: '';
 				display: inline-block;
 				font-size: 0.8em;
@@ -2306,13 +2307,13 @@ input, select, textarea {
 			background: #ee0000;
 			border-color: #585858;
 			color: #ffffff;
-			content: '\f00c';
+			content: '\25B6'; 
 		}
 
 		input[type="checkbox"]:focus + label:before,
 		input[type="radio"]:focus + label:before {
-			border-color: #f2849e;
-			box-shadow: 0 0 0 1px #f2849e;
+			border-color: #ffffff;
+			box-shadow: 0 0 0 1px #ffffff;
 		}
 
 	input[type="checkbox"] + label:before {
@@ -3165,10 +3166,19 @@ input, select, textarea {
 
 		}
 
-/* Center the video container */
-.custom-video-container {
+/* Center the button container */
+.button-container {
+	text-align: center;
+  }
+  
+  /* Center the radio buttons */
+  .button-container input {
+	margin: 0;
+  }
+  
+  /* Center the video container */
+  .custom-video-container {
 	padding: 1vh; /* Add some padding inside the container */
-	display: none;
 	justify-content: center; /* Center the iframe horizontally */
 	align-items: center; /* Center the iframe vertically */
 	text-align: center;
@@ -3204,13 +3214,7 @@ input, select, textarea {
 	}
   }
   
-  /* Show the corresponding video container when the radio button is checked */
-  #demo-basics:checked ~ #video-container-basics,
-  #demo-decals:checked ~ #video-container-decals,
-  #demo-high-to-low:checked ~ #video-container-high-to-low,
-  #demo-udims:checked ~ #video-container-udims {
-	display: flex;
-  }
+
 /* Footer */
 
 	#footer {
