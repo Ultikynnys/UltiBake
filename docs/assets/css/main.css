@@ -27,8 +27,7 @@
 /* Style for the iframe (optional) */
 .video-container iframe {
 	width: 100vw;
-	height: 100vh;
-
+	height: 55vh;
 
 	
     display: flexbox; /* Ensure it's a block-level element */
