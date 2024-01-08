@@ -26,8 +26,10 @@
 
 /* Style for the iframe (optional) */
 .video-container iframe {
-	width: 100vw;
-	height: 55vh;
+	@media screen and (min-width: 2500px) {height: 45vh; width: 100vw;}
+	@media screen and (min-width: 1500px) {height: 72vh; width: 100vw; }
+	@media screen and (min-width: 2px) {height: 70vh; width: 60vw;}
+
 
 	
     display: flexbox; /* Ensure it's a block-level element */
