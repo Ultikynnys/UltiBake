@@ -74,36 +74,36 @@
 							
 							<div class="button-container">
 								<!-- Basics -->
-								<input type="radio" id="demo-basics" name="showcasebutton" col="0" checked>
+								<input type="radio" id="demo-basics" name="sb1" col="0" checked>
 								<label for="demo-basics">Basics</label>
 							  
 								<!-- Decals -->
-								<input type="radio" id="demo-decals" name="showcasebutton">
+								<input type="radio" id="demo-decals" name="sb1">
 								<label for="demo-decals">Decals</label>
 							  
 								<!-- High to Low -->
-								<input type="radio" id="demo-high-to-low" name="showcasebutton">
+								<input type="radio" id="demo-high-to-low" name="sb1">
 								<label for="demo-high-to-low">High to Low</label>
 							  
 								<!-- UDIMs -->
-								<input type="radio" id="demo-udims" name="showcasebutton">
+								<input type="radio" id="demo-udims" name="sb1">
 								<label for="demo-udims">UDIMs</label>
 
 							  
 							  <!-- Video containers with the new class name -->
-							  <div class="custom-video-container"  name="showcase">
-								<iframe src="https://www.youtube.com/embed/GBQJJv9wBto"frameborder="0" allowfullscreen > </iframe>
+							  <div class="custom-video-container"  name="s1">
+								<iframe src="https://www.youtube.com/embed/GBQJJv9wBto" allowfullscreen > </iframe>
 							  </div>
 							  
-							  <div class="custom-video-container" name="showcase">
+							  <div class="custom-video-container" name="s1">
 								<iframe src="https://www.youtube.com/embed/kZvqE1ucUsQ" allowfullscreen></iframe>
 							  </div>
 							  
-							  <div class="custom-video-container"  name="showcase">
+							  <div class="custom-video-container"  name="s1">
 								<iframe src="https://www.youtube.com/embed/ahwdmNK1kPU"  allowfullscreen></iframe>
 							  </div>
 							  
-							  <div class="custom-video-container" name="showcase">
+							  <div class="custom-video-container" name="s1">
 								<iframe src="https://www.youtube.com/embed/2xGhLhU7pTg" allowfullscreen></iframe>
 							  </div>
 
@@ -113,8 +113,8 @@
 
 							<script> 
 								document.addEventListener("DOMContentLoaded", function() {
-								  const AB = document.querySelectorAll('[name="showcasebutton"]');
-								  const AC = document.querySelectorAll('[name="showcase"]');  
+								  const AB = document.querySelectorAll('[name="sb1"]');
+								  const AC = document.querySelectorAll('[name="s1"]');  
 							  
 								  function UC1() {
 									AB.forEach(function(radioButton, index) {
@@ -145,17 +145,16 @@
 
 				<!-- Footer -->
 					<footer id="footer">
-						<div class="inner">
+						<div class="outer">
 							<section>
 								<h2>Get in Touch</h2>
-								<ul class="icons">
-									<li><a href="https://discord.gg/cJGzHttUT5" class="icon brands style2 fa-discord"><span class="label">Twitter</span></a></li>
-									<li><a href="mailto:Hussein.Ubeid@outlook.com" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
-								</ul>
+									<a href="https://discord.gg/cJGzHttUT5" class="icon brands style2 fa-discord"><span class="label">Twitter</span></a>
+									<a href="mailto:Hussein.Ubeid@outlook.com" class="icon solid style2 fa-envelope"><span class="label">Email</span></a>
 							</section>
-
+							<br>
 							<ul class="copyright">
-								<li>&copy; Ultikynnys. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+								&copy; Ultikynnys. All rights reserved <br>
+								Design: <a href="http://html5up.net">HTML5 UP</a>
 							</ul>
 						</div>
 					</footer>
