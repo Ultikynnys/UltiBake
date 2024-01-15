@@ -74,57 +74,69 @@
 							
 							<div class="button-container">
 								<!-- Basics -->
-								<input type="radio" id="demo-basics" name="priority" checked>
+								<input type="radio" id="demo-basics" name="showcasebutton" col="0" checked>
 								<label for="demo-basics">Basics</label>
 							  
 								<!-- Decals -->
-								<input type="radio" id="demo-decals" name="priority">
+								<input type="radio" id="demo-decals" name="showcasebutton">
 								<label for="demo-decals">Decals</label>
 							  
 								<!-- High to Low -->
-								<input type="radio" id="demo-high-to-low" name="priority">
+								<input type="radio" id="demo-high-to-low" name="showcasebutton">
 								<label for="demo-high-to-low">High to Low</label>
 							  
 								<!-- UDIMs -->
-								<input type="radio" id="demo-udims" name="priority">
+								<input type="radio" id="demo-udims" name="showcasebutton">
 								<label for="demo-udims">UDIMs</label>
-							  </div>
+
 							  
 							  <!-- Video containers with the new class name -->
-							  <div class="custom-video-container" id="video-container-basics">
-								<iframe src="https://www.youtube.com/embed/GBQJJv9wBto" style="border: 4px solid #ffffff; border-radius: 10px;" frameborder="0" allowfullscreen > </iframe>
+							  <div class="custom-video-container"  name="showcase">
+								<iframe src="https://www.youtube.com/embed/GBQJJv9wBto"frameborder="0" allowfullscreen > </iframe>
 							  </div>
 							  
-							  <div class="custom-video-container" id="video-container-decals">
-								<iframe src="https://www.youtube.com/embed/kZvqE1ucUsQ"  style="border: 4px solid #ffffff; border-radius: 10px;" allowfullscreen></iframe>
+							  <div class="custom-video-container" name="showcase">
+								<iframe src="https://www.youtube.com/embed/kZvqE1ucUsQ" allowfullscreen></iframe>
 							  </div>
 							  
-							  <div class="custom-video-container" id="video-container-high-to-low">
-								<iframe src="https://www.youtube.com/embed/ahwdmNK1kPU"  style="border: 4px solid #ffffff; border-radius: 10px;" allowfullscreen></iframe>
+							  <div class="custom-video-container"  name="showcase">
+								<iframe src="https://www.youtube.com/embed/ahwdmNK1kPU"  allowfullscreen></iframe>
 							  </div>
 							  
-							  <div class="custom-video-container" id="video-container-udims">
-								<iframe src="https://www.youtube.com/embed/2xGhLhU7pTg" style="border: 4px solid #ffffff; border-radius: 10px;" allowfullscreen></iframe>
+							  <div class="custom-video-container" name="showcase">
+								<iframe src="https://www.youtube.com/embed/2xGhLhU7pTg" allowfullscreen></iframe>
 							  </div>
+
+
 							  
-							  <script>
+
+
+							<script> 
 								document.addEventListener("DOMContentLoaded", function() {
-								  const radioButtons = document.querySelectorAll('input[name="priority"]');
-								  const videoContainers = document.querySelectorAll('.custom-video-container');
+								  const AB = document.querySelectorAll('[name="showcasebutton"]');
+								  const AC = document.querySelectorAll('[name="showcase"]');  
 							  
-								  function updateVideoContainers() {
-									radioButtons.forEach(function(radioButton, index) {
-									  videoContainers[index].style.display = radioButton.checked ? 'flex' : 'none';
+								  function UC1() {
+									AB.forEach(function(radioButton, index) {
+									  AC[index].style.display = radioButton.checked ? 'flex' : 'none';
 									});
 								  }
+
+
+
 							  
-								  setTimeout(updateVideoContainers, 1000);
+								  setTimeout(UC1, 1000);
 							  
-								  radioButtons.forEach(function(radioButton) {
-									radioButton.addEventListener('change', updateVideoContainers);
+								  AB.forEach(function(radioButton) {
+									radioButton.addEventListener('change', UC1);
 								  });
+								  								
+
+
 								});
 							  </script>
+
+
 							  
 							  
 							  
