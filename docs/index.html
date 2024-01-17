@@ -54,22 +54,9 @@
 						</p>
 
 							<header>
-								<h1><a href="https://blendermarket.com/products/Ultibake">Get it on The Blender Marketplace</a></h1>
-								<h1><a href="https://ultikynnys.gumroad.com/l/ultibake">Get it on Gumroad</a></h1>
+								<h3><a href="https://blendermarket.com/products/Ultibake">Get it on The Blender Marketplace</a></h3>
+								<h3><a href="https://ultikynnys.gumroad.com/l/ultibake">Get it on Gumroad</a></h3>
 
-							</header>
-							<header>
-								<h1>How to Use?<br /></h1>
-								<p>
-							
-									I've created a series of instructional videos on using Ultibake,
-									 addressing common challenges encountered during the baking process.
-									  Please note that these videos are regularly updated and new content 
-									  is continually added. Be sure to check back often for the latest content.
-									
-
-
-								</p>
 							</header>
 							
 							<div class="button-container">
@@ -92,8 +79,67 @@
 							  
 							  <!-- Video containers with the new class name -->
 							  <div class="custom-video-container"  name="s1">
-								<iframe src="https://www.youtube.com/embed/GBQJJv9wBto" allowfullscreen > </iframe>
-							  </div>
+								<header>
+									<h1>The Basics<br /></h1>
+									<p>
+										When baking for the first time, you might have to wait for a minute as the baker will fetch dependencies on its first bake. <br>
+										Because we are using "//" as the path which means relative path, we need to save the .blend file or it will display invalid path. <br>
+
+
+										
+										
+										The only thing you need for a bake is to create a bake set from the vertical ribbon on the right in the 3D-viewport, then assign your target object(low) for baking. <br><br>
+
+										<img src="images/BT1.png" alt="" />
+										All the materials must contain at least a <a href="https://docs.blender.org/manual/en/latest/render/shader_nodes/shader/principled.html">Principled BSDF node</a> as this is used by the baker
+										for the bake types. 
+										 <br><br>
+
+										 The side bar can get cluttered very fast, It is recommended to utilize different scenes, as the bake types are stored per-scene. You can also disable hints for a more compact UI.
+										
+										<br><br>
+										
+										On the upper part UI part of Ultibake, there is a Sanity check toggle, I recommend to keep this on at all times as it will prevent you from baking something that might be  invalid, but since this sanity check is expensive, it can also lag the hud.
+
+										<br><br>
+										<img src="images/BasicUsage.gif" alt="" />
+
+										<h1>Channel packing</h1>
+										A very useful technique used to fitting extra bakes into a image.
+										In ultibake each bake set has an excplitic RGB or RGBA selector to the right of the bake type. <br>
+										Bake sets that are similar in name and file format will be combined into a single texture. <br><br><br>
+
+										
+										
+										<img src="images/CP1.gif" alt="" />
+										<br>
+										<br>
+										There is a difference between the RGB and RGBA selectors, but basically the RGB selector is asking what to bake from the selected bake type.
+										<br>
+										Opposed to the RGBA selector which is asking what channel to bake the type into.
+										<br>
+										<br>
+										<img src="images/CP2.gif" alt="" />
+
+
+										<iframe src="https://www.youtube.com/embed/GBQJJv9wBto" allowfullscreen > </iframe>
+										
+										
+	
+	
+									</p>
+								</header>
+								
+
+								
+
+
+							</div>
+
+
+
+
+							  
 							  
 							  <div class="custom-video-container" name="s1">
 								<iframe src="https://www.youtube.com/embed/kZvqE1ucUsQ" allowfullscreen></iframe>
@@ -130,11 +176,32 @@
 								  AB.forEach(function(radioButton) {
 									radioButton.addEventListener('change', UC1);
 								  });
+								  
 								  								
 
 
 								});
 							  </script>
+
+
+				
+
+					<header>
+						<h1>Changelist<br /></h1>
+						<p>
+							<h2>1.5.2 - Initial public release</h2> <br>
+
+									<h2> 1.5.3 - Hotfix</h2>
+									<ul>
+										<li>Improved Decal machine material support</li>
+										<li>Automatic decal subdivision</li>
+										<li> Removed edge control(redudant due to decal margin)</li>
+										<li> New bakesets are now added to bottom instead of top </li>
+									</ul>
+
+							
+						</p>
+					</header>
 
 
 							  
@@ -150,12 +217,10 @@
 								<h2>Get in Touch</h2>
 									<a href="https://discord.gg/cJGzHttUT5" class="icon brands style2 fa-discord"><span class="label">Twitter</span></a>
 									<a href="mailto:Hussein.Ubeid@outlook.com" class="icon solid style2 fa-envelope"><span class="label">Email</span></a>
+									<br><br>
+									&copy; Ultikynnys. All rights reserved <br>
+									Design: <a href="http://html5up.net">HTML5 UP</a>
 							</section>
-							<br>
-							<ul class="copyright">
-								&copy; Ultikynnys. All rights reserved <br>
-								Design: <a href="http://html5up.net">HTML5 UP</a>
-							</ul>
 						</div>
 					</footer>
 
