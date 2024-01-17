@@ -90,7 +90,7 @@
 										<img src="images/BT1.png" alt="">
 										All the materials must contain at least a <a href="https://docs.blender.org/manual/en/latest/render/shader_nodes/shader/principled.html">Principled BSDF node</a> as this is used by the baker for the bake types.<br><br>
 								
-										The sidebar can get cluttered very fast. It is recommended to utilize different scenes, as the bake types are stored per-scene. You can also disable hints for a more compact UI.<br><br>
+										The sidebar can get cluttered very fast. It is recommended to utilize different scenes, as the bake sets are stored per-scene. You can also disable hints for a more compact UI.<br><br>
 								
 										On the upper part of the Ultibake UI, there is a Sanity check toggle. I recommend keeping this on at all times as it will prevent you from baking something that might be invalid. However, since this sanity check is expensive, it can also lag the HUD.<br><br>
 								
@@ -126,7 +126,37 @@
 							  
 							  
 							  <div class="custom-video-container" name="s1">
-								<iframe src="https://www.youtube.com/embed/kZvqE1ucUsQ" allowfullscreen></iframe>
+								<header>
+									<h1>Decal Baking</h1>
+									<p>
+									  Ultibake is currently the only option out there in terms of "multi-mask decal baking," where we can bake multiple masks at the same time like with these decals from DECALmachine. The closest equivalent is the decal tool in Substance Painter, except this one is non-destructive!<br>
+									  In this image, we can see multiple decals with the color, normal, roughness, and metal masks being applied to Suzanne.<br><br>
+									
+									  <img src="images/decalstill2.png" alt=""><br><br>
+									
+									  Non-overlapping decals with an alpha channel will be masked accordingly.<br>
+									
+									  <img src="images/Decals1.gif" alt=""><br><br>
+									
+									  To get overlapping decals to stack correctly, we must use the alpha stacker node to turn the alpha mask into a mesh (the node is included with the addon as a library). The overlapped decals are stacked according to the order in which they appear in the collection, which is defined by the alphabetical order of the object names.<br><br>
+									
+									  <img src="images/Decals2.gif" alt=""><br><br>
+									
+									  To bake decals which have multiple masks like these metal insets, we have to add a bake set for each bake type. If the bake set only contains a bake unit with the decal collection and low object, this will bake just the decals, which can be useful if you just want the decals as a separate texture. If you intend to do this, you should have a bake set using the alpha bake type so you can mask the decals with an underlying texture.<br><br>
+									  If you want to combine the low object's material and decals, you add another bake unit containing just the low object.<br><br>
+									
+									  <img src="images/Decals3.gif" alt=""><br><br>
+									
+									  The decal subdivision checkbox automatically subdivides each decal before trying to wrap it around the desired object. This is ideal for curved surfaces, but it can slow down the bake times considerably at high poly counts. A value of 4 is usually good enough for small/medium-sized decals, but for long strips like zippers or strip sheets, it's recommended to subdivide the mesh manually.<br><br>
+									  The stack height controls the projection offset from the surface of the low object; this value should be as close to zero as possible for accurate projection, but in certain situations increasing this will fix clipping issues.<br><br>
+									  The Global Decal margin works like the margin for UV islands; note that it only affects mesh borders. For text objects, this should be 0 to prevent the text from bleeding. As with the margin for UV islands, increasing this value prevents seams when the decal crosses UV borders.<br><br>
+									
+									  <img src="images/deca2.png" alt=""><br><br>
+
+										<iframe src="https://www.youtube.com/embed/kZvqE1ucUsQ" allowfullscreen></iframe>
+									</p>
+								</header>
+								
 							  </div>
 							  
 							  <div class="custom-video-container"  name="s1">
