@@ -82,8 +82,8 @@
 								<header>
 									<h1>The Basics<br></h1>
 									<p>
-										When baking for the first time, you might have to wait for a minute as the baker will fetch dependencies on its first bake.<br>
-										Because we are using "//" as the path, which means a relative path, we need to save the .blend file or it will display an invalid path.<br>
+										When baking for the first time, you might have to wait for a minute as the baker will fetch dependencies on its first bake.
+										Because we are using "//" as the path, which means a relative path, we need to save the .blend file or it will display an invalid path.<br><br>
 								
 										The only thing you need for a bake is to create a bake set from the vertical ribbon on the right in the 3D-viewport, then assign your target object (low) for baking in the bake unit.<br><br>
 								
@@ -130,7 +130,7 @@
 									<h1>Decal Baking</h1>
 									<p>
 									  Ultibake is currently the only option out there in terms of "multi-mask decal baking," where we can bake multiple masks at the same time like with these decals from DECALmachine. The closest equivalent is the decal tool in Substance Painter, except this one is non-destructive!<br>
-									  In this image, we can see multiple decals with the color, normal, roughness, and metal masks being applied to Suzanne.<br><br>
+									  <br><br> In this image, we can see multiple decals with the color, normal, roughness, and metal masks being applied to Suzanne.<br><br>
 									
 									  <img src="images/decalstill2.png" alt=""><br><br>
 
@@ -162,12 +162,34 @@
 							  </div>
 							  
 							  <div class="custom-video-container"  name="s1">
+								<header>
+									<h1>High to Low Poly Baking</h1>
+									<p>
+
+									In this process, we take a high-poly mesh, typically a sculpted model, and project its surface details onto another object, usually a low-poly quad mesh. <br>
+									 The advantage lies in obtaining high-frequency details from the sculpt while maintaining real-time performance, crucial for gaming applications. <br><br>
+									To employ High to Low baking with Ultibake, it is essential to specify the low and high objects, ensuring they overlap. Proper adjustment of the Cage Extrusion parameter is vital; the low-poly object must envelop the high-poly object to prevent clipping. <br><br> If fine-tuning the cage extrusion parameter proves ineffective, using a helper mesh (cage) that encases the high-poly object becomes necessary. <br>
+									<br>
+									Incorporating a shrinkwrap modifier on the low-poly object, targeting the high-poly object without applying it, offers a practical approach compared to specifying a cage object. 
+									 Personally, I prefer this method as it allows for a visual assessment of the overlap between the low-poly and high-poly objects.
+									
+								</p> <br> <br>
+
 								<iframe src="https://www.youtube.com/embed/ahwdmNK1kPU"  allowfullscreen></iframe>
+								</p>
+							</header>
 							  </div>
 							  
 							  <div class="custom-video-container" name="s1">
-								<iframe src="https://www.youtube.com/embed/2xGhLhU7pTg" allowfullscreen></iframe>
-							  </div>
+								<header>
+									<h1>UDIM Baking</h1>
+									<p>
+										UDIM baking in Ultibake is done by specifying a valid index in the texture name, for example, "T_Ultibake_1005". The UDIM range is 1001 to 1100. Bake sets that incorporate such a naming scheme will bake the UV islands in the specified UDIM index in UV space.
+									</p>
+									<br> <br>
+									<iframe src="https://www.youtube.com/embed/2xGhLhU7pTg" allowfullscreen></iframe>
+								</header>
+							</div>
 
 
 							  
