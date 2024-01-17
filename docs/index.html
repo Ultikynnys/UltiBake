@@ -80,53 +80,37 @@
 							  <!-- Video containers with the new class name -->
 							  <div class="custom-video-container"  name="s1">
 								<header>
-									<h1>The Basics<br /></h1>
+									<h1>The Basics<br></h1>
 									<p>
-										When baking for the first time, you might have to wait for a minute as the baker will fetch dependencies on its first bake. <br>
-										Because we are using "//" as the path which means relative path, we need to save the .blend file or it will display invalid path. <br>
-
-
-										
-										
-										The only thing you need for a bake is to create a bake set from the vertical ribbon on the right in the 3D-viewport, then assign your target object(low) for baking. <br><br>
-
-										<img src="images/BT1.png" alt="" />
-										All the materials must contain at least a <a href="https://docs.blender.org/manual/en/latest/render/shader_nodes/shader/principled.html">Principled BSDF node</a> as this is used by the baker
-										for the bake types. 
-										 <br><br>
-
-										 The side bar can get cluttered very fast, It is recommended to utilize different scenes, as the bake types are stored per-scene. You can also disable hints for a more compact UI.
-										
-										<br><br>
-										
-										On the upper part UI part of Ultibake, there is a Sanity check toggle, I recommend to keep this on at all times as it will prevent you from baking something that might be  invalid, but since this sanity check is expensive, it can also lag the hud.
-
-										<br><br>
-										<img src="images/BasicUsage.gif" alt="" />
-
-										<h1>Channel packing</h1>
-										A very useful technique used to fitting extra bakes into a image.
-										In ultibake each bake set has an excplitic RGB or RGBA selector to the right of the bake type. <br>
-										Bake sets that are similar in name and file format will be combined into a single texture. <br><br><br>
-
-										
-										
-										<img src="images/CP1.gif" alt="" />
+										When baking for the first time, you might have to wait for a minute as the baker will fetch dependencies on its first bake.<br>
+										Because we are using "//" as the path, which means a relative path, we need to save the .blend file or it will display an invalid path.<br>
+								
+										The only thing you need for a bake is to create a bake set from the vertical ribbon on the right in the 3D-viewport, then assign your target object (low) for baking.<br><br>
+								
+										<img src="images/BT1.png" alt="">
+										All the materials must contain at least a <a href="https://docs.blender.org/manual/en/latest/render/shader_nodes/shader/principled.html">Principled BSDF node</a> as this is used by the baker for the bake types.<br><br>
+								
+										The sidebar can get cluttered very fast. It is recommended to utilize different scenes, as the bake types are stored per-scene. You can also disable hints for a more compact UI.<br><br>
+								
+										On the upper part of the Ultibake UI, there is a Sanity check toggle. I recommend keeping this on at all times as it will prevent you from baking something that might be invalid. However, since this sanity check is expensive, it can also lag the HUD.<br><br>
+								
+										<img src="images/BasicUsage.gif" alt="">
+								
+										<h1>Channel Packing</h1>
+										A very useful technique used to fit extra bakes into an image.
+										In Ultibake, each bake set has an explicit RGB or RGBA selector to the right of the bake type.<br>
+										Bake sets that are similar in name and file format will be combined into a single texture.<br><br><br>
+								
+										<img src="images/CP1.gif" alt="">
 										<br>
 										<br>
-										There is a difference between the RGB and RGBA selectors, but basically the RGB selector is asking what to bake from the selected bake type.
+										There is a difference between the RGB and RGBA selectors, but basically, the RGB selector is asking what to bake from the selected bake type.<br>
+										Opposed to the RGBA selector, which is asking what channel to bake the type into.<br>
 										<br>
-										Opposed to the RGBA selector which is asking what channel to bake the type into.
 										<br>
-										<br>
-										<img src="images/CP2.gif" alt="" />
-
-
-										<iframe src="https://www.youtube.com/embed/GBQJJv9wBto" allowfullscreen > </iframe>
-										
-										
-	
-	
+										<img src="images/CP2.gif" alt="">
+								
+										<iframe src="https://www.youtube.com/embed/GBQJJv9wBto" allowfullscreen></iframe>
 									</p>
 								</header>
 								
