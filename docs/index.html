@@ -49,7 +49,7 @@
 							<p>
 							<div class="video-container">
 								<!-- Embedded YouTube video -->
-								<iframe src="https://www.youtube.com/embed/1DRfKW7uc38" style="border: 4px solid #ffffff; border-radius: 10px;" allowfullscreen></iframe>
+								<iframe src="https://www.youtube.com/embed/whxLNnCBBy8" style="border: 4px solid #ffffff; border-radius: 10px;" allowfullscreen></iframe>
 							</div>
 						</p>
 
@@ -85,32 +85,25 @@
 										When baking for the first time, you might have to wait for a minute as the baker will fetch dependencies on its first bake.
 										Because we are using "//" as the path, which means a relative path, we need to save the .blend file or it will display an invalid path.<br><br>
 								
-										The only thing you need for a bake is to create a bake set from the vertical ribbon on the right in the 3D-viewport, then assign your target object (low) for baking in the bake unit.<br><br>
+										The only thing you need for a bake is to create a bake set from the vertical ribbon on the right in the 3D-viewport, then assign your target object (low) for baking in the bake unit.
 								
-										<img src="images/BT1.png" alt="">
+										<img src="images/BK1_2.9.1.jpg" alt="">
 										All the materials must contain at least a <a href="https://docs.blender.org/manual/en/latest/render/shader_nodes/shader/principled.html">Principled BSDF node</a> as this is used by the baker for the bake types.<br><br>
 								
 										The sidebar can get cluttered very fast. It is recommended to utilize different scenes, as the bake sets are stored per-scene. You can also disable hints for a more compact UI.<br><br>
-								
+										
 										On the upper part of the Ultibake UI, there is a Sanity check toggle. I recommend keeping this on at all times as it will prevent you from baking something that might be invalid. However, since this sanity check is expensive, it can also lag the HUD.<br><br>
-								
-										<img src="images/BasicUsage.gif" alt="">
+										<img src="images/caw.png" alt="">
 								
 										<h1>Channel Packing</h1>
-										A very useful technique used to fit extra bakes into an image.
-										In Ultibake, each bake set has an explicit RGB or RGBA selector to the right of the bake type.<br>
-										Bake sets that are similar in name and file format will be combined into a single texture.<br><br><br>
-								
-										<img src="images/CP1.gif" alt="">
-										<br>
-										<br>
+										A very useful technique used to fit extra bakes into an image.<br>
+										In Ultibake, each bake set has an explicit RGB or RGBA selector to the right of the of each bake type.<br>
+										Bake types are added from the + next to the bake button. <br>
 										There is a difference between the RGB and RGBA selectors, but basically, the RGB selector is asking what to bake from the selected bake type.<br>
-										Opposed to the RGBA selector, which is asking what channel to bake the type into.<br>
-										<br>
-										<br>
-										<img src="images/CP2.gif" alt="">
+										Opposed to the RGBA selector, which is asking what channel to bake the type into.
 								
-										<iframe src="https://www.youtube.com/embed/GBQJJv9wBto" allowfullscreen></iframe>
+										<img src="images/CP_1_2.13.1.jpg" alt="">
+
 									</p>
 								</header>
 								
@@ -130,32 +123,30 @@
 									<h1>Decal Baking</h1>
 									<p>
 									  Ultibake is currently the only option out there in terms of "multi-mask decal baking," where we can bake multiple masks at the same time like with these decals from DECALmachine. The closest equivalent is the decal tool in Substance Painter, except this one is non-destructive!<br>
-									  <br><br> In this image, we can see multiple decals with the color, normal, roughness, and metal masks being applied to Suzanne.<br><br>
+									  <br>In this image, we can see multiple decals with the color, normal, roughness, and metal masks being applied to Suzanne.
 									
-									  <img src="images/decalstill2.png" alt=""><br><br>
+									  <img src="images/decalstill2.png" alt="">
 
 
 									
-									  Non-overlapping decals with an alpha channel will be masked accordingly. When baking with planes, it is important to make sure that the decal is not inside the low object.<br>
+									  Non-overlapping decals with an alpha channel will be masked accordingly. When baking with planes, it is important to make sure that the decal is not inside the low object.
 									
-									  <img src="images/Decals1.gif" alt=""><br><br>
+									  <img src="images/Decals1.gif" alt="">
 									
-									  To get overlapping decals to stack correctly, we must use the alpha stacker node to turn the alpha mask into a mesh (the node is included with the addon as a library). The overlapped decals are stacked according to the order in which they appear in the collection, which is defined by the alphabetical order of the object names.<br><br>
+									  To get overlapping decals to stack correctly, we must use the alpha stacker node to turn the alpha mask into a mesh (the node is included with the addon as a library). The overlapped decals are stacked according to the order in which they appear in the collection, which is defined by the alphabetical order of the object names.
 									
-									  <img src="images/Decals2.gif" alt=""><br><br>
+									  <img src="images/Decals2.gif" alt="">
 									
 									  To bake decals which have multiple masks like these metal insets, we have to add a bake set for each bake type. If the bake set only contains a bake unit with the decal collection and low object, this will bake just the decals, which can be useful if you just want the decals as a separate texture. If you intend to do this, you should have a bake set using the alpha bake type so you can mask the decals with an underlying texture.<br><br>
-									  If you want to combine the low object's material and decals, you add another bake unit containing just the low object.<br><br>
+									  If you want to combine the low object's material and decals, you add another bake unit containing just the low object.
 									
-									  <img src="images/Decals3.gif" alt=""><br><br>
+									  <img src="images/Decals3.gif" alt="">
 									
 									  The decal subdivision checkbox automatically subdivides each decal before trying to wrap it around the desired object. This is ideal for curved surfaces, but it can slow down the bake times considerably at high poly counts. A value of 4 is usually good enough for small/medium-sized decals, but for long strips like zippers or strip sheets, it's recommended to subdivide the mesh manually.<br><br>
 									  The stack height controls the projection offset from the surface of the low object; this value should be as close to zero as possible for accurate projection, but in certain situations increasing this will fix clipping issues.<br><br>
-									  The Global Decal margin works like the margin for UV islands; note that it only affects mesh borders. For text objects, this should be 0 to prevent the text from bleeding. As with the margin for UV islands, increasing this value prevents seams when the decal crosses UV borders.<br><br>
+									  The Global Decal margin works like the margin for UV islands; note that it only affects mesh borders. For text objects, this should be 0 to prevent the text from bleeding. As with the margin for UV islands, increasing this value prevents seams when the decal crosses UV borders.
 									
-									  <img src="images/deca2.png" alt=""><br><br>
-
-										<iframe src="https://www.youtube.com/embed/kZvqE1ucUsQ" allowfullscreen></iframe>
+									  <img src="images/deca2.png" alt="">
 									</p>
 								</header>
 								
@@ -168,15 +159,13 @@
 
 									In this process, we take a high-poly mesh, typically a sculpted model, and project its surface details onto another object, usually a low-poly quad mesh. <br>
 									 The advantage lies in obtaining high-frequency details from the sculpt while maintaining real-time performance, crucial for gaming applications. <br><br>
-									To employ High to Low baking with Ultibake, it is essential to specify the low and high objects, ensuring they overlap. Proper adjustment of the Cage Extrusion parameter is vital; the low-poly object must envelop the high-poly object to prevent clipping. <br><br> If fine-tuning the cage extrusion parameter proves ineffective, using a helper mesh (cage) that encases the high-poly object becomes necessary. <br>
-									<br>
+									To employ High to Low baking with Ultibake, it is essential to specify the low and high objects. Proper adjustment of the Cage Extrusion parameter is vital; the low-poly object must envelop the high-poly object to prevent clipping. <br><br> If fine-tuning the cage extrusion parameter proves ineffective, using a helper mesh (cage) that encases the high-poly object becomes necessary. <br>
+									<img src="images/UDIM3_2.15.1.jpg" alt="">
 									Incorporating a shrinkwrap modifier on the low-poly object, targeting the high-poly object without applying it, offers a practical approach compared to specifying a cage object. 
-									 Personally, I prefer this method as it allows for a visual assessment of the overlap between the low-poly and high-poly objects.
-									
-								</p> <br> <br>
+									 Personally, I prefer this method as it allows for a visual assessment of the overlap between the low-poly and high-poly objects, but it does require the low and high object to be overlapping, which can make the bake setup more messy.
+									 <img src="images/MM1.png" alt="">
+									</p>
 
-								<iframe src="https://www.youtube.com/embed/ahwdmNK1kPU"  allowfullscreen></iframe>
-								</p>
 							</header>
 							  </div>
 							  
@@ -184,10 +173,21 @@
 								<header>
 									<h1>UDIM Baking</h1>
 									<p>
-										UDIM baking in Ultibake is done by specifying a valid index in the texture name, for example, "T_Ultibake_1005". The UDIM range is 1001 to 1100. Bake sets that incorporate such a naming scheme will bake the UV islands in the specified UDIM index in UV space.
+										
+										The benefits of UDIM's are that you can separate a single bake into multiple textures, which allows for more control over texture quality. <br>
+										UDIM baking is automatically applied to a bake set when the low object's UV map contains UV islands that are outside of initial UV tile(1001)
+										<br>In this Image below the UVs are crossing 4 UDIM tiles 1001,1002,1011 and 1012. This results in 4 textures. with the udim index at the end of each image file.
+									
+										<img src="images/UDIM1_2.10.1.jpg" alt="">
+									
+
+										You can control the resolution scale with UDIM scale rules. The UDIM scale rule is a bake set parameter which defines the multiplier for the texture resolution based on the bake set resolution.
+										
+									
+
+									<img src="images/UDIM2_2.10.2.jpg" alt="">
 									</p>
-									<br> <br>
-									<iframe src="https://www.youtube.com/embed/2xGhLhU7pTg" allowfullscreen></iframe>
+									
 								</header>
 							</div>
 
@@ -236,6 +236,23 @@
 										<li> Removed edge control(redudant due to decal margin)</li>
 										<li> New bakesets are now added to bottom instead of top </li>
 									</ul>
+									<h2>1.6.0 - QOL update</h2>
+									<ul>
+										<li>UDIMS are now automatically detected from UV map</li>
+										<li>UDIMS resolution rules added to bake set settings</li>
+										<li>New bake units are now added to the bottom instead of top</li>
+										<li>bake sets can now have multiple bake types!</li>
+										<li>bake sets that don't use the alpha channel will default to 1.0 alpha correctly.</li>
+										<li>Channel selector is now aligned</li>
+										<li>Bake denoise/blur strength moved to bakeset settings.</li>
+										<li>Hide option added to bake unit</li>
+										<li>Cancel option added to baking (E+Ctrl)</li>
+										<li>Fixed Shapekey ignore not working when using decals.</li>
+										<li>High to Low baking no longer requires overlapping.</li>
+									</ul>
+									
+
+									
 
 							
 						</p>

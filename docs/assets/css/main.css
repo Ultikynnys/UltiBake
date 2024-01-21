@@ -3219,6 +3219,8 @@ input, select, textarea {
   /* Styling for the video container based on screen width */
   .custom-video-container iframe,
   .custom-video-container img {
+	margin-top: 2em; 
+  	margin-bottom: 2em; /* Adjust the value as needed */
 	border: 4px solid #ffffff;
 	 border-radius: 10px;
 	width: 100%;
