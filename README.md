@@ -28,7 +28,7 @@
 
 ### Udims
 
-> While Ultibake handels UDIM baking automatically, this video explains how it can be used.
+> While Ultibake handels UDIM baking automatically, this video explains how it can be used. This video also explains several extra considerations when working with decals, like how to fix decal seams and black borders.
 
 <iframe width="420" height="315" src="https://www.youtube.com/embed/Mzp5L5xpPIg"></iframe>
 
