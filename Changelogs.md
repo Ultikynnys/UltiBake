@@ -44,7 +44,7 @@
     * Fixed problem where channel packing results in missing alpha in certain situations
     * Fixed an edge case where objects with vertices only on uv borders fail to bake
 
->## 1.7.24 - NEW FEATURES 8/6/2024
+>## 1.7.25 - NEW FEATURES 8/6/2024
     * Low object selection can be toggled to be a Low object collection instead
     * Decal baking now has an toggle for including the underlying object automatically.
     * Finalize baked objects for export
