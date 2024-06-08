@@ -34,3 +34,6 @@
 
 
 
+### Support
+
+> If you find yourself stuck or if something isn't working as you intended, ask about it in the [discord channel](https://discord.gg/RvT8jKRevG)
