@@ -1,4 +1,4 @@
 <!-- docs/_sidebar.md -->
-* [Home](/)
+* [Ultibake](README.md)
 ** [Usage](AddonParm.md)
 ** [Changelog](Changelogs.md)

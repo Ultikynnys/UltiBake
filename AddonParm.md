@@ -96,7 +96,7 @@ The addon introduces various terms, which are explained here.
 ![alt text](image-9.png)
 
 
-* **Toggle Console** - Whenever you bake something on Windows, a console will open up which has a visual progress bar and the option to cancel the bake with E+Ctrl```yes it's reversed```
+* **Toggle Console** - Whenever you bake something on Windows, a console will open up which has a visual progress bar and the option to cancel the bake with E+Ctrl```yes it's reversed(does not currently work on non-Windows machines)```
 
 * **Open Target Folder** - Opens the bake folder upon completion
 
