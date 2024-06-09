@@ -16,6 +16,7 @@
 ### Decal Baking
 
 > Allows you to project any image to a low poly object. Even works if the image uses multiple masks like Normals,roughness,metallic etc.
+```DecalMachine materials use a parallax node, which needs to be disabled from the material```
 
 <iframe width="420" height="315" src="https://www.youtube.com/embed/3LwLf0DBy1A"></iframe>
 
