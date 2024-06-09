@@ -99,7 +99,7 @@ The addon introduces various terms, which are explained here.
 
 ![alt text](image-8.png)
 
-* **Force Color Space** - a toggle which will give you an option to set the colorspace of a baked texture, manually setting this is rarely required since this is automatically detected from the **Bake Sets**. But in certain situations you may need to control this excplicitly
+* **Force Color Space** - a toggle which will give you an option to set the colorspace of a baked texture, manually setting this is rarely required since this is automatically detected from the **Bake Sets**. But in certain situations you may need to control this explicitly
 
 ![alt text](image-9.png)
 
