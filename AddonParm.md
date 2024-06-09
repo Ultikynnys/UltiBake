@@ -69,9 +69,13 @@ The addon introduces various terms, which are explained here.
 
 > With **Bake Types** we can define what is baked from the materials that are applied to the objects in the **Bake Units** These **materials must utilize the Principled BSDF node** and any material which is not using this node will have to be manually converted to utilize it. **The Bake Types reflect the inputs of the Principled BSDF node** except for a few special types which are unique to the Addon.
 
+![alt text](image-11.png)
+
+> You can have **Multiple Bake Types** on a single **Bake Set**, allowing you to do channel packing. The iamge suffix is also generated from these
+
 ![alt text](image-3.png)
 
-> Each Bake Type has a channel selector. Note that you can select multiple channels for a Bake Type by shift+left click
+> Each **Bake Type** has a channel selector. Note that you can select multiple channels for a Bake Type by shift+left click
 
 > In the Image there is a suffix```MRSAO``` after the texture name, which is dynamically generated, It can be disabled from the addon parameters by unticking **Auto Suffix** 
 
@@ -91,7 +95,7 @@ The addon introduces various terms, which are explained here.
 
 ![alt text](image-8.png)
 
-* **Force Color Space** - a toggle which will give you an option to set the colorspace of a baked texture, manually setting this is rarely required since this is automatically detected from the bake sets. But in certain situations you may need to control this excplicitly
+* **Force Color Space** - a toggle which will give you an option to set the colorspace of a baked texture, manually setting this is rarely required since this is automatically detected from the **Bake Sets**. But in certain situations you may need to control this excplicitly
 
 ![alt text](image-9.png)
 
@@ -107,17 +111,17 @@ The addon introduces various terms, which are explained here.
 * **Ignore Shape Keys** - When baking objects which utilize shape keys, you might not want to bake the distorted mesh if it is affected by stuff like AO or Decals.
 
 
-* **Global File Format** - When baking texture, you might want to specify the texture on a **bake set** basis or you can use the same file format for all bake sets.
+* **Global File Format** - When baking texture, you might want to specify the texture on a **bake set** basis or you can use the same file format for all **Bake Sets**.
 
 ![alt text](image-10.png)
 
-* **Decal Subdivision** - Decals are shrinkwraped around the low object, this ensures that the shrinkwrapping works correctly. Some meshes require more subdiv, which can be increased on the value to the right of this tickbox.
+* **Decal Subdivision** - Decals are shrinkwraped around the **low** object, this ensures that the shrinkwrapping works correctly. Some meshes require more subdiv, which can be increased on the value to the right of this tickbox.
 
-* **Use Global Decal Margin** - Just like with the margin for baking, you can specify how much margin the decals have when they are baked to the UV islands on the Low object.
+* **Use Global Decal Margin** - Just like with the margin for baking, you can specify how much margin the **decals** have when they are baked to the UV islands on the Low object.
 
-* **Decal Stack Height** - This is the height at which the decals are shrinkwrapped to the surface of the low object, depending on the mesh resolution of the decal, this should.
+* **Decal Stack Height** - This is the height at which the **decals** are shrinkwrapped to the surface of the low object, depending on the mesh resolution of the decal, this should.
 
-* **Alpha Sensitivity** - This is the value thats responsible for specifying how sharp the border for decals that use an alpha mask, keep it as low as possible to reduce border artifacts on decals.
+* **Alpha Sensitivity** - This is the value thats responsible for specifying how sharp the border for **decals** that use an alpha mask, keep it as low as possible to reduce border artifacts on **decals**.
 
 
 
