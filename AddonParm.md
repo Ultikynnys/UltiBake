@@ -95,7 +95,7 @@ The addon introduces various terms, which are explained here.
 
 ## Parameters
 
-> **Understanding the addon parameters** There are various controls in the addon parameters, which need explaining.
+> There are various controls in the addon parameters, which need explaining.
 
 ![alt text](image-8.png)
 
