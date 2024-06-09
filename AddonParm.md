@@ -38,7 +38,7 @@ The addon introduces various terms, which are explained here.
 
 ### Bake Unit
 
->    With **Bake Units** we can define the **objects which are used for baking**. It also contains the target UVmap which is requied for the bake. a **Bake Set** can contain N amount of **Bake Units**, which allows you to easily bake multiple objects to a single texture. 
+>    With **Bake Units** we can define the **objects which are used for baking**. It also contains the target UVmap which is required for the bake. a **Bake Set** can contain N amount of **Bake Units**, which allows you to easily bake multiple objects to a single texture. 
 
 ![alt text](image-2.png)
 
@@ -63,6 +63,10 @@ The addon introduces various terms, which are explained here.
 * **Collection Toggle** - a toggle which will convert the **Low** parameter to a collection instead
 ```This will prevent you from using High to Low baking or Decals, but its crucial for bakes that contain many objects```
 
+* **Baking UV map** - Convenient selector for choosing what UVmap to use for the **low** object or **low** collection.
+```With collections it will only show UVmaps that are shared with all the other objects in the low collection```
+
+![alt text](image-13.png)
 
 
 ## Bake Types
