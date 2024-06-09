@@ -23,6 +23,7 @@
 ### Decal Stacking
 
 > Allows you to stack decals on top of each other with control over stack order.
+```The Alphastack.blend file comes with the addon.```
 
 <iframe width="420" height="315" src="https://www.youtube.com/embed/ltRfZqC-O6g"></iframe>
 
