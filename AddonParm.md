@@ -38,7 +38,7 @@ The addon introduces various terms, which are explained here.
 
 ### Bake Unit
 
->    With **Bake Units** we can define the **objects which are used for baking**. It also contains the target UVmap which is required for the bake. a **Bake Set** can contain N amount of **Bake Units**, which allows you to easily bake multiple objects to a single texture. 
+>    With **Bake Units** we can define the **objects which are used for baking**. It also contains the target UVmap which is required for the bake. a **Bake Set** can contain any amount of **Bake Units**, which allows you to easily bake multiple objects to a single texture. 
 
 ![alt text](image-2.png)
 
@@ -63,7 +63,7 @@ The addon introduces various terms, which are explained here.
 * **Collection Toggle** - a toggle which will convert the **Low** parameter to a collection instead
 ```This will prevent you from using High to Low baking or Decals, but its crucial for bakes that contain many objects```
 
-* **Baking UV map** - Convenient selector for choosing what UVmap to use for the **low** object or **low** collection.
+* **Baking UV map** - Convenient selector for choosing what UVmap to use for the **Low** object or **Low** collection.
 ```With collections it will only show UVmaps that are shared with all the other objects in the low collection```
 
 ![alt text](image-13.png)
@@ -71,17 +71,17 @@ The addon introduces various terms, which are explained here.
 
 ## Bake Types
 
-> With **Bake Types** we can define what is baked from the materials that are applied to the objects in the **Bake Units** These **materials must utilize the Principled BSDF node** and any material which is not using this node will have to be manually converted to utilize it. **The Bake Types reflect the inputs of the Principled BSDF node** except for a few special types which are unique to the Addon.
+> With **Bake Types** we can define what is baked from the materials that are applied to the objects in the **Bake Units**. The **Materials must utilize the Principled BSDF node** and any material which is not using this node will have to be manually converted to utilize it. **The Bake Types reflect the inputs of the Principled BSDF node** except for a few special types which are unique to the Addon.
 
 ![alt text](image-11.png)
 
-> You can have **Multiple Bake Types** on a single **Bake Set**, allowing you to do channel packing. The iamge suffix is also generated from these
+> You can have **Multiple Bake Types** on a single **Bake Set**, allowing you to do channel packing. The image suffix is also generated from these
 
 ![alt text](image-3.png)
 
-> Each **Bake Type** has a channel selector. Note that you can select multiple channels for a Bake Type by shift+left click
+> Each **Bake Type** has a channel selector. Note that you can select multiple channels for a Bake Type with shift+left click
 
-> In the Image there is a suffix```MRSAO``` after the texture name, which is dynamically generated, It can be disabled from the addon parameters by unticking **Auto Suffix** 
+> To the right of the image name is a suffix```MRSAO``` , which is dynamically generated. The suffix can be disabled from the addon parameters by unticking **Auto Suffix** 
 
 ![alt text](image-4.png)
 
@@ -89,7 +89,7 @@ The addon introduces various terms, which are explained here.
 
 ## Finalize
 
-> **The last part in the pipeline** Once the bake is complete, with a single click you can create a copies of your bakeable objects which now utilize only the baked textures. Great for ensuring consistency and also as a bonus makes your objects ready for exporting.
+> **The last part in the pipeline** Once the bake is complete. With a single click you can create a copies of your **Bake Set** objects which now utilize only the baked textures. Great for ensuring consistency and also as a bonus makes your objects ready for exporting.
 
 ![alt text](image-7.png)
 
@@ -99,7 +99,7 @@ The addon introduces various terms, which are explained here.
 
 ![alt text](image-8.png)
 
-* **Force Color Space** - a toggle which will give you an option to set the colorspace of a baked texture, manually setting this is rarely required since this is automatically detected from the **Bake Sets**. But in certain situations you may need to control this explicitly
+* **Force Color Space** - a toggle which will give you an option to set the colorspace of a baked texture, manually setting this is rarely required since its automatically determined from the **Bake Types**. In certain situations you may need to control this explicitly
 
 ![alt text](image-9.png)
 
@@ -115,17 +115,17 @@ The addon introduces various terms, which are explained here.
 * **Ignore Shape Keys** - When baking objects which utilize shape keys, you might not want to bake the distorted mesh if it is affected by stuff like AO or Decals.
 
 
-* **Global File Format** - When baking texture, you might want to specify the texture on a **bake set** basis or you can use the same file format for all **Bake Sets**.
+* **Global File Format** - Specify the texture format on a **Bake Set** basis or you can use the same file format for all **Bake Sets**.
 
 ![alt text](image-10.png)
 
-* **Decal Subdivision** - Decals are shrinkwraped around the **low** object, this ensures that the shrinkwrapping works correctly. Some meshes require more subdiv, which can be increased on the value to the right of this tickbox.
+* **Decal Subdivision** - Decals are shrinkwraped around the **Low** object, this ensures that the shrinkwrapping works correctly. Some meshes require more subdiv, which can be increased on the value to the right of this tickbox.
 
-* **Use Global Decal Margin** - Just like with the margin for baking, you can specify how much margin the **decals** have when they are baked to the UV islands on the Low object.
+* **Use Global Decal Margin** - Just like with the margin for baking, you can specify how much margin the **Decals** have when they are baked to the UV islands on the Low object.
 
-* **Decal Stack Height** - This is the height at which the **decals** are shrinkwrapped to the surface of the low object, depending on the mesh resolution of the decal, this should.
+* **Decal Stack Height** - This is the height at which the **Decals** are shrinkwrapped to the surface of the low object, depending on the mesh resolution of the decal, this should.
 
-* **Alpha Sensitivity** - This is the value thats responsible for specifying how sharp the border for **decals** that use an alpha mask, keep it as low as possible to reduce border artifacts on **decals**.
+* **Alpha Sensitivity** - This is the value thats responsible for specifying how sharp the border for **Decals** that use an alpha mask, keep it as low as possible to reduce border artifacts on **Decals**.
 
 
 
