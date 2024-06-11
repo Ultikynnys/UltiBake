@@ -4,11 +4,11 @@ The addon introduces various terms, which are explained here.
 
 ## Bake Sets
 
-> The most important part of the addon. These define the what and how for baking. Inside we can find a lot of parameters by toggling ```More Settings``` ```The ghost icon is used to indicate that something can be expanded/minimzed```
+> **Bake Sets** are the most important part of the addon. These containers can be created/removed and they contain all the information that specify the what and how for **baking a single texture**. They can be individually baked for time save or you can bake all of them from the **Bake All Sets** Button
 
 > You can have as many **Bake Sets** as you want.
 
-> **Bake Sets are tied to a Scene**, so you can have multiple setups if you utilize multiple Scenes.
+> **Bake Sets are tied to a Scene**, so you can have multiple setups if you utilize multiple Scenes. **Great for reducing clutter**
 
 
 
