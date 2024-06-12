@@ -51,3 +51,7 @@
     * Automatic Suffix generation
     * MacOS/Linux Support
     * Many small bugfixes
+
+>## 1.7.25 - Quality Of Life UPDATE 13/6/2024
+    * UcuPainter support
+    * Ability to quickly bake in texture mode
