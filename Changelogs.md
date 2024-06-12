@@ -54,4 +54,4 @@
 
 >## 1.7.26 - QOL UPDATE 13/6/2024
     * UcuPainter support
-    * Ability to quickly bake in texture mode
+    * Ability to quickly bake in texture painting mode
