@@ -55,3 +55,6 @@
 >## 1.7.26 - QOL UPDATE 13/6/2024
     * UcuPainter support
     * Ability to quickly bake in texture painting mode
+
+>## 1.7.28 - Stability UPDATE 20/6/2024
+    * Embedded import packages. Ensures version stability
