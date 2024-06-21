@@ -54,6 +54,8 @@ The addon introduces various terms, which are explained here.
 * **Decals** - the collection which will have its meshes projected to the **Low** object
 ```Similar to High to Low baking, but contains internal pre-processing to ensure better results```
 
+> Any non-mesh based decal method like with the "Stamp It!" Addon does not require the decal collection, since its applied directly to the material.
+
 * **Decals Only Toggle** - This will as it name implies, bake the **Decals** to the **Low** object, but not the underlying **Low** Object itself.
 ```Useful when your application requires you to apply decals on top of an existing texture```
 
