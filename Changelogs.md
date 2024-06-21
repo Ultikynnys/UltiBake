@@ -58,3 +58,7 @@
 
 >## 1.7.28 - Stability UPDATE 20/6/2024
     * Embedded import packages. Ensures version stability
+
+>## 1.7.30 - NEW  FEATURES UPDATE 21/6/2024
+    * More robust material parser algorithm
+    * Support for Stamp It! https://blendermarket.com/products/easy-decal--stamp
