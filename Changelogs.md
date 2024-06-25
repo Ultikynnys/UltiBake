@@ -62,3 +62,8 @@
 >## 1.7.30 - NEW  FEATURES UPDATE 21/6/2024
     * More robust material parser algorithm
     * Support for Stamp It! https://blendermarket.com/products/easy-decal--stamp
+
+>## 1.7.67 - NEW FEATURES 25/6/2024
+    * Sanctus Library decal materials baking fixed
+    * Search feature(affects Finalize and Bake all Sets)
+    * Even more robust material parser algorithm
