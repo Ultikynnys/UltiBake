@@ -67,3 +67,6 @@
     * Sanctus Library decal materials baking fixed
     * Search feature(affects Finalize and Bake all Sets)
     * Even more robust material parser algorithm
+
+>## 1.7.68 - Stability 26/6/2024
+    * Fixed decalMACHINE regression
