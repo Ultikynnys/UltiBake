@@ -137,8 +137,8 @@ The addon introduces various terms, which are explained here.
 
 * **Decal Stack Height** - This is the height at which the **Decals** are shrinkwrapped to the surface of the low object, depending on the mesh resolution of the decal, this should.
 
-* **Alpha Sensitivity** - This is the value thats responsible for specifying how sharp the border for **Decals** that use an alpha mask, keep it as low as possible to reduce border artifacts on **Decals**.
-
+* **Alpha Sensitivity** - Multiply all alpha channels by this value. Ideal for 
+crisper edges when using decals. You can also manually do it in the material, but this is more convenient.
 
 
 

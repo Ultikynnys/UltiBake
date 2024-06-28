@@ -20,6 +20,10 @@
 
 <iframe width="420" height="315" src="https://www.youtube.com/embed/3LwLf0DBy1A"></iframe>
 
+> For TrimFlow users, this is how you setup the bake. All you need to do is move the generated decal mesh into a decal collection which is used by the Bake Set
+
+![alt text](image-20.png)
+
 ### Decal Stacking
 
 > Allows you to stack decals on top of each other with control over stack order.

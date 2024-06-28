@@ -76,3 +76,7 @@
     * Added a sharpen post-process effect
     * Bugfixes to post-process effects
 
+>## 1.7.74 - Bugfixes 28/6/2024
+    * Alpha blending now works correctly
+    * Bugfixes to post-process effects
+
