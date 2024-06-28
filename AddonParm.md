@@ -27,7 +27,7 @@ The addon introduces various terms, which are explained here.
 
 ### Post-Process Effects
 
-> These are applied after the bake
+> These are applied after the bake. The effects stack and they are applied in top to bottom order.
 
 ![alt text](image-15.png)
 
