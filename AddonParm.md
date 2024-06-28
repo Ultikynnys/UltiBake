@@ -25,7 +25,17 @@ The addon introduces various terms, which are explained here.
 
 * **Bake Samples Per Pixel** - Controls how many passes each pixel in the baked texture will get during the baking. It's a good idea to **set this to a low value**, due to its **impact on bake time**
 
-* **Bake Denosing and Smoothing Toggles** - Automatically apply an effect to improve the quality of the baked textures.
+### Post-Process Effects
+
+> These are applied after the bake
+
+![alt text](image-15.png)
+
+![alt text](image-17.png)
+![alt text](image-18.png)
+![alt text](image-19.png)
+
+### UDIMS
 
 * **Add Udim Scale Rule Button** - Adds a resolution multiplier to any UV Islands that are in the corresponding UDIM tile
 

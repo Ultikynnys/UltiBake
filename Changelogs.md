@@ -70,3 +70,9 @@
 
 >## 1.7.68 - Stability 26/6/2024
     * Fixed decalMACHINE regression
+
+
+>## 1.7.70 - NEW FATURES 28/6/2024
+    * Added a sharpen post-process effect
+    * Bugfixes to post-process effects
+
