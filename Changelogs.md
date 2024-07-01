@@ -80,3 +80,8 @@
     * Alpha blending now works correctly
     * Bugfixes to post-process effects
 
+
+>## 1.7.80 - Hotfix 1/7/2024
+    * BSDF fetcher related crashes fixed
+
+
