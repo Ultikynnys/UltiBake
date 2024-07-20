@@ -29,11 +29,13 @@ The addon introduces various terms, which are explained here.
 
 > These are applied after the bake. The effects stack and they are applied in top to bottom order.
 
-![alt text](image-15.png)
+![alt text](image-21.png)
 
-![alt text](image-17.png)
-![alt text](image-18.png)
-![alt text](image-19.png)
+![alt text](blender_k9uN6Kpcmw.png)
+![alt text](blender_Bdz51vaJ2N.png)
+![alt text](blender_Uqpi6DzJeo.png)
+![alt text](blender_yflZLdZMJD.png)
+![alt text](blender_USdIiTlX8M.png)
 
 ### UDIMS
 

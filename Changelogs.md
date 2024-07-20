@@ -72,7 +72,7 @@
     * Fixed decalMACHINE regression
 
 
->## 1.7.70 - NEW FATURES 28/6/2024
+>## 1.7.70 - NEW FEATURES 28/6/2024
     * Added a sharpen post-process effect
     * Bugfixes to post-process effects
 
@@ -83,6 +83,8 @@
 
 >## 1.7.80 - Hotfix 1/7/2024
     * BSDF fetcher related crashes fixed
-
->## 1.7.80 - Hotfix 4/7/2024
     * Baked normals being affected by diffuse
+
+>## 1.7.82 - NEW FEATURES 20/7/2024
+    * Post Process effects now utilize Blenders internal compositor
+    * New Post Process filters. Kuwahara filter + Antialias
