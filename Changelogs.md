@@ -88,3 +88,7 @@
 >## 1.7.82 - NEW FEATURES 20/7/2024
     * Post Process effects now utilize Blenders internal compositor
     * New Post Process filters. Kuwahara filter + Antialias
+
+>## 1.7.84 - CHANGE 23/7/2024
+    * Folder open parameter changed to open baked images in blender instead.
+    * small bugfixes
