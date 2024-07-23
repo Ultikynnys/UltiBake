@@ -92,3 +92,7 @@
 >## 1.7.84 - CHANGE 23/7/2024
     * Folder open parameter changed to open baked images in blender instead.
     * small bugfixes
+
+
+>## 1.7.85 - HOTFIX 23/7/2024
+    * Fixed opening new windows with bakes
