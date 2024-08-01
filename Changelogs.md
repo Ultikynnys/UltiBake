@@ -96,3 +96,8 @@
 
 >## 1.7.85 - HOTFIX 23/7/2024
     * Fixed opening new windows with bakes
+
+>## 1.7.90 - NEW FATURES 1/8/2024
+    * Smoothness type added
+    * Position type added
+    * Ability to specify suffixes 

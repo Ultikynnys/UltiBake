@@ -100,6 +100,78 @@ The addon introduces various terms, which are explained here.
 ![alt text](image-4.png)
 
 
+### Bake Type Usage
+
+> Bake types are split into two categories. **Bsdf Inputs** and **Special**
+
+> As the name implies, the BSDF inputs are mapped directly to the Principled BSDF node and its inputs.
+
+> Special types are utilizing custom materials that create useful maps.
+
+![alt text](image-30.png)
+
+#### Normalized Position
+
+> This is equivalent to the **Position Bake** from substance painter using bbox as the normalization type. 
+
+![alt text](blender_cKEJC3AEkB.png)
+
+> Since the axis changes depending on the platform, we have to configure the right one depending on the platform.
+
+![alt text](image-22.png)
+
+![alt text](Untitled-1.png)
+
+> The resulting baked texture looks like the following. Each axis containing a 0 to 1 gradient using the mesh bounding box.
+
+![alt text](gg.gif)
+
+
+#### Smoothness
+
+> Basically the inverse of roughness
+
+![alt text](blender_IEwHCECQ4m.png)
+
+![alt text](blender_jIAnGk8162.png)
+
+#### Curvature
+
+> The **pointyness** of the mesh curvature. **Mesh density** has great effect on this bake type.
+
+![alt text](image-23.png)
+
+#### Glossy map
+
+> The **surface reflection** of the mesh. **Roughness** has great effect on this bake type.
+
+![alt text](image-24.png)
+
+#### Light map
+
+> The surface **brightness** and **color** from light sources
+
+![alt text](image-25.png)
+
+#### ColorID
+
+> Using the user defined colors from the bake unit, we can color each bake unit to have a unique color.
+
+![alt text](image-26.png)
+
+#### Ambient Occlusion
+
+> Distance calculation to the closest mesh. It is important to note that the **Isolate** buttons affect this baketype. It basically hides the other objects during the AO calculation.
+
+![alt text](image-27.png)
+
+![alt text](image-28.png)
+
+#### Normal map
+
+> Baking normal maps is a very useful technique, either by defining a **high object** or by using a **multi resolution modifier** we can bake high detail surface imperfections to a texture.
+
+![alt text](image-29.png)
 
 ## Finalize
 
@@ -125,6 +197,10 @@ The addon introduces various terms, which are explained here.
 * **Auto Suffix** - Generates the suffix for the texturename from the baketypes
 
 ![alt text](image-4.png)
+
+> You can also manually define the suffixes from the first panel
+
+![alt text](image-31.png)
 
 * **Ignore Shape Keys** - When baking objects which utilize shape keys, you might not want to bake the distorted mesh if it is affected by stuff like AO or Decals.
 
