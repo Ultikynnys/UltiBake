@@ -6,7 +6,7 @@ The addon introduces various terms, which are explained here.
 
 > **Bake Sets** are the most important part of the addon. These containers can be created/removed and they contain all the information that specify the what and how for **baking a single texture**. They can be individually baked for time save or you can bake all of them from the **Bake All Sets** Button
 
-> The **Search feature** will affect how **Bake All Sets** works, so you can use it to bake specific **Bake Sets** with a single click.
+> The **Search feature** will affect how **Bake All Sets** works, so you can use it to filter specific **Bake Sets** 
 
 ![alt text](parsecd_iLgxqf8nw4.gif)
 
