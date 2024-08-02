@@ -6,7 +6,7 @@ The addon introduces various terms, which are explained here.
 
 > **Bake Sets** are the most important part of the addon. These containers can be created/removed and they contain all the information that specify the what and how for **baking a single texture**. They can be individually baked for time save or you can bake all of them from the **Bake All Sets** Button
 
-> The **Search feature** will affect how **Bake All Sets** works, so you can use it to bake specific with a single click **Bake Sets**.
+> The **Search feature** will affect how **Bake All Sets** works, so you can use it to bake specific **Bake Sets** with a single click.
 
 ![alt text](parsecd_iLgxqf8nw4.gif)
 
@@ -15,6 +15,7 @@ The addon introduces various terms, which are explained here.
 > **Bake Sets are tied to a Scene**, so you can have multiple setups if you utilize multiple Scenes. **Great for reducing clutter**
 
 
+### Bake Set parameters
 
 ![alt text](image-5.png)
 
@@ -41,7 +42,7 @@ The addon introduces various terms, which are explained here.
 ![alt text](blender_yflZLdZMJD.png)
 ![alt text](blender_USdIiTlX8M.png)
 
-### UDIMS
+#### UDIMS
 
 * **Add Udim Scale Rule Button** - Adds a resolution multiplier to any UV Islands that are in the corresponding UDIM tile
 
@@ -87,7 +88,7 @@ The addon introduces various terms, which are explained here.
 ![alt text](image-13.png)
 
 
-## Bake Types
+### Bake Types
 
 > With **Bake Types** we can define what is baked from the materials that are applied to the objects in the **Bake Units**. The **Materials must utilize the Principled BSDF node** and any material which is not using this node will have to be manually converted to utilize it. **The Bake Types reflect the inputs of the Principled BSDF node** except for a few special types which are unique to the Addon.
 
@@ -104,7 +105,7 @@ The addon introduces various terms, which are explained here.
 ![alt text](image-4.png)
 
 
-### Bake Type Usage
+#### Bake Type Usage
 
 > Bake types are split into two categories. **Bsdf Inputs** and **Special**
 
@@ -114,7 +115,7 @@ The addon introduces various terms, which are explained here.
 
 ![alt text](image-30.png)
 
-#### Normalized Position
+##### Normalized Position
 
 > This is equivalent to the **Position Bake** from substance painter using bbox as the normalization type. 
 
@@ -131,7 +132,7 @@ The addon introduces various terms, which are explained here.
 ![alt text](gg.gif)
 
 
-#### Smoothness
+##### Smoothness
 
 > Basically the inverse of roughness
 
@@ -139,31 +140,31 @@ The addon introduces various terms, which are explained here.
 
 ![alt text](blender_jIAnGk8162.png)
 
-#### Curvature
+##### Curvature
 
 > The **pointyness** of the mesh curvature. **Mesh density** has great effect on this bake type.
 
 ![alt text](image-23.png)
 
-#### Glossy map
+##### Glossy map
 
 > The **surface reflection** of the mesh. **Roughness** has great effect on this bake type.
 
 ![alt text](image-24.png)
 
-#### Light map
+##### Light map
 
 > The surface **brightness** and **color** from light sources
 
 ![alt text](image-25.png)
 
-#### ColorID
+##### ColorID
 
 > Using the user defined colors from the bake unit, we can color each bake unit to have a unique color.
 
 ![alt text](image-26.png)
 
-#### Ambient Occlusion
+##### Ambient Occlusion
 
 > Distance calculation to the closest mesh. It is important to note that the **Isolate** buttons affect this baketype. It basically hides the other objects during the AO calculation.
 
@@ -171,13 +172,13 @@ The addon introduces various terms, which are explained here.
 
 ![alt text](image-28.png)
 
-#### Normal map
+##### Normal map
 
 > Baking normal maps is a very useful technique, either by defining a **high object** or by using a **multi resolution modifier** we can bake high detail surface imperfections to a texture.
 
 ![alt text](image-29.png)
 
-## Finalize
+### Finalize
 
 > **The last part in the pipeline** Once the bake is complete. With a single click you can create a copies of your **Bake Set** objects which now utilize only the baked textures. Great for ensuring consistency and also as a bonus makes your objects ready for exporting.
 
