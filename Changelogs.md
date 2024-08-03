@@ -101,3 +101,6 @@
     * Smoothness type added
     * Position type added
     * Ability to specify suffixes 
+
+>## 1.7.91 - HOTFIX 3/8/2024
+    * Alphas no longer get premultiplied with RGB channels when baking using channel packing
