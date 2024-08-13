@@ -115,7 +115,7 @@ The addon introduces various terms, which are explained here.
 
 ![alt text](image-30.png)
 
-##### Normalized Position
+## Normalized Position
 
 > This is equivalent to the **Position Bake** from substance painter using bbox as the normalization type. 
 
@@ -132,7 +132,7 @@ The addon introduces various terms, which are explained here.
 ![alt text](gg.gif)
 
 
-##### Smoothness
+## Smoothness
 
 > Basically the inverse of roughness
 
