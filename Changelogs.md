@@ -104,3 +104,7 @@
 
 >## 1.7.91 - HOTFIX 3/8/2024
     * Alphas no longer get premultiplied with RGB channels when baking using channel packing
+
+>## 1.7.92 - HOTFIX 13/8/2024
+    * Non-Fixed aspect ratio now works correctly
+    * Alpha channel packing fixed for custom types
