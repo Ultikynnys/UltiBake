@@ -1,4 +1,4 @@
-# ![alt text](bake.png)
+# ![alt text](bake.webp)
 
 ## Quick Start
 
@@ -22,7 +22,7 @@
 
 > For TrimFlow users, this is how you setup the bake. All you need to do is move the generated decal mesh into a decal collection which is used by the Bake Set
 
-![alt text](image-20.png)
+![alt text](image-20.webp)
 
 ### Decal Stacking
 
