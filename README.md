@@ -2,6 +2,11 @@
 
 ## Quick Start
 
+> Short overview of the 1.8 update
+
+
+<iframe width="420" height="315" src="https://www.youtube.com/embed/bVQO3cXhhyc"></iframe>
+
 > The following video will show the basic usage for Ultibake.
 
 <iframe width="420" height="315" src="https://www.youtube.com/embed/aWSn2NolLlo"></iframe>

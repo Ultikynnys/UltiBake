@@ -4,20 +4,33 @@ The addon introduces various terms, which are explained here.
 
 ## Bake Sets
 
-> **Bake Sets** are the most important part of the addon. These containers can be created/removed and they contain all the information that specify the what and how for **baking a single texture**. They can be individually baked for time save or you can bake all of them from the **Bake All Sets** Button
+> **Bake Sets** are the most important part of the addon. These containers can be created/removed and they contain all the information that specify the what and how for **baking textures**. They can be individually baked for time save or you can bake all of them from the **Bake All Sets** Button
 
 > The **Search feature** will affect how **Bake All Sets** works, so you can use it to filter specific **Bake Sets** 
 
-![alt text](parsecd_iLgxqf8nw4.webp)
+![alt text](Search.webp)
 
 > You can have as many **Bake Sets** as you want.
 
 > **Bake Sets are tied to a Scene**, so you can have multiple setups if you utilize multiple Scenes. **Great for reducing clutter**
 
+## Profiles
+> Basically the Templates system from Substance Painter
 
-## Bake Set parameters
+> Added in 1.8 This is the new way of defining the **how** for **Bake Sets** It works the same was in 1.7, but the settings and type information has been moved here.
 
-![alt text](image-5.webp)
+> Bake Sets link to these profiles
+
+![alt text](image-4.png)
+
+
+> You can also save profiles to an external file. This way you can re-use these profiles in any Blender project.
+
+![alt text](parsecd_jPDlh803v3.png)
+
+## Profile parameters
+
+![alt text](parsecd_JiDgvuXb2s.png)
 
 
 * **Margin** - extra padding from the UV island borders, which prevent seams when dealing with LODs
@@ -34,7 +47,7 @@ The addon introduces various terms, which are explained here.
 
 > These are applied after the bake. The effects stack and they are applied in top to bottom order.
 
-![alt text](image-21.webp)
+![alt text](BakeFilters.png)
 
 ![alt text](blender_k9uN6Kpcmw.webp)
 ![alt text](blender_Bdz51vaJ2N.webp)
@@ -94,28 +107,32 @@ The addon introduces various terms, which are explained here.
 
 ![alt text](image-11.webp)
 
-> You can have **Multiple Bake Types** on a single **Bake Set**, allowing you to do channel packing. The image suffix is also generated from these
-
-![alt text](image-3.webp)
-
 > Each **Bake Type** has a channel selector. Note that you can select multiple channels for a Bake Type with shift+left click
 
-> To the right of the image name is a suffix```MRSAO``` , which is dynamically generated. The suffix can be disabled from the addon parameters by unticking **Auto Suffix** 
+![alt text](image.png)
+
 
 ![alt text](image-4.webp)
 
 
-## Bake Type Usage
+### Texture Units
 
-> Bake types are split into two categories. **Bsdf Inputs** and **Special**
+> **Texture Units** define a single texture to be baked. You can have as many of these as you want in a **single profile**.
 
-> As the name implies, the BSDF inputs are mapped directly to the Principled BSDF node and its inputs.
+![alt text](SuffixGen.png)
 
-> Special types are utilizing custom materials that create useful maps.
+> To the right of the image name is a suffix```D|N|MRS``` , which is dynamically generated. In this case it means we're baking Three textures. **Diffuse**, **Normal** and **MetallicRoughnessSpecular** as channel packed texture.
 
-![alt text](image-30.webp)
+> The suffix can be disabled from the addon parameters by unticking **Auto Suffix** 
 
-## Normalized Position
+
+## Special Bake types
+> **Bake Types** contain types that aren't defined in the Principled BSDF node. These are called **Special Bake types**
+
+![alt text](image-1.png)
+
+
+### Normalized Position
 
 > This is equivalent to the **Position Bake** from substance painter using bbox as the normalization type. 
 
@@ -132,7 +149,7 @@ The addon introduces various terms, which are explained here.
 ![alt text](gg.webp)
 
 
-## Smoothness
+### Smoothness
 
 > Basically the inverse of roughness
 
@@ -140,43 +157,58 @@ The addon introduces various terms, which are explained here.
 
 ![alt text](blender_jIAnGk8162.webp)
 
-## Curvature
+### Curvature
 
 > The **pointyness** of the mesh curvature. **Mesh density** has great effect on this bake type.
 
 ![alt text](image-23.webp)
 
-## Glossy map
+### Glossy map
 
 > The **surface reflection** of the mesh. **Roughness** has great effect on this bake type.
 
 ![alt text](image-24.webp)
 
-### Light map
+#### Light map
 
 > The surface **brightness** and **color** from light sources
 
 ![alt text](image-25.webp)
 
-## ColorID
+### ColorID
 
 > Using the user defined colors from the bake unit, we can color each bake unit to have a unique color.
 
 ![alt text](image-26.webp)
 
-## Ambient Occlusion
+### Ambient Occlusion
 
-> Distance calculation to the closest mesh. It is important to note that the **Isolate** buttons affect this baketype. It basically hides the other objects during the AO calculation.
+> Distance calculation to the closest mesh. 
+
+> It is important to note that the **Isolate** buttons affect this baketype. It basically hides the other objects during the AO calculation.
 
 ![alt text](image-27.webp)
 
 ![alt text](image-28.webp)
 
-## Normal map
+### Thickness
+> Taken from substance painter, it's basically AO, but the rays are casted inside the mesh instead of outside.
+
+> It is important to note that the **Isolate** buttons affect this baketype. It basically hides the other objects during the AO calculation.
+
+![alt text](image-2.png)
+
+### Normal map
 
 > Baking normal maps is a very useful technique, either by defining a **high object** or by using a **multi resolution modifier** we can bake high detail surface imperfections to a texture.
 
 ![alt text](image-29.webp)
+
+### World Space Normal
+
+> Same as normal map, but it's in World space.
+
+![alt text](image-3.png)
 
 ## Finalize
 

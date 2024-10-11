@@ -108,3 +108,13 @@
 >## 1.7.92 - HOTFIX 13/8/2024
     * Non-Fixed aspect ratio now works correctly
     * Alpha channel packing fixed for custom types
+
+>## 1.8.0 - Profile Update 11/10/2024
+    * Improved Addon stability and UI performance
+    * Bake Set Settings are now replaced with profiles
+    * Bake Types are now stored in profiles
+    * Profile Saving/Loading
+    * Ambient occlusion baking is now split into two bake types.(Ambient Occlusion and Thickness)[This allows you to bake both types in a single profile]
+    * Normal Baking is now split into two bake types.(Normal and World Space Normal)[This allows you to bake both types in a single profile]
+    * Deprecating Linked Bakesets(bake sets that are identical will bake together)[Makes addon more stable]
+    * Deprecating Drivers(Pointless now that we can use profiles)[Makes addon more stable]
