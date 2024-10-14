@@ -118,3 +118,17 @@
     * Normal Baking is now split into two bake types.(Normal and World Space Normal)[This allows you to bake both types in a single profile]
     * Deprecating Linked Bakesets(bake sets that are identical will bake together)[Makes addon more stable]
     * Deprecating Drivers(Pointless now that we can use profiles)[Makes addon more stable]
+
+
+>## 1.8.1 - Hotfix 11/10/2024
+    * Kuwahara setting names fixed
+    * Image aspect ratio toggle moved inside profile
+    * Changed default extrusion from 0.1m to 0.02m
+    * Changed post process effect icons back to original ones
+    * Fixed Post process effect text to match old
+    * added OSL checks
+    * Combined Ultibake + BakeSets panel into one
+    * Icons for each panel
+    * Documentation now in panel header
+    
+    
