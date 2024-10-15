@@ -120,7 +120,7 @@
     * Deprecating Drivers(Pointless now that we can use profiles)[Makes addon more stable]
 
 
->## 1.8.1 - Hotfix 11/10/2024
+>## 1.8.1 - Hotfix 14/10/2024
     * Kuwahara setting names fixed
     * Image aspect ratio toggle moved inside profile
     * Changed default extrusion from 0.1m to 0.02m
@@ -130,5 +130,14 @@
     * Combined Ultibake + BakeSets panel into one
     * Icons for each panel
     * Documentation now in panel header
-    
+
+>## 1.8.2 - Improvements and Bugfixes 15/10/2024
+    * Removed isolation mode. Replaced with Blender's native Render toggles
+    * Hiding isn't controlled by the addon anymore.
+    * Fixed special bakes not baking to alpha channel
+    * Fixed crash caused by context problems
+    * Decal projection now using normal based projection mode
+    * Documentation button is now smaller
+    * Fixed Searching
+    * Finalize check added for multiple unique texture names
     

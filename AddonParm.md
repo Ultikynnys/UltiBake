@@ -89,9 +89,6 @@ The addon introduces various terms, which are explained here.
 * **Decals Only Toggle** - This will as it name implies, bake the **Decals** to the **Low** object, but not the underlying **Low** Object itself.
 ```Useful when your application requires you to apply decals on top of an existing texture```
 
-* **Isolate** - a toggle which for the duration of the bake will hide all other objects, so that the **Low** object is not affected
-```Useful for baking AO```
-
 * **Collection Toggle** - a toggle which will convert the **Low** parameter to a collection instead
 ```This will prevent you from using High to Low baking or Decals, but its crucial for bakes that contain many objects```
 
@@ -185,8 +182,6 @@ The addon introduces various terms, which are explained here.
 
 > Distance calculation to the closest mesh. 
 
-> It is important to note that the **Isolate** buttons affect this baketype. It basically hides the other objects during the AO calculation.
-
 ![alt text](image-27.webp)
 
 ![alt text](image-28.webp)
@@ -194,7 +189,6 @@ The addon introduces various terms, which are explained here.
 ### Thickness
 > Taken from substance painter, it's basically AO, but the rays are casted inside the mesh instead of outside.
 
-> It is important to note that the **Isolate** buttons affect this baketype. It basically hides the other objects during the AO calculation.
 
 ![alt text](image-2.png)
 
