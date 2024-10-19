@@ -248,6 +248,25 @@ result in the desired bake.
 
 ![alt text](blender_bSQVfeDZ6o.webp)
 
+
+## Decals
+
+> All Bake Units contain a single collection slot reserved for any decals.
+
+> The Objects in this collection should be Curve Objects, Font Objects or Mesh objects
+
+![alt text](image-20.png)
+
+> Decals can be baked in two projection modes specified by the ```_PROJ``` suffix on the decal object, if the projected decal doesn't work then try this.
+
+![alt text](blender_mgCotKDYXm.webp)
+
+> The ```_PROJ```  suffix should not be used with text objects
+
+![alt text](blender_THMwXlMG2K.webp)
+
+
+
 ## Parameters
 
 > There are various controls in the addon parameters, which need explaining.
@@ -278,6 +297,8 @@ result in the desired bake.
 ![alt text](blender_w0jE3LHiEI.webp)
 
 * **Decal Subdivision** - Decals are shrinkwraped around the **Low** object, this ensures that the shrinkwrapping works correctly. Some meshes require more subdiv, which can be increased on the value to the right of this tickbox.
+
+![alt text](blender_X8PDx9mE0N.webp)
 
 * **Use Global Decal Margin** - Just like with the margin for baking, you can specify how much margin the **Decals** have when they are baked to the UV islands on the Low object.
 
