@@ -1,6 +1,6 @@
-## Quick Start
-> The following video will show the basic usage for Ultibake.
-<iframe width="420" height="315" src="https://www.youtube.com/embed/aWSn2NolLlo"allowfullscreen></iframe>
+## Showcase
+> The following video will showcase most of the important features of Ultibake and quickly how to use the addon. [Click here for more information](#Usage)
+<iframe width="420" height="315" src="https://www.youtube.com/embed/A-00q0g_X5k"allowfullscreen></iframe>
 
 ## Latest Update
 <iframe width="420" height="315" src="https://www.youtube.com/embed/bVQO3cXhhyc"allowfullscreen></iframe>
