@@ -143,10 +143,10 @@
     * OSL check removed(way too laggy)
 
 
->## 1.8.3 - Bugfixes 15/10/2024
+>## 1.8.3 - Bugfixes 20/10/2024
     * OSL check removed(way too laggy)
     * Decals suffixed with "_PROJ" or ".PROJ" will now use a different projection mode
-    This can improve decal quality in most cases, except for Fonts where it will do the opposite.
+        * This can improve decal quality in most cases, except for Fonts where it will do the opposite.
     * Decal subdivision threshold lowered from 1024 to 10, this caused many of the lag issues when using decal baking.
     * Don't open baked images when force exit
     * Setting an invalid mesh object in low,high,cage and decals wont brick the addon anymore.
