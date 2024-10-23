@@ -1,23 +1,25 @@
 ## Showcase
 > The following video will showcase most of the important features of Ultibake and quickly how to use the addon. [Click here for more information](#Usage)
-<iframe width="420" height="315" src="https://www.youtube.com/embed/A-00q0g_X5k"allowfullscreen></iframe>
+
+<iframe width="300em" height="200em" src="https://www.youtube.com/embed/A-00q0g_X5k"allowfullscreen></iframe>
 
 ## Latest Update
-<iframe width="420" height="315" src="https://www.youtube.com/embed/bVQO3cXhhyc"allowfullscreen></iframe>
+<iframe width="300em" height="200em" src="https://www.youtube.com/embed/bVQO3cXhhyc"allowfullscreen></iframe>
 
 ### High to Low baking
 
 > Baking high detail objects to low poly representations is a very common trick to getting assets to run in real-time applications. The following video will cover this topic.
 
-<iframe width="420" height="315" src="https://www.youtube.com/embed/gd659C732qs"allowfullscreen></iframe>
+<iframe width="300em" height="200em" src="https://www.youtube.com/embed/gd659C732qs"allowfullscreen></iframe>
 
 
 ### Decal Baking
 
-> Allows you to project any image to a low poly object. Even works if the image uses multiple masks like Normals,roughness,metallic etc.
-```DecalMachine materials use a parallax node, which needs to be disabled from the material```
+> Allows you to project any image to a low poly object. Even works if the image uses multiple masks like Normals,roughness,metallic etc. 
 
-<iframe width="420" height="315" src="https://www.youtube.com/embed/3LwLf0DBy1A"allowfullscreen></iframe>
+> DecalMachine materials use a parallax node, which needs to be disabled from the material
+
+<iframe width="300em" height="200em" src="https://www.youtube.com/embed/3LwLf0DBy1A"allowfullscreen></iframe>
 
 > For TrimFlow users, this is how you setup the bake. All you need to do is move the generated decal mesh into a decal collection which is used by the Bake Set
 
@@ -26,16 +28,17 @@
 ### Decal Stacking
 
 > Allows you to stack decals on top of each other with control over stack order.
-```The Alphastack.blend file comes with the addon.```
 
-<iframe width="420" height="315" src="https://www.youtube.com/embed/ltRfZqC-O6g"allowfullscreen></iframe>
+> The Alphastack.blend file comes with the addon.
+
+<iframe width="300em" height="200em" src="https://www.youtube.com/embed/ltRfZqC-O6g"allowfullscreen></iframe>
 
 
 ### Udims
 
 > While Ultibake handels UDIM baking automatically, this video explains how it can be used. This video also explains several extra considerations when working with decals, like how to fix decal seams and black borders.
 
-<iframe width="420" height="315" src="https://www.youtube.com/embed/Mzp5L5xpPIg"allowfullscreen></iframe>
+<iframe width="300em" height="200em" src="https://www.youtube.com/embed/Mzp5L5xpPIg"allowfullscreen></iframe>
 
 # Usage
 
@@ -109,27 +112,27 @@ The addon introduces various terms, which are explained here.
 ![alt text](image-12.png)
 
 * **Low** - the object/collection which will be baked
-```Uses the UVmap selector shown in the image below```
+> Uses the UVmap selector shown in the image below
 
 * **High** - the object which will be projected to the surface of the **Low** object
-```Commonly used for baking high detail meshes to low poly representations```
+> Commonly used for baking high detail meshes to low poly representations
 
 * **Cage** - the object which will define how the projection from **High** to **Low** baking will behave
-```optional, rarely needed, but useful for complicated high to low bakes```
+> optional, rarely needed, but useful for complicated high to low bakes
 
 * **Decals** - the collection which will have its meshes projected to the **Low** object
-```Similar to High to Low baking, but contains internal pre-processing to ensure better results```
+> Similar to High to Low baking, but contains internal pre-processing to ensure better results
 
 > Any non-mesh based decal method like with the "Stamp It!" Addon does not require the decal collection, since its applied directly to the material.
 
 * **Decals Only Toggle** - This will as it name implies, bake the **Decals** to the **Low** object, but not the underlying **Low** Object itself.
-```Useful when your application requires you to apply decals on top of an existing texture```
+> Useful when your application requires you to apply decals on top of an existing texture
 
 * **Collection Toggle** - a toggle which will convert the **Low** parameter to a collection instead
-```This will prevent you from using High to Low baking or Decals, but its crucial for bakes that contain many objects```
+> This will prevent you from using High to Low baking or Decals, but its crucial for bakes that contain many objects
 
 * **Baking UV map** - Convenient selector for choosing what UVmap to use for the **Low** object or **Low** collection.
-```With collections it will only show UVmaps that are shared with all the other objects in the low collection```
+> With collections it will only show UVmaps that are shared with all the other objects in the low collection
 
 ![alt text](blender_uyiswEQhRE.gif)
 
@@ -257,11 +260,11 @@ result in the desired bake.
 
 ![alt text](image-20.png)
 
-> Decals can be baked in two projection modes specified by the ```_PROJ``` suffix on the decal object, if the projected decal doesn't work then try this.
+> Decals can be baked in two projection modes specified by the > _PROJ suffix on the decal object, if the projected decal doesn't work then try this.
 
 ![alt text](blender_mgCotKDYXm.webp)
 
-> The ```_PROJ```  suffix should not be used with text objects
+> The > _PROJ  suffix should not be used with text objects
 
 ![alt text](blender_THMwXlMG2K.webp)
 
@@ -278,7 +281,9 @@ result in the desired bake.
 ![alt text](blender_7L9BT6yH08.webp)
 
 
-* **Toggle Console** - Whenever you bake something on Windows, a console will open up which has a visual progress bar and the option to cancel the bake with E+Ctrl```yes it's reversed(does not currently work on non-Windows machines)```
+* **Toggle Console** - Whenever you bake something on Windows, a console will open up which has a visual progress bar and the option to cancel the bake with E+Ctrl
+
+> yes it's reversed(does not currently work on non-Windows machines)
 
 * **Auto Suffix** - Generates the suffix for the texturename from the baketypes
 
