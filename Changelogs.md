@@ -151,3 +151,14 @@
     * Don't open baked images when force exit
     * Setting an invalid mesh object in low,high,cage and decals wont brick the addon anymore.
     * Font baking works without converting it to object
+
+
+
+>## 1.8.4 - Optimizations 24/10/2024
+    * Debugging is now disabled by default(bpy.context.scene.sna_skipdebug = True to enable)
+    * Added parameter to disable Automatic UDIM detection
+
+
+>## 1.8.5 - Bugfix 2/11/2024
+    * Custom texture suffixes didn't get detected.
+    * AO visibility by collection is fixed
