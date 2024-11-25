@@ -162,3 +162,8 @@
 >## 1.8.5 - Bugfix 2/11/2024
     * Custom texture suffixes didn't get detected.
     * AO visibility by collection is fixed
+
+
+>## 1.8.6 - Bugfix 25/11/2024
+    * Icons fixed
+    * Texture set alphas affect other texture sets fixed
