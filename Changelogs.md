@@ -167,3 +167,8 @@
 >## 1.8.6 - Bugfix 25/11/2024
     * Icons fixed
     * Texture set alphas affect other texture sets fixed
+
+
+>## 1.8.7-8 - Improvement 25/11/2024
+    * Icons fixes
+    * Quality slider added to profiles
