@@ -81,6 +81,10 @@ The addon introduces various terms, which are explained here.
 
 * **Bake Samples Per Pixel** - Controls how many passes each pixel in the baked texture will get during the baking. It's a good idea to **set this to a low value**, due to its **impact on bake time**
 
+* **Quality** - Controls the compression ratio for jpeg and png textures.
+
+![alt text](image-21.png)
+
 ## Post-Process Effects
 
 > These are applied after the bake. The effects stack and they are applied in top to bottom order.
