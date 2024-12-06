@@ -1,7 +1,7 @@
 ## Quickstart
 > The following video will showcase most of the important features of Ultibake and quickly how to use the addon. [Click here for more information](#Usage)
 
-<iframe width="300em" height="200em" src="https://www.youtube.com/embed/JE-4eoKqQEs"allowfullscreen></iframe>
+<iframe width="300em" height="200em" src="https://www.youtube.com/embed/VlecsUOZ5ew"allowfullscreen></iframe>
 
 ### High to Low baking
 

@@ -172,3 +172,8 @@
 >## 1.8.7-8 - Improvement 25/11/2024
     * Icons fixes
     * Quality slider added to profiles
+
+
+>## 1.8.9 - Bugfix 06/12/2024
+    * Decal blending fixed with black masks
+    * Finalize now applies textures correctly
