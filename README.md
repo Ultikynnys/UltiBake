@@ -1,24 +1,23 @@
 ## Quickstart
-> The following video will showcase most of the important features of Ultibake and quickly how to use the addon. [Click here for more information](#Usage)
+> The following video will showcase most of the important features of Ultibake and quickly demonstrate how to use the addon. [Click here for more information](#Usage)
 
-<iframe width="300em" height="200em" src="https://www.youtube.com/embed/VlecsUOZ5ew"allowfullscreen></iframe>
+<iframe width="300em" height="200em" src="https://www.youtube.com/embed/VlecsUOZ5ew" allowfullscreen></iframe>
 
-### High to Low baking
+### High to Low Baking
 
-> Baking high detail objects to low poly representations is a very common trick to getting assets to run in real-time applications. The following video will cover this topic.
+> Baking high-detail objects to low-poly representations is a very common trick to make assets run in real-time applications. The following video will cover this topic.
 
-<iframe width="300em" height="200em" src="https://www.youtube.com/embed/gd659C732qs"allowfullscreen></iframe>
-
+<iframe width="300em" height="200em" src="https://www.youtube.com/embed/gd659C732qs" allowfullscreen></iframe>
 
 ### Decal Baking
 
-> Allows you to project any image to a low poly object. Even works if the image uses multiple masks like Normals,roughness,metallic etc. 
+> Allows you to project any image onto a low-poly object. It even works if the image uses multiple masks, like normals, roughness, metallic, etc.
 
-> DecalMachine materials use a parallax node, which needs to be disabled from the material
+> DecalMachine materials use a parallax node, which needs to be disabled in the material.
 
-<iframe width="300em" height="200em" src="https://www.youtube.com/embed/3LwLf0DBy1A"allowfullscreen></iframe>
+<iframe width="300em" height="200em" src="https://www.youtube.com/embed/3LwLf0DBy1A" allowfullscreen></iframe>
 
-> For TrimFlow users, this is how you setup the bake. All you need to do is move the generated decal mesh into a decal collection which is used by the Bake Set
+> For TrimFlow users, this is how you set up the bake. All you need to do is move the generated decal mesh into a decal collection that is used by the Bake Set.
 
 ![alt text](image-20.webp)
 
@@ -28,14 +27,13 @@
 
 > The Alphastack.blend file comes with the addon.
 
-<iframe width="300em" height="200em" src="https://www.youtube.com/embed/ltRfZqC-O6g"allowfullscreen></iframe>
+<iframe width="300em" height="200em" src="https://www.youtube.com/embed/ltRfZqC-O6g" allowfullscreen></iframe>
 
+### UDIMs
 
-### Udims
+> While Ultibake handles UDIM baking automatically, this video explains how it can be used. This video also explains several additional considerations when working with decals, such as how to fix decal seams and black borders.
 
-> While Ultibake handels UDIM baking automatically, this video explains how it can be used. This video also explains several extra considerations when working with decals, like how to fix decal seams and black borders.
-
-<iframe width="300em" height="200em" src="https://www.youtube.com/embed/Mzp5L5xpPIg"allowfullscreen></iframe>
+<iframe width="300em" height="200em" src="https://www.youtube.com/embed/Mzp5L5xpPIg" allowfullscreen></iframe>
 
 # Usage
 
@@ -43,48 +41,47 @@ The addon introduces various terms, which are explained here.
 
 ## Bake Sets
 
-> **Bake Sets** are the most important part of the addon. These containers can be created/removed and they contain all the information that specify what objects will be baked into textures. They can be individually baked for time save or you can bake all of them from the **Bake All Sets** Button
+> **Bake Sets** are the most important part of the addon. These containers can be created or removed, and they contain all the information that specifies which objects will be baked into textures. They can be baked individually to save time, or you can bake all of them using the **Bake All Sets** button.
 
-> The **Search feature** will affect how **Bake All Sets** works, so you can use it to filter specific **Bake Sets** 
+> The **Search feature** will affect how **Bake All Sets** works, so you can use it to filter specific **Bake Sets**.
 
 ![alt text](Search.webp)
 
 > You can have as many **Bake Sets** as you want.
 
-> **Bake Sets are tied to a Scene**, so you can have multiple setups if you utilize multiple Scenes. **Great for reducing clutter**
+> **Bake Sets are tied to a Scene**, so you can have multiple setups if you utilize multiple Scenes. **Great for reducing clutter.**
 
 ## Profiles
 
-> Added in 1.8 This is the new way of defining **what** textures will be baked and **how** for **Bake Sets** It works the same was in 1.7, but the settings and type information has been moved here.
+> Added in 1.8. This is the new way of defining **what** textures will be baked and **how** for **Bake Sets**. It works the same way as in 1.7, but the settings and type information have been moved here.
 
 ![alt text](image-6.png)
 
-> You can also save profiles to an external file. This way you can re-use these profiles in any Blender project.
+> You can also save profiles to an external file. This way, you can reuse these profiles in any Blender project.
 
 ![alt text](parsecd_jPDlh803v3.png)
 
-## Profile parameters
+## Profile Parameters
 
 ![alt text](image-7.png)
 
+* **Margin** - Extra padding from the UV island borders, which prevents seams when dealing with LODs.
 
-* **Margin** - extra padding from the UV island borders, which prevent seams when dealing with LODs
+* **XY** - The dimensions of the image that will be baked. Can be toggled with the **Fixed Aspect Ratio** button to expose X and Y separately.
 
-* **XY** - The dimensions of the image that will be baked, can be toggled with the **Fixed Aspect Ratio** button to expose X and Y separately
+* **Cage Extrusion** - How much to inflate the **Cage** object, useful for tweaking **High** to **Low** baking.
 
-* **Cage Extrusion** - How much to inflate the **Cage** object, useful for tweaking **High** to **Low** baking
+* **Max Ray Distance** - How far a ray can be cast from a **High** object when projected to a **Low** object.
 
-* **Max Ray Distance** - How far can a ray be cast from a **High** object when projected to a **Low** object.
+* **Bake Samples Per Pixel** - Controls how many passes each pixel in the baked texture will receive during the baking process. It's a good idea to **set this to a low value** due to its **impact on bake time**.
 
-* **Bake Samples Per Pixel** - Controls how many passes each pixel in the baked texture will get during the baking. It's a good idea to **set this to a low value**, due to its **impact on bake time**
-
-* **Quality** - Controls the compression ratio for jpeg and png textures.
+* **Quality** - Controls the compression ratio for JPEG and PNG textures.
 
 ![alt text](image-21.png)
 
 ## Post-Process Effects
 
-> These are applied after the bake. The effects stack and they are applied in top to bottom order.
+> These are applied after the bake. The effects stack and are applied in top-to-bottom order.
 
 ![alt text](image-8.png)
 
@@ -94,46 +91,46 @@ The addon introduces various terms, which are explained here.
 ![alt text](blender_yflZLdZMJD.webp)
 ![alt text](blender_USdIiTlX8M.webp)
 
-## UDIMS
+## UDIMs
 
-* **Add Udim Scale Rule Button** - Adds a resolution multiplier to any UV Islands that are in the corresponding UDIM tile
+* **Add UDIM Scale Rule Button** - Adds a resolution multiplier to any UV islands that are in the corresponding UDIM tile.
 
 ![alt text](blender_30zS0uqnk4.gif)
 
-> **UDIMS are handeled automatically by Ultibake**, so you only have to ensure that the UV Islands are packed in the correct tiles. I highly recommend UVPackmaster3 for this.
+> **UDIMs are handled automatically by Ultibake**, so you only have to ensure that the UV islands are packed in the correct tiles. I highly recommend UVPackmaster3 for this.
 
 ![alt text](image-11.png)
 
 ## Bake Units
 
->    With **Bake Units** we can define the **objects which are used for baking**. It also contains the target UVmap which is required for the bake. a **Bake Set** can contain any amount of **Bake Units**, which allows you to easily bake multiple objects for each profile.
+> With **Bake Units**, we can define the **objects that are used for baking**. It also contains the target UV map, which is required for the bake. A **Bake Set** can contain any number of **Bake Units**, allowing you to easily bake multiple objects for each profile.
 
 ![alt text](image-14.png)
 
 ![alt text](image-12.png)
 
-* **Low** - the object/collection which will be baked
-> Uses the UVmap selector shown in the image below
+* **Low** - The object/collection that will be baked.
+> Uses the UV map selector shown in the image below.
 
-* **High** - the object which will be projected to the surface of the **Low** object
-> Commonly used for baking high detail meshes to low poly representations
+* **High** - The object that will be projected onto the surface of the **Low** object.
+> Commonly used for baking high-detail meshes to low-poly representations.
 
-* **Cage** - the object which will define how the projection from **High** to **Low** baking will behave
-> optional, rarely needed, but useful for complicated high to low bakes
+* **Cage** - The object that will define how the projection from **High** to **Low** baking will behave.
+> Optional, rarely needed, but useful for complicated high-to-low bakes.
 
-* **Decals** - the collection which will have its meshes projected to the **Low** object
-> Similar to High to Low baking, but contains internal pre-processing to ensure better results
+* **Decals** - The collection whose meshes will be projected onto the **Low** object.
+> Similar to High to Low baking but contains internal preprocessing to ensure better results.
 
-> Any non-mesh based decal method like with the "Stamp It!" Addon does not require the decal collection, since its applied directly to the material.
+> Any non-mesh-based decal method, like with the "Stamp It!" Addon, does not require the decal collection since it's applied directly to the material.
 
-* **Decals Only Toggle** - This will as it name implies, bake the **Decals** to the **Low** object, but not the underlying **Low** Object itself.
-> Useful when your application requires you to apply decals on top of an existing texture
+* **Decals Only Toggle** - As its name implies, this will bake the **Decals** to the **Low** object but not the underlying **Low** object itself.
+> Useful when your application requires you to apply decals on top of an existing texture.
 
-* **Collection Toggle** - a toggle which will convert the **Low** parameter to a collection instead
-> This will prevent you from using High to Low baking or Decals, but its crucial for bakes that contain many objects
+* **Collection Toggle** - A toggle that will convert the **Low** parameter to a collection instead.
+> This will prevent you from using High to Low baking or Decals, but it's crucial for bakes that contain many objects.
 
-* **Baking UV map** - Convenient selector for choosing what UVmap to use for the **Low** object or **Low** collection.
-> With collections it will only show UVmaps that are shared with all the other objects in the low collection
+* **Baking UV Map** - A convenient selector for choosing which UV map to use for the **Low** object or **Low** collection.
+> With collections, it will only show UV maps that are shared with all the other objects in the low collection.
 
 ![alt text](blender_uyiswEQhRE.gif)
 
@@ -141,186 +138,161 @@ The addon introduces various terms, which are explained here.
 
 > A profile contains a **Texture Set**, which contains **Texture Units**. These are used to define a single texture to be baked using **Bake Types**.
 
-> To the right of the image name is a suffix which is dynamically generated. You can change the suffix letters in the settings or even remove them.
+> To the right of the image name is a suffix that is dynamically generated. You can change the suffix letters in the settings or even remove them.
 
-> The suffix can be disabled from the addon parameters by unticking **Auto Suffix** 
+> The suffix can be disabled from the addon parameters by unticking **Auto Suffix**.
 
-> Having **multiple Texture Units** result in the Bake set **baking multiple textures** at once.
-
-
+> Having **multiple Texture Units** results in the Bake Set **baking multiple textures** at once.
 
 ![alt text](image-16.png)
 
-
 ## Bake Types
 
-> With **Bake Types** we can define what is baked from the materials that are applied to the objects in the **Bake Units**. The **Materials must utilize the Principled BSDF node** and any material which is not using this node will have to be manually converted to utilize it. **The Bake Types reflect the inputs of the Principled BSDF node** except for a few special types which are unique to the Addon.
+> With **Bake Types**, we can define what is baked from the materials that are applied to the objects in the **Bake Units**. The **materials must utilize the Principled BSDF node**, and any material that is not using this node will have to be manually converted to utilize it. **The Bake Types reflect the inputs of the Principled BSDF node** except for a few special types that are unique to the addon.
 
 ![alt text](image-15.png)
 
-> Each **Bake Type** has a channel selector. Note that you can select multiple channels for a Bake Type with shift+left click
+> Each **Bake Type** has a channel selector. Note that you can select multiple channels for a Bake Type with Shift + left-click.
 
 ![alt text](image.png)
 
+## Special Bake Types
 
-
-## Special Bake types
-> **Bake Types** that are not specified on the Principled BSDF node are called **Special Bake types** These generate nodes automatically during the bake which
-result in the desired bake.
+> **Bake Types** that are not specified on the Principled BSDF node are called **Special Bake Types**. These generate nodes automatically during the bake, which result in the desired bake.
 
 ![alt text](image-17.png)
 
-
 ### Normalized Position
 
-> This is equivalent to the **Position Bake** from substance painter using bbox as the normalization type. 
+> This is equivalent to the **Position Bake** from Substance Painter using bbox as the normalization type.
 
 ![alt text](blender_cKEJC3AEkB.webp)
 
-> Since the axis changes depending on the platform, we have to configure the right one depending on the platform.
+> Since the axis changes depending on the platform, we have to configure the correct one depending on the platform.
 
 ![alt text](image-22.webp)
-
 ![alt text](Untitled-1.webp)
 
-> The resulting baked texture looks like the following. Each axis containing a 0 to 1 gradient using the mesh bounding box.
+> The resulting baked texture looks like the following. Each axis contains a 0 to 1 gradient using the mesh bounding box.
 
 ![alt text](gg.webp)
 
-
 ### Smoothness
 
-> Basically the inverse of roughness
+> Basically the inverse of roughness.
 
 ![alt text](blender_IEwHCECQ4m.webp)
-
 ![alt text](blender_jIAnGk8162.webp)
 
 ### Curvature
 
-> The **pointyness** of the mesh curvature. **Mesh density** has great effect on this bake type.
+> The **pointiness** of the mesh curvature. **Mesh density** has a great effect on this bake type.
 
 ![alt text](image-23.webp)
 
-### Glossy map
+### Glossy Map
 
-> The **surface reflection** of the mesh. **Roughness** has great effect on this bake type.
+> The **surface reflection** of the mesh. **Roughness** has a great effect on this bake type.
 
 ![alt text](image-24.webp)
 
-#### Light map
+#### Light Map
 
-> The surface **brightness** and **color** from light sources
+> The surface **brightness** and **color** from light sources.
 
 ![alt text](image-25.webp)
 
 ### ColorID
 
-> Using the user defined colors from the bake unit, we can color each bake unit to have a unique color.
+> Using the user-defined colors from the bake unit, we can color each bake unit to have a unique color.
 
 ![alt text](image-26.webp)
 
 ### Ambient Occlusion
 
-> Distance calculation to the closest mesh. 
+> Distance calculation to the closest mesh.
 
 ![alt text](image-27.webp)
-
 ![alt text](image-28.webp)
 
 ### Thickness
-> Taken from substance painter, it's basically AO, but the rays are casted inside the mesh instead of outside.
-
+> Taken from Substance Painter, it's basically AO, but the rays are cast inside the mesh instead of outside.
 
 ![alt text](image-2.png)
 
-### Normal map
+### Normal Map
 
-> Baking normal maps is a very useful technique, either by defining a **high object** or by using a **multi resolution modifier** we can bake high detail surface imperfections to a texture.
+> Baking normal maps is a very useful technique. Either by defining a **high object** or by using a **multi-resolution modifier**, we can bake high-detail surface imperfections to a texture.
 
 ![alt text](image-29.webp)
 
 ### World Space Normal
 
-> Same as normal map, but it's in World space.
+> Same as a normal map, but it's in world space.
 
 ![alt text](image-3.png)
 
 ## Finalize
 
-> **The last part in the pipeline** Once the bake is complete. With a single click you can create a copies of your **Bake Set** objects which now utilize only the baked textures. Great for ensuring consistency and also as a bonus makes your objects ready for exporting.
+> **The last part in the pipeline** once the bake is complete. With a single click, you can create copies of your **Bake Set** objects that now utilize only the baked textures. This is great for ensuring consistency and also makes your objects ready for exporting.
 
 ![alt text](blender_bSQVfeDZ6o.webp)
-
 
 ## Decals
 
 > All Bake Units contain a single collection slot reserved for any decals.
 
-> The Objects in this collection should be Curve Objects, Font Objects or Mesh objects
+> The objects in this collection should be Curve Objects, Font Objects, or Mesh Objects.
 
 ![alt text](image-20.png)
 
-> Decals can be baked in two projection modes specified by the > _PROJ suffix on the decal object, if the projected decal doesn't work then try this.
+> Decals can be baked in two projection modes specified by the > _PROJ suffix on the decal object. If the projected decal doesn't work, try this.
 
 ![alt text](blender_mgCotKDYXm.webp)
 
-> The > _PROJ  suffix should not be used with text objects
+> The > _PROJ suffix should not be used with text objects.
 
 ![alt text](blender_THMwXlMG2K.webp)
 
-
-
 ## Parameters
 
-> There are various controls in the addon parameters, which need explaining.
+> There are various controls in the addon parameters that need explaining.
 
 ![alt text](image-18.png)
 
-* **Force Color Space** - a toggle which will give you an option to set the colorspace of a baked texture, manually setting this is rarely required since its automatically determined from the **Bake Types**. In certain situations you may need to control this explicitly
+* **Force Color Space** - A toggle that gives you the option to set the color space of a baked texture. Manually setting this is rarely required since it's automatically determined from the **Bake Types**. In certain situations, you may need to control this explicitly.
 
 ![alt text](blender_7L9BT6yH08.webp)
 
+* **Toggle Console** - Whenever you bake something on Windows, a console will open up which has a visual progress bar and the option to cancel the bake with E+Ctrl.
+> Yes, it's reversed (does not currently work on non-Windows machines).
 
-* **Toggle Console** - Whenever you bake something on Windows, a console will open up which has a visual progress bar and the option to cancel the bake with E+Ctrl
-
-> yes it's reversed(does not currently work on non-Windows machines)
-
-* **Auto Suffix** - Generates the suffix for the texturename from the baketypes
+* **Auto Suffix** - Generates the suffix for the texture name from the bake types.
 
 ![alt text](blender_yslJiXpimY.webp)
 
-> You can also manually define the suffixes from the first panel
+> You can also manually define the suffixes from the first panel.
 
 ![alt text](blender_zljkGzEKJX.webp)
 
-* **Ignore Shape Keys** - When baking objects which utilize shape keys, you might not want to bake the distorted mesh if it is affected by stuff like AO or Decals.
+* **Ignore Shape Keys** - When baking objects that utilize shape keys, you might not want to bake the distorted mesh if it is affected by things like AO or Decals.
 
 ![alt text](blender_WfgK9RwSqA.webp)
 
-* **Global File Format** - Specify the texture format on a **Bake Set** basis or you can use the same file format for all **Bake Sets**.
+* **Global File Format** - Specify the texture format on a **Bake Set** basis or use the same file format for all **Bake Sets**.
 
 ![alt text](blender_w0jE3LHiEI.webp)
 
-* **Decal Subdivision** - Decals are shrinkwraped around the **Low** object, this ensures that the shrinkwrapping works correctly. Some meshes require more subdiv, which can be increased on the value to the right of this tickbox.
+* **Decal Subdivision** - Decals are shrink-wrapped around the **Low** object. This ensures that the shrink-wrapping works correctly. Some meshes require more subdivisions, which can be increased using the value to the right of this tickbox.
 
 ![alt text](blender_X8PDx9mE0N.webp)
 
 * **Use Global Decal Margin** - Just like with the margin for baking, you can specify how much margin the **Decals** have when they are baked to the UV islands on the Low object.
 
-* **Decal Stack Height** - This is the height at which the **Decals** are shrinkwrapped to the surface of the low object, depending on the mesh resolution of the decal, this should.
+* **Decal Stack Height** - This is the height at which the **Decals** are shrink-wrapped to the surface of the Low object. Depending on the mesh resolution of the decal, this should be adjusted accordingly.
 
-* **Alpha Sensitivity** - Multiply all alpha channels by this value. Ideal for 
-crisper edges when using decals. You can also manually do it in the material, but this is more convenient.
-
-
-
-
-
-
-
-
+* **Alpha Sensitivity** - Multiplies all alpha channels by this value. Ideal for crisper edges when using decals. You can also manually adjust this in the material, but this is more convenient.
 
 ### Support
 
-> If you find yourself stuck or if something isn't working as you intended, ask about it in the [discord channel](https://discord.gg/RvT8jKRevG)
+> If you find yourself stuck or if something isn't working as you intended, ask about it in the [Discord channel](https://discord.gg/RvT8jKRevG).
