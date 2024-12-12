@@ -215,6 +215,20 @@ The addon introduces various terms, which are explained here.
 ![alt text](image-27.webp)
 ![alt text](image-28.webp)
 
+> In rare cases the baking will fail, this can be caused by invalid object data.
+Broken object data causing mesh to bake a fully white AO bake.
+
+![alt text](image-22.png)
+
+> Select your broken Object and click the **Object Data Fix** button
+
+![alt text](image-23.png)
+
+> Fixed Result
+
+![alt text](image-24.png)
+
+
 ### Thickness
 > Taken from Substance Painter, it's basically AO, but the rays are cast inside the mesh instead of outside.
 

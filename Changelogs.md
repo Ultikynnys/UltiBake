@@ -177,3 +177,7 @@
 >## 1.8.9 - Bugfix 06/12/2024
     * Decal blending fixed with black masks
     * Finalize now applies textures correctly
+
+
+>## 1.8.10 - Addition 06/12/2024
+    * Added object fix button(described in documentation)
