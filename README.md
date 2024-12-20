@@ -122,6 +122,7 @@ The addon introduces various terms, which are explained here.
 > Similar to High to Low baking but contains internal preprocessing to ensure better results.
 
 > Any non-mesh-based decal method, like with the "Stamp It!" Addon, does not require the decal collection since it's applied directly to the material.
+![alt text](parsecd_pNXsW3qURu.webp)
 
 * **Decals Only Toggle** - As its name implies, this will bake the **Decals** to the **Low** object but not the underlying **Low** object itself.
 > Useful when your application requires you to apply decals on top of an existing texture.
