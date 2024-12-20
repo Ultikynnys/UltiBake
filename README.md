@@ -121,9 +121,6 @@ The addon introduces various terms, which are explained here.
 * **Decals** - The collection whose meshes will be projected onto the **Low** object.
 > Similar to High to Low baking but contains internal preprocessing to ensure better results.
 
-> Any non-mesh-based decal method, like with the "Stamp It!" Addon, does not require the decal collection since it's applied directly to the material.
-![alt text](parsecd_pNXsW3qURu.webp)
-
 * **Decals Only Toggle** - As its name implies, this will bake the **Decals** to the **Low** object but not the underlying **Low** object itself.
 > Useful when your application requires you to apply decals on top of an existing texture.
 
@@ -307,6 +304,13 @@ Broken object data causing mesh to bake a fully white AO bake.
 * **Decal Stack Height** - This is the height at which the **Decals** are shrink-wrapped to the surface of the Low object. Depending on the mesh resolution of the decal, this should be adjusted accordingly.
 
 * **Alpha Sensitivity** - Multiplies all alpha channels by this value. Ideal for crisper edges when using decals. You can also manually adjust this in the material, but this is more convenient.
+
+
+## Stamp it!
+
+> Any non-mesh-based decal method, like with the "Stamp It!" Addon, does not require the decal collection since it's applied directly to the material. Simply just bake the object with the material.
+
+![alt text](parsecd_pNXsW3qURu.webp)
 
 ### Support
 
