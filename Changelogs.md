@@ -181,3 +181,6 @@
 
 >## 1.8.10 - Addition 06/12/2024
     * Added object fix button(described in documentation)
+
+>## 1.8.11 - Bugfix 28/12/2024
+    * Color settings do not affect the bakes now
