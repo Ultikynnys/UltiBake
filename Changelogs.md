@@ -184,3 +184,7 @@
 
 >## 1.8.11 - Bugfix 28/12/2024
     * Color settings do not affect the bakes now
+
+>## 1.8.12 - Rework 11/01/2025
+    * Panel rework
+    * Moving away from SNA
