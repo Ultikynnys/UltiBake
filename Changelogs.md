@@ -188,3 +188,15 @@
 >## 1.8.12 - Rework 11/01/2025
     * Panel rework
     * Moving away from SNA
+
+>## 1.8.13 - Rework 11/01/2025
+    * UI rework
+    * Alpha blending fixed for stamps, no longer goes to black
+
+>## 1.8.14 - Rework 16/01/2025
+    * Reworked how decals are applied internally to support floating meshes
+    * removed stack height parameter(obsolete)
+    * removed alpha sensitivity parameter(obsolete due to stamp stencils)
+    * UI re-shuffle
+    * UI panel is now called Ultikynnys instead of Ultibake to keep panel amount low when using multiple Ultikynnys addons
+    

@@ -10,24 +10,11 @@
 <iframe width="300em" height="200em" src="https://www.youtube.com/embed/gd659C732qs" allowfullscreen></iframe>
 
 ### Decal Baking
-
 > Allows you to project any image onto a low-poly object. It even works if the image uses multiple masks, like normals, roughness, metallic, etc.
 
 > DecalMachine materials use a parallax node, which needs to be disabled in the material.
 
-<iframe width="300em" height="200em" src="https://www.youtube.com/embed/3LwLf0DBy1A" allowfullscreen></iframe>
-
-> For TrimFlow users, this is how you set up the bake. All you need to do is move the generated decal mesh into a decal collection that is used by the Bake Set.
-
-![alt text](image-20.webp)
-
-### Decal Stacking
-
-> Allows you to stack decals on top of each other with control over stack order.
-
-> The Alphastack.blend file comes with the addon.
-
-<iframe width="300em" height="200em" src="https://www.youtube.com/embed/ltRfZqC-O6g" allowfullscreen></iframe>
+<iframe width="300em" height="200em" src="https://www.youtube.com/embed/VBhVNOL74CM" allowfullscreen></iframe>
 
 ### UDIMs
 
@@ -213,18 +200,6 @@ The addon introduces various terms, which are explained here.
 ![alt text](image-27.webp)
 ![alt text](image-28.webp)
 
-> In rare cases the baking will fail, this can be caused by invalid object data.
-Broken object data causing mesh to bake a fully white AO bake.
-
-![alt text](image-22.png)
-
-> Select your broken Object and click the **Object Data Fix** button
-
-![alt text](image-23.png)
-
-> Fixed Result
-
-![alt text](image-24.png)
 
 
 ### Thickness
@@ -246,7 +221,8 @@ Broken object data causing mesh to bake a fully white AO bake.
 
 ## Finalize
 
-> **The last part in the pipeline** once the bake is complete. With a single click, you can create copies of your **Bake Set** objects that now utilize only the baked textures. This is great for ensuring consistency and also makes your objects ready for exporting.
+> **The last part in the pipeline** once the bake is complete. With a single click, you can create copies of your **Bake Set** objects that now utilize only the baked textures. This is great for ensuring consistency and also makes your objects ready for exporting. Note it can only **finalize** when bake sets using the same texturename are visible from the search
+
 
 ![alt text](blender_bSQVfeDZ6o.webp)
 
@@ -255,16 +231,6 @@ Broken object data causing mesh to bake a fully white AO bake.
 > All Bake Units contain a single collection slot reserved for any decals.
 
 > The objects in this collection should be Curve Objects, Font Objects, or Mesh Objects.
-
-![alt text](image-20.png)
-
-> Decals can be baked in two projection modes specified by the > _PROJ suffix on the decal object. If the projected decal doesn't work, try this.
-
-![alt text](blender_mgCotKDYXm.webp)
-
-> The > _PROJ suffix should not be used with text objects.
-
-![alt text](blender_THMwXlMG2K.webp)
 
 ## Parameters
 
@@ -301,16 +267,17 @@ Broken object data causing mesh to bake a fully white AO bake.
 
 * **Use Global Decal Margin** - Just like with the margin for baking, you can specify how much margin the **Decals** have when they are baked to the UV islands on the Low object.
 
-* **Decal Stack Height** - This is the height at which the **Decals** are shrink-wrapped to the surface of the Low object. Depending on the mesh resolution of the decal, this should be adjusted accordingly.
+* **Decal Smooth** - makes the edges of mesh based decals more blurred, which usually ends up looking visually better
 
-* **Alpha Sensitivity** - Multiplies all alpha channels by this value. Ideal for crisper edges when using decals. You can also manually adjust this in the material, but this is more convenient.
+![alt text](image-25.png)
 
 
-## Stamp it!
+## UltiStamp!
 
-> Any non-mesh-based decal method, like with the "Stamp It!" Addon, does not require the decal collection since it's applied directly to the material. Simply just bake the object with the material.
+> Any non-mesh-based decal method, like with the "UltiSamp" Addon, does not require the decal collection since it's applied directly to the material. Simply just bake the object with the material.
 
-![alt text](parsecd_pNXsW3qURu.webp)
+![alt text](image-26.png)
+
 
 ### Support
 
