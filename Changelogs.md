@@ -199,4 +199,7 @@
     * removed alpha sensitivity parameter(obsolete due to stamp stencils)
     * UI re-shuffle
     * UI panel is now called Ultikynnys instead of Ultibake to keep panel amount low when using multiple Ultikynnys addons
-    
+
+
+>## 1.8.15 - Hotfix 17/01/2025
+    * Addon loading/saving no longer errors out
