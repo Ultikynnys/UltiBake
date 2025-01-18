@@ -203,3 +203,7 @@
 
 >## 1.8.15 - Hotfix 17/01/2025
     * Addon loading/saving no longer errors out
+
+
+>## 1.8.16 - Hotfix 18/01/2025
+    * Addon loading/saving no longer errors out
