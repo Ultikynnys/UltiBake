@@ -206,4 +206,5 @@
 
 
 >## 1.8.16 - Hotfix 18/01/2025
-    * Addon loading/saving no longer errors out
+    * Alpha smoothing no longer errors out
+    * Emission baking fixed from regression 
