@@ -208,3 +208,9 @@
 >## 1.8.16 - Hotfix 18/01/2025
     * Alpha smoothing no longer errors out
     * Emission baking fixed from regression 
+
+
+
+
+>## 1.8.17 - Hotfix 20/01/2025
+    * Normal map smoothing now works correctly when using float mesh decals, Normal directionality fixed when using mesh decals
