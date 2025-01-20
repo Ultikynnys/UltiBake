@@ -217,3 +217,9 @@
 
 >## 1.8.18 - Hotfix 20/01/2025
     * Normal map direction fixed for image projection
+
+
+
+>## 1.8.19 - Hotfix 20/01/2025
+    * all except for anisotrophic kuwahara filtering replaced with scipy post processing effects
+    
