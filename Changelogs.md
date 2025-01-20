@@ -222,4 +222,11 @@
 
 >## 1.8.19 - Hotfix 20/01/2025
     * all except for anisotrophic kuwahara filtering replaced with scipy post processing effects
+
+
+    
+>## 1.8.20 - Woooooo Hotfix 20/01/2025
+    * Changed Gpu baking icon to ENUM
+    * Fixed regression bug with using cage object when baking
+    * Fixed empty texture units causing problems
     
