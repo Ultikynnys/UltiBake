@@ -214,3 +214,6 @@
 
 >## 1.8.17 - Hotfix 20/01/2025
     * Normal map smoothing now works correctly when using float mesh decals, Normal directionality fixed when using mesh decals
+
+>## 1.8.18 - Hotfix 20/01/2025
+    * Normal map direction fixed for image projection
