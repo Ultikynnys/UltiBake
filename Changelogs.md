@@ -231,5 +231,5 @@
     * Fixed empty texture units causing problems
     
 
->## 1.8.25 - General bugfixes 27/01/2025
+>## 1.8.23 - General bugfixes 27/01/2025
     * Fixed issue with installing dependencies
