@@ -233,3 +233,7 @@
 
 >## 1.8.23 - General bugfixes 27/01/2025
     * Fixed issue with installing dependencies
+
+>## 1.8.27 - General bugfixes 05/02/2025
+    * Added local mode to AO and Thickness
+    * various small bugfixes
