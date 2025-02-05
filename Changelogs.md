@@ -237,3 +237,8 @@
 >## 1.8.27 - General bugfixes 05/02/2025
     * Added local mode to AO and Thickness
     * various small bugfixes
+
+
+
+>## 1.8.27 - General bugfixes 05/02/2025
+    * More safety checks for advanced setups
