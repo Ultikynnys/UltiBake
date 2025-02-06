@@ -242,3 +242,10 @@
 
 >## 1.8.27 - General bugfixes 05/02/2025
     * More safety checks for advanced setups
+
+
+>## 1.8.33 - General bugfixes 05/02/2025
+    * UI rework
+    * More guards
+    * Post processing fixed
+    * Slightly faster bake times
