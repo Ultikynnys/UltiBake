@@ -1,5 +1,3 @@
-# Changelogs
-
 >## 1.5.2 - INITIAL PUBLIC RELEASE
 
 >## 1.5.3 - HOTFIX
@@ -249,3 +247,14 @@
     * More guards
     * Post processing fixed
     * Slightly faster bake times
+  
+
+## 1.9.0 - Version Increment 15/02/2025
+    * Pre-bake Visualizer Added
+    * UDIM visualizer added
+    * Bake Set Generator Added
+    * UI rework
+    * Many many small fixes
+    * Normalized Position baking now can be split to R G B channels
+    * Bake progress now visible inside Blender
+    * Added Ability to stop the bake on non-Windows Machines with ESC

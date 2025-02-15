@@ -15,7 +15,6 @@
   
   <style>
 /* Base styling for links with a moving, slightly desaturated rainbow */
-/* Base styling: white text when not hovered */
 a {
   color: rgb(255, 85, 85);
   font-weight: normal;
@@ -24,7 +23,6 @@ a {
   transition: all 0.3s ease;
 }
 
-/* On hover/focus, apply the animated, slightly desaturated rainbow */
 a:hover,
 a:focus {
   background-image: linear-gradient(
@@ -45,19 +43,33 @@ a:focus {
 }
 
 @keyframes rainbow {
-  0% {
-    background-position: 0%;
-  }
-  100% {
-    background-position: 400%;
-  }
+  0% { background-position: 0%; }
+  100% { background-position: 400%; }
 }
-
 
 a:hover,
 a:focus {
   -webkit-text-stroke: 0;
   text-shadow: none;
+}
+
+/* New rainbow-text class for animated rainbow header */
+.rainbow-text {
+  background-image: linear-gradient(
+    90deg,
+    hsl(0, 50%, 50%),
+    hsl(60, 50%, 50%),
+    hsl(120, 50%, 50%),
+    hsl(180, 50%, 50%),
+    hsl(240, 50%, 50%),
+    hsl(300, 50%, 50%),
+    hsl(360, 50%, 50%)
+  );
+  background-size: 400%;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: rainbow 10s linear infinite;
 }
 
 /* Headers with explicit text sizes */
@@ -71,12 +83,7 @@ h2 {
   font-family: 'Outfit', 'Raleway', sans-serif;
   font-size: 4rem;
 }
-h3 {
-  text-align: center;
-  font-family: 'Outfit', 'Raleway', sans-serif;
-  font-size: 2rem;
-}
-h4 {
+h3, h4 {
   text-align: center;
   font-family: 'Outfit', 'Raleway', sans-serif;
   font-size: 2rem;
@@ -94,8 +101,7 @@ h6 {
 
 /* Main content container */
 .content-container {
-  background: url('https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/pattern3.svg')
-    repeat;
+  background: url('https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/pattern3.svg') repeat;
   background-size: 100px 100px;
   font-family: 'Outfit', 'Raleway', sans-serif;
   padding: 5px;
@@ -137,11 +143,7 @@ p {
   height: 50%;
 }
 
-/* ------------------------------------------------------------------ */
-/* Combined Carousel Item Styling for Feature and Step Carousels      */
-/* ------------------------------------------------------------------ */
-
-/* Both feature and step items will use the same flex layout */
+/* Combined Carousel Item Styling for Feature and Step Carousels */
 .feature-item,
 .step-item {
   display: flex;
@@ -152,20 +154,13 @@ p {
   text-align: center;
 }
 
-/* Combined text styling for both carousels */
 .feature-text,
 .step-item p {
   margin-bottom: 0.5em;
 }
 
-/* ------------------------------------------------------------------ */
-/* Combined Image Styling for Carousels                             */
-/* ------------------------------------------------------------------ */
-
-/* For feature items, images are wrapped in a container.
-   For step items, the image is directly inside the item.
-   We use a container style only for feature images. */
-.feature-image:not(.bpp-image) {
+/* Combined Image Styling for Carousels */
+.feature-image {
   position: relative;
   width: 100%;
   height: 35em;
@@ -175,19 +170,7 @@ p {
   justify-content: center;
 }
 
-/* BPP image container remains unchanged */
-.bpp-image {
-  position: relative;
-  width: 100%;
-  height: 35em;
-  overflow: hidden;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-}
-
-/* Both feature (non-BPP) images and step images share these rules */
-.feature-image:not(.bpp-image) img,
+.feature-image img,
 .step-item img {
   width: auto;
   height: auto;
@@ -199,53 +182,7 @@ p {
   background-color: transparent;
 }
 
-/* BPP images with animation */
-.bpp-image img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  animation: cycleNoTransition 5s steps(1, end) infinite;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  border-radius: 15px;
-  background-color: transparent;
-  object-position: center;
-}
-
-/* Keyframes for BPP images animation */
-@keyframes cycleNoTransition {
-  0%, 20% {
-    opacity: 1;
-  }
-  20.01%, 100% {
-    opacity: 0;
-  }
-}
-
-/* Animation delays for BPP images */
-.bpp-image img:nth-child(1) {
-  animation-delay: 0s;
-}
-.bpp-image img:nth-child(2) {
-  animation-delay: 1s;
-}
-.bpp-image img:nth-child(3) {
-  animation-delay: 2s;
-}
-.bpp-image img:nth-child(4) {
-  animation-delay: 3s;
-}
-.bpp-image img:nth-child(5) {
-  animation-delay: 4s;
-}
-
-/* ------------------------------------------------------------------ */
-/* Custom styling for Steps Carousel                                */
-/* ------------------------------------------------------------------ */
-
-/* Override fixed heights so the steps carousel fits its content */
+/* Custom styling for Steps Carousel */
 #stepsCarousel {
   height: auto !important;
 }
@@ -254,7 +191,6 @@ p {
   height: auto !important;
 }
 
-/* Position the step carousel indicators at the bottom of the image */
 #stepsCarousel .carousel-indicators {
   position: absolute;
   bottom: 0;
@@ -265,14 +201,13 @@ p {
   z-index: 15;
 }
 
-
 #featuresCarousel {
   position: relative;
 }
 
 #featuresCarousel .carousel-indicators {
   position: absolute;
-  bottom: 0; /* Adjust this value if needed */
+  bottom: 0;
   left: 50%;
   transform: translateX(-50%);
   margin: 0;
@@ -280,7 +215,33 @@ p {
   z-index: 15;
 }
 
+/* Changelog Box styling */
+#changelog-box {
+  border: 2px solid #555;
+  max-height: 400px; /* Adjust height as needed to show roughly 3 entries */
+  overflow-y: auto;
+  padding: 1rem;
+  margin-top: 1rem;
+  background-color: #222;
+  color: white;
+}
 
+/* Each update in its own smaller box */
+.changelog-entry {
+  border: 1px solid #666;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+}
+
+/* Update items now styled with darker text instead of a darker background */
+.update-item {
+  color: #ccc;
+  padding: 0.3rem;
+  margin-left: 20px;
+  border-radius: 3px;
+  font-size: 0.8em; /* Reduced font size for changelog items */
+}
   </style>
 </head>
 <body>
@@ -292,9 +253,8 @@ p {
     </p>
     
     <h2>Features</h2>
-    <!-- Features Carousel: 1 item per slide -->
+    <!-- Features Carousel -->
     <div id="featuresCarousel" class="carousel slide rounded-carousel features-carousel" data-bs-pause="hover">
-      <!-- Carousel Indicators for 12 slides -->
       <div class="carousel-indicators">
         <button type="button" data-bs-target="#featuresCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#featuresCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -484,6 +444,7 @@ p {
         </div>
       </div>
     </div>   
+    
     <h2>Simple to use</h2>
     <!-- Steps Carousel -->
     <div id="stepsCarousel" class="carousel slide rounded-carousel" data-bs-pause="hover">
@@ -495,7 +456,6 @@ p {
         <button type="button" data-bs-target="#stepsCarousel" data-bs-slide-to="4" aria-label="Step 5"></button>
       </div>
       <div class="carousel-inner">
-        <!-- Each step is defined similarly -->
         <div class="carousel-item active">
           <div class="step-item">
             <p>Step 1: Install the addon .zip from Blender Properties</p>
@@ -540,6 +500,13 @@ p {
     <p>
       <a href="https://discord.gg/Pm7TDf2rV5" target="_blank">https://discord.gg/Pm7TDf2rV5</a>
     </p>
+    
+    <!-- Changelog Header Outside the Box -->
+    <h2>Changelog</h2>
+    <!-- Changelog Box (Now the last element) -->
+    <div id="changelog-box">
+      <p>Loading latest changes...</p>
+    </div>
   </div>
   
   <!-- Bootstrap 5 Bundle with Popper (JS) -->
@@ -565,6 +532,77 @@ p {
         instance.next();
       });
     });
+    
+    // Fetch and parse all changelog entries from the Markdown file
+    const changelogUrl = 'https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/Changelogs.md';
+    
+    fetch(changelogUrl)
+      .then(response => response.text())
+      .then(text => {
+        // Split entries by double newlines and reverse the array so the newest entries come first
+        let entries = text.trim().split(/\n\s*\n/).reverse();
+        let html = "";
+        
+        entries.forEach(entry => {
+          // Remove any leading '>' characters and trim the entry
+          entry = entry.replace(/^>\s*/, '');
+          let lines = entry.split('\n');
+          
+          // Process the header line
+          let headerLine = lines[0].trim();
+          let headerText = headerLine.startsWith("##") ? headerLine.replace(/^##\s*/, '') : headerLine;
+          
+          // Determine header color based on keywords
+          let lowerHeader = headerText.toLowerCase();
+          let categories = [];
+          if(lowerHeader.includes("bug") || lowerHeader.includes("fix")){
+            categories.push("red");
+          }
+          if(lowerHeader.includes("improvement") || lowerHeader.includes("addition") || lowerHeader.includes("optimization") || lowerHeader.includes("update") || lowerHeader.includes("ures") || lowerHeader.includes("stability") ){
+            categories.push("Green");
+          }
+          if(lowerHeader.includes("rework") || lowerHeader.includes("change")){
+            categories.push("blue");
+          }
+          // If multiple categories match, or none, default to white
+          let headerColor = (categories.length === 1) ? categories[0] : "white";
+          
+          let headerHtml = "";
+          if (headerLine.startsWith("##")) {
+            if(lowerHeader.includes("version increment")){
+              headerHtml = `<h5 class="rainbow-text">${headerText}</h5>`;
+            } else {
+              headerHtml = `<h5 style="color: ${headerColor};">${headerText}</h5>`;
+            }
+          } else {
+            if(lowerHeader.includes("version increment")){
+              headerHtml = `<p class="rainbow-text">${headerText}</p>`;
+            } else {
+              headerHtml = `<p style="color: ${headerColor};">${headerText}</p>`;
+            }
+          }
+          
+          // Process the remaining lines without bullet points,
+          // wrapping lines that start with "*" in a paragraph with the "update-item" class.
+          let contentHtml = "";
+          for (let i = 1; i < lines.length; i++) {
+            let line = lines[i].trim();
+            if (line.startsWith("*")) {
+              let item = line.replace(/^\*\s*/, '');
+              contentHtml += `<p class="update-item">${item}</p>`;
+            } else if (line !== "") {
+              contentHtml += `<p>${line}</p>`;
+            }
+          }
+          
+          html += `<div class="changelog-entry mb-3">${headerHtml}${contentHtml}</div>`;
+        });
+        document.getElementById("changelog-box").innerHTML = html;
+      })
+      .catch(error => {
+        document.getElementById("changelog-box").innerHTML = "<p>Error loading changelog.</p>";
+        console.error("Error fetching changelog:", error);
+      });
   </script>
 </body>
 </html>
