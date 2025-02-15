@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ultibake Showcase</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Raleway:ital,wght@0,500;1,500&display=swap" rel="stylesheet" />
+  
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  
+  <style>
+    /* Base styling for links with a moving, slightly desaturated rainbow */
+    a {
+      color: rgb(255, 85, 85);
+      font-weight: normal;
+      font-family: 'Outfit', 'Raleway', sans-serif;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    a:hover,
+    a:focus {
+      background-image: linear-gradient(
+        90deg,
+        hsl(0, 50%, 50%),
+        hsl(60, 50%, 50%),
+        hsl(120, 50%, 50%),
+        hsl(180, 50%, 50%),
+        hsl(240, 50%, 50%),
+        hsl(300, 50%, 50%),
+        hsl(360, 50%, 50%)
+      );
+      background-size: 400%;
+      color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+      animation: rainbow 10s linear infinite;
+    }
+
+    @keyframes rainbow {
+      0% { background-position: 0%; }
+      100% { background-position: 400%; }
+    }
+
+    a:hover,
+    a:focus {
+      -webkit-text-stroke: 0;
+      text-shadow: none;
+    }
+
+    /* New rainbow-text class for animated rainbow header */
+    .rainbow-text {
+      background-image: linear-gradient(
+        90deg,
+        hsl(0, 50%, 50%),
+        hsl(60, 50%, 50%),
+        hsl(120, 50%, 50%),
+        hsl(180, 50%, 50%),
+        hsl(240, 50%, 50%),
+        hsl(300, 50%, 50%),
+        hsl(360, 50%, 50%)
+      );
+      background-size: 400%;
+      color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+      animation: rainbow 10s linear infinite;
+      text-shadow: none;
+    }
+
+    /* Headers with explicit text sizes */
+    h1 {
+      text-align: center;
+      font-family: 'Outfit', 'Raleway', sans-serif;
+      font-size: 5rem;
+    }
+    h2 {
+      text-align: center;
+      font-family: 'Outfit', 'Raleway', sans-serif;
+      font-size: 4rem;
+    }
+    h3, h4 {
+      text-align: center;
+      font-family: 'Outfit', 'Raleway', sans-serif;
+      font-size: 2rem;
+    }
+    h5 {
+      text-align: center;
+      font-family: 'Outfit', 'Raleway', sans-serif;
+      font-size: 1.25rem;
+    }
+    h6 {
+      text-align: center;
+      font-family: 'Outfit', 'Raleway', sans-serif;
+      font-size: 1rem;
+    }
+
+    /* Main content container */
+    .content-container {
+      background: url('https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/pattern3.svg') repeat;
+      background-size: 100px 100px;
+      font-family: 'Outfit', 'Raleway', sans-serif;
+      padding: 5px;
+      font-size: 20px;
+      color: white;
+      text-shadow: -0.1em 0 0 black, 0.1em 0 0 black, 0 -0.1em 0 black, 0 0.1em 0 black,
+        -0.07em -0.07em 0 black, 0.07em -0.07em 0 black, -0.07em 0.07em 0 black,
+        0.07em 0.07em 0 black, 0.07em 0.07em 0.2em rgba(0, 0, 0, 0.7);
+      border-radius: 15px;
+      margin: 0;
+      text-align: center;
+    }
+
+    /* Paragraph styling */
+    p {
+      font-size: 1.5em;
+      line-height: 1.5;
+    }
+
+    /* Rounded containers */
+    .rounded-video,
+    .rounded-carousel {
+      border-radius: 15px;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .rounded-video {
+      max-width: 100%;
+      margin: 0 auto;
+    }
+
+    /* Carousel sizing for feature carousel */
+    .rounded-carousel {
+      width: 100%;
+      height: 30em;
+      margin: 0 auto 1.5rem; /* reduced bottom margin */
+    }
+    .carousel-inner > .carousel-item {
+      height: 100%;
+    }
+
+    /* Combined Carousel Item Styling for Feature and Step Carousels */
+    .feature-item,
+    .step-item {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 0.5em;
+      text-align: center;
+      height: 100%;
+      padding: 1rem;
+    }
+
+    .feature-text,
+    .step-item p {
+      margin-bottom: 0.5em;
+    }
+
+    /* Combined Image Styling for Carousels */
+    .feature-image,
+    .step-item img {
+      position: relative;
+      width: 100%;
+      height: auto;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .feature-image img,
+    .step-item img {
+      width: auto;
+      height: 100%;
+      max-width: 100%;
+      object-fit: contain;
+      object-position: top center;
+      border-radius: 15px;
+      background-color: transparent;
+    }
+
+    /* Custom styling for Steps Carousel */
+    #stepsCarousel {
+      height: auto !important;
+    }
+
+    #stepsCarousel .carousel-inner > .carousel-item {
+      height: auto !important;
+    }
+
+    #stepsCarousel .carousel-indicators,
+    #featuresCarousel .carousel-indicators {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      margin: 0;
+      padding: 0;
+      z-index: 15;
+    }
+  </style>
+</head>
+<body class="bg-dark">
+  <div class="container-fluid my-3 content-container">
+
+    <!-- Introduction Section -->
+    <h2 class="rainbow-text">What Is This?</h2>
+    <p>A projection-based Decal add-on that includes more than 100 presets for most use cases.</p>
+    <div id="introCarousel" class="carousel slide rounded-carousel mb-3" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="https://assets.superhivemarket.com/cache/037a4ef518d6f4627dc92b17af27f4cc.webp" 
+               alt="Decal add-on preview" class="d-block w-100">
+        </div>
+      </div>
+    </div>
+
+    <!-- Features Section -->
+    <h1 class="rainbow-text">Features</h1>
+    <ul class="list-unstyled mb-3">
+      <li>Preset packs are included, offering more than 100 decals in total. (More added with each update)</li>
+      <li>Full PBR decals that can be applied to any material.</li>
+      <li>Complete <a href="https://blendermarket.com/products/ultibake" target="_blank">Ultibake</a> support for seamless decal baking into textures (useful for exporting to game engines).</li>
+      <li>Create your own preset packs with the add-on for consistent reuse across various Blender projects.</li>
+      <li>Effortless decal creation from any texture or image.</li>
+      <li>Supports even the most complex decals.</li>
+      <li>Add-on support is available for troubleshooting or new suggestions via <a href="https://discord.gg/J7kWSfM4jw" target="_blank">Discord</a>.</li>
+    </ul>
+
+    <!-- Showcase Carousel -->
+    <h1 class="rainbow-text">Showcase</h1>
+    <div id="featuresCarousel" class="carousel slide rounded-carousel mb-3" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <!-- Carousel Item 1 -->
+        <div class="carousel-item active">
+          <div class="feature-item">
+            <h3>Easily clickable empty handles and radial menu buttons</h3>
+            <div class="feature-image">
+              <img src="https://assets.superhivemarket.com/cache/6689514acd2a4bcedcc54bd4d3929be4.webp" 
+                   alt="Clickable handles" class="d-block w-100">
+            </div>
+          </div>
+        </div>
+        <!-- Carousel Item 2 -->
+        <div class="carousel-item">
+          <div class="feature-item">
+            <h3>Advanced decals with alpha masking and full PBR</h3>
+            <div class="feature-image">
+              <img src="https://assets.superhivemarket.com/cache/c2bc74ff0ee30d588fb8b67d424371a3.webp" 
+                   alt="Advanced decals" class="d-block w-100">
+            </div>
+          </div>
+        </div>
+        <!-- Carousel Item 3 -->
+        <div class="carousel-item">
+          <div class="feature-item">
+            <h3>A great way to add more detail to existing props</h3>
+            <div class="feature-image">
+              <img src="https://assets.superhivemarket.com/cache/d93123ac21101ca34aee5643844588c6.webp" 
+                   alt="Detail enhancement" class="d-block w-100">
+            </div>
+          </div>
+        </div>
+        <!-- Carousel Item 4 -->
+        <div class="carousel-item">
+          <div class="feature-item">
+            <h3>Supports emissive decals</h3>
+            <div class="feature-image">
+              <img src="https://assets.superhivemarket.com/cache/d0c935b0540ebd9c916ed5c811f88f80.webp" 
+                   alt="Emissive decals" class="d-block w-100">
+            </div>
+          </div>
+        </div>
+        <!-- Carousel Item 5 -->
+        <div class="carousel-item">
+          <div class="feature-item">
+            <h3>Add decals to transparent materials</h3>
+            <div class="feature-image">
+              <img src="https://assets.superhivemarket.com/cache/c115c532252a9126b0ecd120461181f2.webp" 
+                   alt="Transparent material decals" class="d-block w-100">
+            </div>
+          </div>
+        </div>
+        <!-- Carousel Item 6 -->
+        <div class="carousel-item">
+          <div class="feature-item">
+            <h3>Scale Decal UVs for seamless decals</h3>
+            <div class="feature-image">
+              <img src="https://assets.superhivemarket.com/cache/1fc0cab7af6ca7de8022208b81e9dfc3.webp" 
+                   alt="Scale decal UVs" class="d-block w-100">
+            </div>
+          </div>
+        </div>
+        <!-- Carousel Item 7 -->
+        <div class="carousel-item">
+          <div class="feature-item">
+            <h3>Bake your decals into textures with Ultibake</h3>
+            <div class="feature-image">
+              <img src="https://assets.superhivemarket.com/cache/5d27e14527e75651dbafc568acbde26f.png" 
+                   alt="Bake decals with Ultibake" class="d-block w-100">
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#featuresCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#featuresCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <!-- How to Use Carousel -->
+    <h1 class="rainbow-text">How to Use</h1>
+    <div id="stepsCarousel" class="carousel slide rounded-carousel mb-3" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <!-- Carousel Step 1 -->
+        <div class="carousel-item active">
+          <div class="step-item">
+            <img src="https://assets.superhivemarket.com/cache/787371203f6e42c45ccb5263a36736f6.png" 
+                 alt="Step 1" class="d-block w-100">
+            <p>Step 1: Initial interface overview.</p>
+          </div>
+        </div>
+        <!-- Carousel Step 2 -->
+        <div class="carousel-item">
+          <div class="step-item">
+            <img src="https://assets.superhivemarket.com/cache/4c7214903625768101b9d12844c9472c.png" 
+                 alt="Step 2" class="d-block w-100">
+            <p>Step 2: Begin decal creation process.</p>
+          </div>
+        </div>
+        <!-- Carousel Step 3 -->
+        <div class="carousel-item">
+          <div class="step-item">
+            <img src="https://assets.superhivemarket.com/cache/8663c2a79915693d122bb086e409aa7e.png" 
+                 alt="Step 3" class="d-block w-100">
+            <p>Step 3: Duplicate or remove decals using keyboard shortcuts.</p>
+          </div>
+        </div>
+        <!-- Carousel Step 4 -->
+        <div class="carousel-item">
+          <div class="step-item">
+            <img src="https://assets.superhivemarket.com/cache/0b8ee1e394e7371fdeb8cf616dbc85b4.png" 
+                 alt="Step 4" class="d-block w-100">
+            <p>Step 4: More detailed usage of the interface.</p>
+          </div>
+        </div>
+        <!-- Carousel Step 5 -->
+        <div class="carousel-item">
+          <div class="step-item">
+            <img src="https://assets.superhivemarket.com/cache/33768a6f9fc80b2b51727ab758521e01.png" 
+                 alt="Step 5" class="d-block w-100">
+            <p>Step 5: Decal creation is performed by clicking the Create Decal button from the Radial Menu using <strong>Ctrl+R</strong> (by default). Remove decals with <strong>X or Del</strong> and duplicate them with <strong>Shift+D</strong>.</p>
+          </div>
+        </div>
+        <!-- Carousel Step 6 -->
+        <div class="carousel-item">
+          <div class="step-item">
+            <img src="https://assets.superhivemarket.com/cache/3ac4d398d8a1cdd40b95e3fccd67f66a.webp" 
+                 alt="Step 6" class="d-block w-100">
+            <p>Step 6: Load the included preset packs to use them.</p>
+          </div>
+        </div>
+        <!-- Carousel Step 7 -->
+        <div class="carousel-item">
+          <div class="step-item">
+            <img src="https://assets.superhivemarket.com/cache/e37f26b6c702b49c7cd3ec9241623ee0.webp" 
+                 alt="Step 7" class="d-block w-100">
+            <p>Step 7: Move the decal to the top by clicking the "Move Stamp to Front" button.</p>
+          </div>
+        </div>
+        <!-- Carousel Step 8 -->
+        <div class="carousel-item">
+          <div class="step-item">
+            <img src="https://assets.superhivemarket.com/cache/6365b4a2bd15f12c8e6b3598ce8423d0.webp" 
+                 alt="Step 8" class="d-block w-100">
+            <p>Step 8: Move decals across materials using the "Move Stamp to Active Material" button.</p>
+          </div>
+        </div>
+        <!-- Carousel Step 9 -->
+        <div class="carousel-item">
+          <div class="step-item">
+            <img src="https://assets.superhivemarket.com/cache/8e8ac9a0e7cd5c148db12f6d8518877b.webp" 
+                 alt="Step 9" class="d-block w-100">
+            <p>Step 9: If you break the material, use the "Fix Stamps" button to fix any stamps on the selected object.</p>
+          </div>
+        </div>
+        <!-- Carousel Step 10 -->
+        <div class="carousel-item">
+          <div class="step-item">
+            <img src="https://assets.superhivemarket.com/cache/a73249a528a64665a077ea7094e83ea5.webp" 
+                 alt="Step 10" class="d-block w-100">
+            <p>Step 10: Final adjustments and confirmations.</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#stepsCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#stepsCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+  </div>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
