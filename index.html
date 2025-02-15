@@ -105,7 +105,7 @@
     .feature-image:not(.bpp-image) {
       position: relative;
       width: 100%;
-      height: 25em;
+      height: 35em;
       overflow: hidden;
     }
     
@@ -113,41 +113,19 @@
     .bpp-image {
       position: relative;
       width: 100%;
-      height: 25em;
+      height: 35em;
       overflow: hidden;
     }
     
-    /* Base image styles for all feature images */
+    /* Base image styles for all feature images with letterboxing instead of cropping */
     .feature-image img,
     .bpp-image img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain; /* Ensures the full image is displayed */
       border-radius: 15px;
-    }
-    
-    /* Default cropping mode is center */
-    .feature-image img,
-    .bpp-image img {
+      background-color: transparent; /* Transparent background instead of black */
       object-position: center;
-    }
-    
-    /* Cropping mode classes */
-    .feature-image.top-left img,
-    .bpp-image.top-left img {
-      object-position: top left;
-    }
-    .feature-image.bottom-left img,
-    .bpp-image.bottom-left img {
-      object-position: bottom left;
-    }
-    .feature-image.top-right img,
-    .bpp-image.top-right img {
-      object-position: top right;
-    }
-    .feature-image.bottom-right img,
-    .bpp-image.bottom-right img {
-      object-position: bottom right;
     }
     
     /* New keyframes for Bake Post Processing images without transitions */
@@ -241,7 +219,7 @@
                 See your baked textures before you bake them!
               </div>
             </div>
-            <div class="feature-image bottom-left">
+            <div class="feature-image">
               <img src="https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/SmartVis.webp" alt="Bake Visualizer">
             </div>
           </div>
@@ -255,7 +233,7 @@
                 Bake entire collections simultaneously.
               </div>
             </div>
-            <div class="feature-image bottom-left">
+            <div class="feature-image">
               <img src="https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/multibake2.webp" alt="Multi Object Baking">
             </div>
           </div>
@@ -298,7 +276,7 @@
                 Bake a different surface property <br> to each channel in the RGBA Channels
               </div>
             </div>
-            <div class="feature-image bottom-left">
+            <div class="feature-image">
               <img src="https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/BakeFinal.webp" alt="Channel Packing">
             </div>
           </div>
@@ -313,7 +291,7 @@
                 Support for decal addons like <a href="https://blendermarket.com/products/ultistamp" target="_blank">UltiStamp</a>
               </div>
             </div>
-            <div class="feature-image bottom-left">
+            <div class="feature-image">
               <img src="https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/Decals1.webp" alt="Decal Baking">
             </div>
           </div>
@@ -327,7 +305,7 @@
                 Transfer surface details from high-poly to low-poly meshes.
               </div>
             </div>
-            <div class="feature-image bottom-left">
+            <div class="feature-image">
               <img src="https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/superman.webp" alt="High to Low Baking">
             </div>
           </div>
@@ -341,7 +319,7 @@
                 Variety of bake types and new ones as well.
               </div>
             </div>
-            <div class="feature-image bottom-left">
+            <div class="feature-image">
               <img src="https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/Baketex.webp" alt="Special Bakes">
             </div>
           </div>
@@ -356,7 +334,7 @@
                 configured in the profile
               </div>
             </div>
-            <div class="feature-image bpp-image top-left">
+            <div class="feature-image bpp-image">
               <img src="https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/PP1.webp" alt="Bake Post Processing Variation 1">
               <img src="https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/PP2.webp" alt="Bake Post Processing Variation 2">
               <img src="https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/PP3.webp" alt="Bake Post Processing Variation 3">
@@ -402,7 +380,7 @@
                 UDIMs are detected automatically from the mesh
               </div>
             </div>
-            <div class="feature-image bottom-left">
+            <div class="feature-image">
               <img src="https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/udim2.webp" alt="UDIMs">
             </div>
           </div>
