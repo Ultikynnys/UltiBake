@@ -65,7 +65,7 @@
       background-size: 100px 100px;
       font-family: 'Outfit', 'Raleway', sans-serif;
       padding: 20px;
-      font-size: 20px; /* Main text size */
+      font-size: 20px;
       color: white;
       text-shadow: 
          -0.1em 0 0 black,
@@ -95,10 +95,21 @@
       overflow: hidden;
       cursor: pointer;
     }
-    /* New rule: Make the video container the same size as the steps window */
+    /* Make the video container the same size as the steps window */
     .rounded-video {
       max-width: 60%;
       margin: 0 auto;
+    }
+    
+    /* Carousel sizing: all carousels have the same dimensions */
+    .rounded-carousel {
+      width: 60%;
+      height: 35em;
+      margin: 0 auto;
+    }
+    /* Ensure inner carousel items fill the container */
+    .carousel-inner > .carousel-item {
+      height: 100%;
     }
     
     /* Feature image container for non-Bake Post Processing items */
@@ -119,12 +130,13 @@
     
     /* Base image styles for all feature images with letterboxing instead of cropping */
     .feature-image img,
-    .bpp-image img {
+    .bpp-image img,
+    .step-item img {
       width: 100%;
       height: 100%;
-      object-fit: contain; /* Ensures the full image is displayed */
+      object-fit: contain;
       border-radius: 15px;
-      background-color: transparent; /* Transparent background instead of black */
+      background-color: transparent;
       object-position: center;
     }
     
@@ -155,6 +167,7 @@
       flex-direction: column;
       justify-content: space-between;
       text-align: center;
+      height: 100%;
     }
     
     /* Fixed-size feature description */
@@ -172,7 +185,7 @@
       display: none;
     }
     
-    /* Styling for the steps carousel */
+    /* Styling for the steps carousel text */
     .step-item {
       text-align: center;
     }
@@ -386,8 +399,6 @@
           </div>
         </div>
       </div>
-      
-      <!-- Entire carousel acts as clickable area -->
     </div>
     
     <h2>Quick Start</h2>
@@ -433,7 +444,7 @@
         </div>
         <div class="carousel-item">
           <div class="step-item">
-            <p>Step 5: Create a copy of your baked object with the textures applied as a material</p>
+            <p>Step 5: Create an export ready copy with Finalize</p>
             <img src="https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/tut4.webp" alt="Step 5">
           </div>
         </div>
@@ -477,24 +488,5 @@
       });
     });
   </script>
-  
-  <!-- Additional styles for step items -->
-  <style>
-    .step-item {
-      text-align: center;
-    }
-    .step-item p {
-      margin-bottom: 10px;
-      font-size: 1.2em;
-    }
-    /* Reduce the size of steps carousel images without cropping them */
-    .step-item img {
-      max-width: 60%;
-      height: auto;
-      object-fit: contain;
-      display: block;
-      margin: 0 auto;
-    }
-  </style>
 </body>
 </html>
