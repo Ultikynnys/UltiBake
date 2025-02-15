@@ -31,17 +31,17 @@
     h1 {
       text-align: center;
       font-family: 'Outfit', 'Raleway', sans-serif;
-      font-size: 2.5rem;
+      font-size: 5rem;
     }
     h2 {
       text-align: center;
       font-family: 'Outfit', 'Raleway', sans-serif;
-      font-size: 3rem;
+      font-size: 4rem;
     }
     h3 {
       text-align: center;
       font-family: 'Outfit', 'Raleway', sans-serif;
-      font-size: 3rem;
+      font-size: 2rem;
     }
     h4 {
       text-align: center;
@@ -61,7 +61,7 @@
     
     /* Main content container with main text styling */
     .content-container {
-      background: url('https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/pattern2.svg') repeat;
+      background: url('https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/pattern3.svg') repeat;
       background-size: 100px 100px;
       font-family: 'Outfit', 'Raleway', sans-serif;
       padding: 20px;
@@ -207,15 +207,15 @@
 <body>
   <div class="content-container">
     
-    <h2>What is Ultibake?</h2>
+    <h1>What is Ultibake?</h1>
     <p>
       <strong>Ultibake</strong> completely revamps Blender's baking process, inspired by Substance Painter and Marmoset Toolbag.
     </p>
     
     <h2>Features</h2>
-    <!-- Features Carousel: 2 items per slide -->
+    <!-- Features Carousel: 1 item per slide -->
     <div id="featuresCarousel" class="carousel slide rounded-carousel features-carousel" data-bs-pause="hover">
-      <!-- Carousel Indicators for 6 slides -->
+      <!-- Carousel Indicators for 12 slides -->
       <div class="carousel-indicators">
         <button type="button" data-bs-target="#featuresCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#featuresCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -223,193 +223,187 @@
         <button type="button" data-bs-target="#featuresCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
         <button type="button" data-bs-target="#featuresCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
         <button type="button" data-bs-target="#featuresCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
+        <button type="button" data-bs-target="#featuresCarousel" data-bs-slide-to="6" aria-label="Slide 7"></button>
+        <button type="button" data-bs-target="#featuresCarousel" data-bs-slide-to="7" aria-label="Slide 8"></button>
+        <button type="button" data-bs-target="#featuresCarousel" data-bs-slide-to="8" aria-label="Slide 9"></button>
+        <button type="button" data-bs-target="#featuresCarousel" data-bs-slide-to="9" aria-label="Slide 10"></button>
+        <button type="button" data-bs-target="#featuresCarousel" data-bs-slide-to="10" aria-label="Slide 11"></button>
+        <button type="button" data-bs-target="#featuresCarousel" data-bs-slide-to="11" aria-label="Slide 12"></button>
       </div>
       
-      <!-- Carousel Inner with slides having 2 features each -->
       <div class="carousel-inner">
-        <!-- Slide 1: Feature 0 & Feature 1 -->
+        <!-- Slide 1: Bake Visualizer -->
         <div class="carousel-item active">
-          <div class="row">
-            <!-- Feature 0: Bake Visualizer (cropped bottom left) -->
-            <div class="col-md-6 p-4 d-flex feature-item">
-              <div class="feature-text">
-                <h3>Bake Visualizer</h3>
-                <div class="feature-description">
-                  See your baked textures before you bake them!
-                </div>
-              </div>
-              <div class="feature-image bottom-left">
-                <img src="https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/SmartVis.webp" alt="Bake Visualizer">
+          <div class="p-4 d-flex feature-item flex-column">
+            <div class="feature-text">
+              <h3>Bake Visualizer</h3>
+              <div class="feature-description">
+                See your baked textures before you bake them!
               </div>
             </div>
-            <!-- Feature 1: Multi Object Baking (default center) -->
-            <div class="col-md-6 p-4 d-flex feature-item">
-              <div class="feature-text">
-                <h3>Multi Object Baking</h3>
-                <div class="feature-description">
-                  Bake entire collections simultaneously.
-                </div>
-              </div>
-              <div class="feature-image bottom-left">
-                <img src="https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/multibake2.webp" alt="Bake Visualizer">
-              </div>
+            <div class="feature-image bottom-left">
+              <img src="https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/SmartVis.webp" alt="Bake Visualizer">
             </div>
           </div>
         </div>
-        
-        <!-- Slide 2: Feature 2 & Feature 3 -->
+        <!-- Slide 2: Multi Object Baking -->
         <div class="carousel-item">
-          <div class="row">
-            <!-- Feature 2: Profiles (default center) -->
-            <div class="col-md-6 p-4 d-flex feature-item">
-              <div class="feature-text">
-                <h3>Profiles</h3>
-                <div class="feature-description">
-                  Create your own bake setup profile.<br>
-                  You can also save/load to external files
-                </div>
-              </div>
-              <div class="feature-image">
-                <img src="https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/ProfileGen.webp" alt="Bake Visualizer">
+          <div class="p-4 d-flex feature-item flex-column">
+            <div class="feature-text">
+              <h3>Multi Object Baking</h3>
+              <div class="feature-description">
+                Bake entire collections simultaneously.
               </div>
             </div>
-            <!-- Feature 3: Multi Texture Baking (default center) -->
-            <div class="col-md-6 p-4 d-flex feature-item">
-              <div class="feature-text">
-                <h3>Multi Texture Baking</h3>
-                <div class="feature-description">
-                  Bake multiple textures with a single click.
-                </div>
-              </div>
-              <div class="feature-image">
-                <img src="https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/HighToLow2X.webp" alt="Bake Visualizer">
-              </div>
+            <div class="feature-image bottom-left">
+              <img src="https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/multibake2.webp" alt="Multi Object Baking">
             </div>
           </div>
         </div>
-        
-        <!-- Slide 3: Feature 4 & Feature 5 -->
+        <!-- Slide 3: Profiles -->
         <div class="carousel-item">
-          <div class="row">
-            <!-- Feature 4: Channel Packing (default center) -->
-            <div class="col-md-6 p-4 d-flex feature-item">
-              <div class="feature-text">
-                <h3>Channel Packing</h3>
-                <div class="feature-description">
-                  Bake a different surface property <br> to each channel in the RGBA Channels
-                </div>
-              </div>
-              <div class="feature-image bottom-left">
-                <img src="https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/BakeFinal.webp" alt="Bake Visualizer">
+          <div class="p-4 d-flex feature-item flex-column">
+            <div class="feature-text">
+              <h3>Profiles</h3>
+              <div class="feature-description">
+                Create your own bake setup profile.<br>
+                You can also save/load to external files
               </div>
             </div>
-            <!-- Feature 5: Decal Baking (default center) -->
-            <div class="col-md-6 p-4 d-flex feature-item">
-              <div class="feature-text">
-                <h3>Decal Baking</h3>
-                <div class="feature-description">
-                  Apply decals to your desired object's surface.<br>
-                  Support for decal addons like <a href="https://blendermarket.com/products/ultistamp" target="_blank">UltiStamp</a>
-                </div>
-              </div>
-              <div class="feature-image bottom-left">
-                <img src="https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/Decals1.webp" alt="Bake Visualizer">
-              </div>
+            <div class="feature-image">
+              <img src="https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/ProfileGen.webp" alt="Profiles">
             </div>
           </div>
         </div>
-        
-        <!-- Slide 4: Feature 6 & Feature 8 -->
+        <!-- Slide 4: Multi Texture Baking -->
         <div class="carousel-item">
-          <div class="row">
-            <!-- Feature 6: High to Low Baking (default center) -->
-            <div class="col-md-6 p-4 d-flex feature-item">
-              <div class="feature-text">
-                <h3>High to Low Baking</h3>
-                <div class="feature-description">
-                  Transfer surface details from high-poly to low-poly meshes.
-                </div>
-              </div>
-              <div class="feature-image bottom-left">
-                <img src="https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/superman.webp" alt="Bake Visualizer">
+          <div class="p-4 d-flex feature-item flex-column">
+            <div class="feature-text">
+              <h3>Multi Texture Baking</h3>
+              <div class="feature-description">
+                Bake multiple textures with a single click.
               </div>
             </div>
-            <!-- Feature 8: Special Bakes (default center) -->
-            <div class="col-md-6 p-4 d-flex feature-item">
-              <div class="feature-text">
-                <h3>Special Bakes</h3>
-                <div class="feature-description">
-                  Variety of bake types and new ones as well.
-                </div>
-              </div>
-              <div class="feature-image bottom-left">
-                <img src="https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/Baketex.webp" alt="Bake Visualizer">
-              </div>
+            <div class="feature-image">
+              <img src="https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/HighToLow2X.webp" alt="Multi Texture Baking">
             </div>
           </div>
         </div>
-        
-        <!-- Slide 5: Feature 10 & Feature 11 -->
+        <!-- Slide 5: Channel Packing -->
         <div class="carousel-item">
-          <div class="row">
-            <!-- Feature 10: Bake Post Processing (cropped top left) -->
-            <div class="col-md-6 p-4 d-flex feature-item">
-              <div class="feature-text">
-                <h3>Bake Post Processing</h3>
-                <div class="feature-description">
-                  Apply antialiasing, denoising, sharpening and <br>
-                  configured in the profile
-                </div>
-              </div>
-              <div class="feature-image bpp-image top-left">
-                <img src="https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/PP1.webp" alt="Bake Post Processing Variation 1">
-                <img src="https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/PP2.webp" alt="Bake Post Processing Variation 2">
-                <img src="https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/PP3.webp" alt="Bake Post Processing Variation 3">
-                <img src="https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/PP4.webp" alt="Bake Post Processing Variation 4">
-                <img src="https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/PP5.webp" alt="Bake Post Processing Variation 5">
+          <div class="p-4 d-flex feature-item flex-column">
+            <div class="feature-text">
+              <h3>Channel Packing</h3>
+              <div class="feature-description">
+                Bake a different surface property <br> to each channel in the RGBA Channels
               </div>
             </div>
-            <!-- Feature 11: UDIMs (default center) -->
-            <div class="col-md-6 p-4 d-flex feature-item">
-              <div class="feature-text">
-                <h3>Finalize</h3>
-                <div class="feature-description">
-                  Automatically setup textures for quick export
-                </div>
-              </div>
-              <div class="feature-image">
-                <img src="https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/finalize.webp" alt="Bake Post Processing Variation 5">
-              </div>
+            <div class="feature-image bottom-left">
+              <img src="https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/BakeFinal.webp" alt="Channel Packing">
             </div>
           </div>
         </div>
-        
-        <!-- Slide 6: Feature 12 & Placeholder -->
+        <!-- Slide 6: Decal Baking -->
         <div class="carousel-item">
-          <div class="row">
-            <!-- Feature 12: Finalize (default center) -->
-            <div class="col-md-6 p-4 d-flex feature-item">
-              <div class="feature-text">
-                <h3>UDIM Visualizer</h3>
-                <div class="feature-description">
-                  See how the resolution will be defined per UDIM tile
-                </div>
-              </div>
-              <div class="feature-image">
-                <img src="https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/udimvis.webp" alt="Bake Post Processing Variation 5">
+          <div class="p-4 d-flex feature-item flex-column">
+            <div class="feature-text">
+              <h3>Decal Baking</h3>
+              <div class="feature-description">
+                Apply decals to your desired object's surface.<br>
+                Support for decal addons like <a href="https://blendermarket.com/products/ultistamp" target="_blank">UltiStamp</a>
               </div>
             </div>
-            <!-- Placeholder column to ensure two items per slide -->
-            <div class="col-md-6 p-4 d-flex feature-item">
-              <div class="feature-text">
-                <h3>UDIMs</h3>
-                <div class="feature-description">
-                  UDIMs are detected automatically from the mesh
-                </div>
+            <div class="feature-image bottom-left">
+              <img src="https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/Decals1.webp" alt="Decal Baking">
+            </div>
+          </div>
+        </div>
+        <!-- Slide 7: High to Low Baking -->
+        <div class="carousel-item">
+          <div class="p-4 d-flex feature-item flex-column">
+            <div class="feature-text">
+              <h3>High to Low Baking</h3>
+              <div class="feature-description">
+                Transfer surface details from high-poly to low-poly meshes.
               </div>
-              <div class="feature-image bottom-left">
-                <img src="https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/udim2.webp" alt="Bake Post Processing Variation 5">
+            </div>
+            <div class="feature-image bottom-left">
+              <img src="https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/superman.webp" alt="High to Low Baking">
+            </div>
+          </div>
+        </div>
+        <!-- Slide 8: Special Bakes -->
+        <div class="carousel-item">
+          <div class="p-4 d-flex feature-item flex-column">
+            <div class="feature-text">
+              <h3>Special Bakes</h3>
+              <div class="feature-description">
+                Variety of bake types and new ones as well.
               </div>
+            </div>
+            <div class="feature-image bottom-left">
+              <img src="https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/Baketex.webp" alt="Special Bakes">
+            </div>
+          </div>
+        </div>
+        <!-- Slide 9: Bake Post Processing -->
+        <div class="carousel-item">
+          <div class="p-4 d-flex feature-item flex-column">
+            <div class="feature-text">
+              <h3>Bake Post Processing</h3>
+              <div class="feature-description">
+                Apply antialiasing, denoising, sharpening and <br>
+                configured in the profile
+              </div>
+            </div>
+            <div class="feature-image bpp-image top-left">
+              <img src="https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/PP1.webp" alt="Bake Post Processing Variation 1">
+              <img src="https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/PP2.webp" alt="Bake Post Processing Variation 2">
+              <img src="https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/PP3.webp" alt="Bake Post Processing Variation 3">
+              <img src="https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/PP4.webp" alt="Bake Post Processing Variation 4">
+              <img src="https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/PP5.webp" alt="Bake Post Processing Variation 5">
+            </div>
+          </div>
+        </div>
+        <!-- Slide 10: Finalize -->
+        <div class="carousel-item">
+          <div class="p-4 d-flex feature-item flex-column">
+            <div class="feature-text">
+              <h3>Finalize</h3>
+              <div class="feature-description">
+                Automatically setup textures for quick export
+              </div>
+            </div>
+            <div class="feature-image">
+              <img src="https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/finalize.webp" alt="Finalize">
+            </div>
+          </div>
+        </div>
+        <!-- Slide 11: UDIM Visualizer -->
+        <div class="carousel-item">
+          <div class="p-4 d-flex feature-item flex-column">
+            <div class="feature-text">
+              <h3>UDIM Visualizer</h3>
+              <div class="feature-description">
+                See how the resolution will be defined per UDIM tile
+              </div>
+            </div>
+            <div class="feature-image">
+              <img src="https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/udimvis.webp" alt="UDIM Visualizer">
+            </div>
+          </div>
+        </div>
+        <!-- Slide 12: UDIMs -->
+        <div class="carousel-item">
+          <div class="p-4 d-flex feature-item flex-column">
+            <div class="feature-text">
+              <h3>UDIMs</h3>
+              <div class="feature-description">
+                UDIMs are detected automatically from the mesh
+              </div>
+            </div>
+            <div class="feature-image bottom-left">
+              <img src="https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/udim2.webp" alt="UDIMs">
             </div>
           </div>
         </div>
@@ -462,7 +456,7 @@
         <div class="carousel-item">
           <div class="step-item">
             <p>Step 5: Create a copy of your baked object with the textures applied as a material</p>
-            <img src="https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/tut4.webp" alt="Step 4">
+            <img src="https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/tut4.webp" alt="Step 5">
           </div>
         </div>
       </div>
