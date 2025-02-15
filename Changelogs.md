@@ -249,7 +249,7 @@
     * Slightly faster bake times
   
 
-## 1.9.0 - Version Increment 15/02/2025
+>## 1.9.0 - Version Increment 15/02/2025
     * Pre-bake Visualizer Added
     * UDIM visualizer added
     * Bake Set Generator Added
