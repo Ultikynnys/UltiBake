@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ultibake Showcase</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Raleway:ital,wght@0,500;1,500&display=swap" rel="stylesheet" />
+  
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  
+  <style>
+    /* Base styling for links with a moving, slightly desaturated rainbow */
+    a {
+      color: rgb(255, 85, 85);
+      font-weight: normal;
+      font-family: 'Outfit', 'Raleway', sans-serif;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    a:hover,
+    a:focus {
+      background-image: linear-gradient(
+        90deg,
+        hsl(0, 50%, 50%),
+        hsl(60, 50%, 50%),
+        hsl(120, 50%, 50%),
+        hsl(180, 50%, 50%),
+        hsl(240, 50%, 50%),
+        hsl(300, 50%, 50%),
+        hsl(360, 50%, 50%)
+      );
+      background-size: 400%;
+      color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+      animation: rainbow 10s linear infinite;
+    }
+    @keyframes rainbow {
+      0% { background-position: 0%; }
+      100% { background-position: 400%; }
+    }
+    a:hover,
+    a:focus {
+      -webkit-text-stroke: 0;
+      text-shadow: none;
+    }
+    
+    /* New rainbow-text class for animated rainbow header */
+    .rainbow-text {
+      background-image: linear-gradient(
+        90deg,
+        hsl(0, 50%, 50%),
+        hsl(60, 50%, 50%),
+        hsl(120, 50%, 50%),
+        hsl(180, 50%, 50%),
+        hsl(240, 50%, 50%),
+        hsl(300, 50%, 50%),
+        hsl(360, 50%, 50%)
+      );
+      background-size: 400%;
+      color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+      animation: rainbow 10s linear infinite;
+      text-shadow: none;
+    }
+    
+    /* Headers with explicit text sizes */
+    h1, h2, h3 {
+      text-align: center;
+      font-family: 'Outfit', 'Raleway', sans-serif;
+    }
+    h1 { font-size: 5rem; }
+    h2 { font-size: 4rem; }
+    h3 { font-size: 2rem; }
+    
+    /* Main content container */
+    .content-container {
+      background-color: white; /* White base color under the background image */
+      background: url('https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/pattern3.svg') repeat;
+      background-size: 100px 100px;
+      font-family: 'Outfit', 'Raleway', sans-serif;
+      padding: 5px;
+      font-size: 20px;
+      color: white;
+      text-shadow: -0.1em 0 0 black, 0.1em 0 0 black, 0 -0.1em 0 black, 0 0.1em 0 black,
+                   -0.07em -0.07em 0 black, 0.07em -0.07em 0 black, -0.07em 0.07em 0 black,
+                   0.07em 0.07em 0 black, 0.07em 0.07em 0.2em rgba(0, 0, 0, 0.7);
+      border-radius: 15px;
+      margin: 0;
+      text-align: center;
+    }
+    
+    /* Paragraph styling */
+    p {
+      font-size: 1.5em;
+      line-height: 1.5;
+    }
+    
+    /* Carousel container styling */
+    .rounded-carousel {
+      border-radius: 15px;
+      overflow: hidden;
+      margin: 2rem auto;
+    }
+  </style>
+</head>
+<body class="bg-dark">
+  <div class="container-fluid my-3 content-container">
+    <!-- Introduction -->
+    <h1>What Is This?</h1>
+    <p>
+      Ultitools is an add-on that includes various tools, showcased below. For any problems or suggestions, join the 
+      <a href="https://discord.gg/Xh7eB5Rn5b" target="_blank" style="font-family:sans-serif; background-color:#ffffff;">
+        Discord channel
+      </a>.
+    </p>
+    
+    <!-- Tools Carousel -->
+    <div id="toolsCarousel" class="carousel slide rounded-carousel" data-bs-interval="false">
+      <div class="carousel-inner">
+        <!-- Palette Manager -->
+        <div class="carousel-item active">
+          <h3>Palette Manager</h3>
+          <p>
+            Switching between colors is truly painful with Blender's current implementation, so I decided to streamline the palette system.
+            I also added the ability to save/load palettes, so you can bring them with you in future projects. (Ctrl+Q for pie menu by default, you can rebind it)
+          </p>
+          <p>
+            <img src="https://assets.superhivemarket.com/cache/17ef9af37a543ec3b6655ab98c9826ec.webp" style="max-width:100%;">
+          </p>
+          <p>
+            <img src="https://assets.superhivemarket.com/cache/43f55ea5fbd33b5baa65e23ee7b0c16d.webp" style="max-width:100%;">
+          </p>
+        </div>
+        
+        <!-- Mesh Analysis -->
+        <div class="carousel-item">
+          <h3>Mesh Analysis</h3>
+          <p>
+            I can't believe this isn't a thing already in Blender, but seeing the state of your mesh with all its glorious problems
+            is a feature I couldn't go without.
+          </p>
+          <p>
+            <img src="https://assets.superhivemarket.com/cache/b3d436e308da970b07f9b75bc58b1245.webp" style="max-width:100%; width:100%;">
+          </p>
+          <p>Yes, it does detect overlapping faces as well.</p>
+          <p>
+            <img src="https://assets.superhivemarket.com/cache/17efa55d893e825110c3c0946ee9112c.webp" style="max-width:100%;">
+          </p>
+          <p>
+            <img src="https://assets.superhivemarket.com/cache/3180cc7296217e29fdd9ecada277808f.png" style="max-width:100%; width:50%;">
+          </p>
+        </div>
+        
+        <!-- Portfolio Renderer -->
+        <div class="carousel-item">
+          <h3>Portfolio Renderer</h3>
+          <p>
+            I spent countless hours setting up the wireframe render for my projects, so this tool automates the entire process,
+            including configuring the text, font, size, and material settings for AO and wireframe renders.
+          </p>
+          <p>
+            <img src="https://assets.superhivemarket.com/cache/55e942007fb84f2f87277e3497b4e483.webp" style="max-width:100%; width:100%;">
+          </p>
+        </div>
+        
+        <!-- 3D LUT Generator -->
+        <div class="carousel-item">
+          <h3>3D LUT Generator</h3>
+          <p>
+            A surprisingly useful tool if you use 3D LUTs in your projects. Since various engines and platforms have different formats
+            and requirements, this generator can be invaluable for any color correction tasks.
+          </p>
+          <p>
+            <img src="https://assets.superhivemarket.com/cache/8a9185f04e83e0e62f63ffaf623e6e8a.webp" style="max-width:100%; width:100%;">
+          </p>
+          <p>
+            There is also a 3D LUT visualizer, allowing you to see how it affects your target color space. (I use Krita to embed color transformations into the 3D LUT)
+          </p>
+          <p>
+            <img src="https://assets.superhivemarket.com/cache/9b8222c0142c8413d5f0781fe0fa02d4.webp" style="max-width:100%; width:100%;">
+          </p>
+        </div>
+        
+        <!-- Sprite Sheet Creation -->
+        <div class="carousel-item">
+          <h3>Sprite Sheet Creation</h3>
+          <p>
+            As the name implies, this tool takes all the frames of the camera and stitches them into a single texture.
+            It is a very useful tool for anyone looking to create sprite animations.
+          </p>
+          <p>
+            <img src="https://assets.superhivemarket.com/cache/37452227a0e0d91b99d23a853aacacc4.webp" style="max-width:100%; width:100%;">
+          </p>
+        </div>
+        
+        <!-- Text Animation -->
+        <div class="carousel-item">
+          <h3>Text Animation</h3>
+          <p>
+            One of the most underrated tools in the add-on. Simply toggle and keyframe different texts on your text object (stored per text object).
+          </p>
+          <p>
+            <img src="https://assets.superhivemarket.com/cache/e270f2e1ff7c4e3358662a3a9f016c6e.webp" style="max-width:100%; width:100%;">
+          </p>
+          <p>
+            It even supports dynamic expressions and mathematical operations, requiring brackets <b>{}</b> for math expressions.
+          </p>
+          <p>
+            <img src="https://assets.superhivemarket.com/cache/2836b2a78da82b8f6235b01acdb21253.webp" style="max-width:100%; width:100%;">
+          </p>
+          <p>
+            Copy the settings to your selected text objects for reusability.
+          </p>
+          <p>
+            <img src="https://assets.superhivemarket.com/cache/7da51768dad7e82f31a82583fb0afb80.webp" style="max-width:100%; width:100%;">
+          </p>
+        </div>
+        
+        <!-- UV++ -->
+        <div class="carousel-item">
+          <h3>UV++</h3>
+          <p>
+            Better UV layer controls—you can finally rearrange the UV layers, create a copy from a specific UV layer, and even copy the UV layout to selected objects
+            (sadly, Blender's internal UV layer data transfer is broken).
+          </p>
+          <p>
+            <img src="https://assets.superhivemarket.com/cache/9df02db79a4411be127e88d1fa53dcef.webp" style="max-width:100%; width:100%;">
+          </p>
+        </div>
+        
+        <!-- Game Ready FBX Exporter -->
+        <div class="carousel-item">
+          <h3>Game Ready FBX Exporter</h3>
+          <p>
+            If I could count how many times I've had to struggle with the built-in exporter, I would be a millionaire.
+            Since I use Unity and Unreal in my game development projects, I need a reliable tool for my models.
+          </p>
+          <ul style="text-align: left; display: inline-block;">
+            <li><b>Game Engine-Friendly Default Settings</b> (the default FBX exporter has too many options to configure that I forget to setup correctly)</li>
+            <li><b>Unreal Animation Scale Fix</b> (even in 2024, the Blender FBX exporter doesn't fix the animation scale problem that occurs only in Unreal)</li>
+            <li><b>Move Objects to Origin</b> (very useful since the actual placement of props happens in the engine anyway)</li>
+            <li><b>Action Selector</b> (ability to choose which actions are embedded into the FBX file)</li>
+            <li><b>Remove Materials Toggle</b> (since removing material slots is not possible in Unity or Unreal)</li>
+            <li><b>Combine to Active</b> (only relevant to Unity since Unreal does this internally; basically combines each individual object into a single object)</li>
+          </ul>
+          <p>
+            <img src="https://assets.superhivemarket.com/cache/67fdca5e9df4ea0f00332ee827880d4a.webp" style="max-width:100%; width:100%;">
+          </p>
+          <p>
+            The exporter comes in two different versions, depending on whether it’s animated or not.
+          </p>
+          <p>
+            <img src="https://assets.superhivemarket.com/cache/3bbd3f6b73844e35d462fdf1069adefe.webp" style="max-width:100%; width:100%;">
+          </p>
+        </div>
+        
+        <!-- Miscellaneous Tools | Capsule -->
+        <div class="carousel-item">
+          <h3>Miscellaneous Tools | Capsule</h3>
+          <p>This is a great mesh for creating character pose blockouts.</p>
+          <p>
+            <img src="https://assets.superhivemarket.com/cache/5b7214b2c3f0548cd9c96e58f906bd10.webp" style="max-width:100%; width:100%;">
+          </p>
+        </div>
+        
+        <!-- Miscellaneous Tools | Symmetrize Color Attributes -->
+        <div class="carousel-item">
+          <h3>Miscellaneous Tools | Symmetrize Color Attributes</h3>
+          <p>For when you forget to enable paint mirroring.</p>
+          <p>
+            <img src="https://assets.superhivemarket.com/cache/08627214f5ba3fe543d9550c9d1f103b.webp" style="max-width:100%; width:100%;">
+          </p>
+        </div>
+        
+        <!-- Miscellaneous Tools | Symmetrize Vertex Groups -->
+        <div class="carousel-item">
+          <h3>Miscellaneous Tools | Symmetrize Vertex Groups</h3>
+          <p>For when you forget to enable vertex mirroring.</p>
+          <p>
+            <img src="https://assets.superhivemarket.com/cache/e2e17a1f1b25b10ebb18a0e03c57e930.webp" style="max-width:100%; width:100%;">
+          </p>
+        </div>
+        
+        <!-- Miscellaneous Tools | Average Selected Vertices -->
+        <div class="carousel-item">
+          <h3>Miscellaneous Tools | Average Selected Vertices</h3>
+          <p>
+            A tool to fix weighting issues by recalculating the selected vertices based on the surrounding vertices.
+          </p>
+          <p>
+            <img src="https://assets.superhivemarket.com/cache/08c62fb049f7b20d0d53a40cc7423d54.webp" style="max-width:100%; width:100%;">
+          </p>
+        </div>
+        
+        <!-- Miscellaneous Tools | Copy Active Vertex Weights -->
+        <div class="carousel-item">
+          <h3>Miscellaneous Tools | Copy Active Vertex Weights</h3>
+          <p>
+            A tool to fix weighting issues by copying weights from the active vertex to selected vertices.
+            (Yes, it already exists, but now it's in a more convenient location.)
+          </p>
+          <p>
+            <img src="https://assets.superhivemarket.com/cache/cc8828075d98ef4d1108bd545d083800.webp" style="max-width:100%; width:100%;">
+          </p>
+        </div>
+        
+        <!-- Miscellaneous Tools | Save/Load Sculpt Masks -->
+        <div class="carousel-item">
+          <h3>Miscellaneous Tools | Save/Load Sculpt Masks</h3>
+          <p>
+            Saving and loading sculpt masks is very useful, as you can perform various operations on the vertex groups and apply them as sculpt masks.
+          </p>
+          <p>
+            <img src="https://assets.superhivemarket.com/cache/74e99e5b800e430e8af78cca727823b4.webp" style="max-width:100%; width:100%;">
+          </p>
+        </div>
+        
+        <!-- Miscellaneous Tools | Edit Mode Selection to Sculpt Mask -->
+        <div class="carousel-item">
+          <h3>Miscellaneous Tools | Edit Mode Selection to Sculpt Mask</h3>
+          <p>Self-explanatory.</p>
+          <p>
+            <img src="https://assets.superhivemarket.com/cache/778499f2ae8603dcd55ba61048a91187.webp" style="max-width:100%; width:100%;">
+          </p>
+        </div>
+      </div>
+      <!-- Carousel Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#toolsCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#toolsCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    
+  </div>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Debug snippet to print the vertical height of the page -->
+  <script>
+    window.addEventListener('load', function() {
+      const verticalHeight = document.documentElement.scrollHeight;
+      console.log("Vertical height of the page: " + verticalHeight + "px");
+    });
+  </script>
+</body>
+</html>
