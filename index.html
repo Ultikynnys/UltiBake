@@ -14,185 +14,256 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   
   <style>
-    /* Base styling for links */
-    a {
-      background: none;
-      font-weight: normal;
-      font-family: 'Outfit', 'Raleway', sans-serif;
-      color: white;
-      text-decoration: none;
-    }
-    a:hover, a:focus {
-      -webkit-text-stroke: 0;
-      text-shadow: none;
-    }
-    
-    /* Headers with explicit text sizes */
-    h1 {
-      text-align: center;
-      font-family: 'Outfit', 'Raleway', sans-serif;
-      font-size: 5rem;
-    }
-    h2 {
-      text-align: center;
-      font-family: 'Outfit', 'Raleway', sans-serif;
-      font-size: 4rem;
-    }
-    h3 {
-      text-align: center;
-      font-family: 'Outfit', 'Raleway', sans-serif;
-      font-size: 2rem;
-    }
-    h4 {
-      text-align: center;
-      font-family: 'Outfit', 'Raleway', sans-serif;
-      font-size: 2rem;
-    }
-    h5 {
-      text-align: center;
-      font-family: 'Outfit', 'Raleway', sans-serif;
-      font-size: 1.25rem;
-    }
-    h6 {
-      text-align: center;
-      font-family: 'Outfit', 'Raleway', sans-serif;
-      font-size: 1rem;
-    }
-    
-    /* Main content container with main text styling */
-    .content-container {
-      background: url('https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/pattern3.svg') repeat;
-      background-size: 100px 100px;
-      font-family: 'Outfit', 'Raleway', sans-serif;
-      padding: 20px;
-      font-size: 20px;
-      color: white;
-      text-shadow: 
-         -0.1em 0 0 black,
-          0.1em 0 0 black,
-          0 -0.1em 0 black,
-          0 0.1em 0 black,
-         -0.07em -0.07em 0 black,
-          0.07em -0.07em 0 black,
-         -0.07em  0.07em 0 black,
-          0.07em  0.07em 0 black,
-          0.07em  0.07em 0.2em rgba(0,0,0,0.7);
-      border-radius: 15px;
-      margin: 20px;
-      text-align: center;
-    }
-    
-    /* Paragraph styling for main text */
-    p {
-      font-size: 1.5em;
-      line-height: 1.5;
-    }
-    
-    /* Rounded containers */
-    .rounded-video,
-    .rounded-carousel {
-      border-radius: 15px;
-      overflow: hidden;
-      cursor: pointer;
-    }
-    /* Make the video container the same size as the steps window */
-    .rounded-video {
-      max-width: 60%;
-      margin: 0 auto;
-    }
-    
-    /* Carousel sizing: all carousels have the same dimensions */
-    .rounded-carousel {
-      width: 60%;
-      height: 35em;
-      margin: 0 auto;
-    }
-    /* Ensure inner carousel items fill the container */
-    .carousel-inner > .carousel-item {
-      height: 100%;
-    }
-    
-    /* Feature image container for non-Bake Post Processing items */
-    .feature-image:not(.bpp-image) {
-      position: relative;
-      width: 100%;
-      height: 35em;
-      overflow: hidden;
-    }
-    
-    /* Bake Post Processing container */
-    .bpp-image {
-      position: relative;
-      width: 100%;
-      height: 35em;
-      overflow: hidden;
-    }
-    
-    /* Base image styles for all feature images with letterboxing instead of cropping */
-    .feature-image img,
-    .bpp-image img,
-    .step-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      border-radius: 15px;
-      background-color: transparent;
-      object-position: center;
-    }
-    
-    /* New keyframes for Bake Post Processing images without transitions */
-    @keyframes cycleNoTransition {
-      0%, 20% { opacity: 1; }
-      20.01%, 100% { opacity: 0; }
-    }
-    
-    /* Apply the new animation to BPP images */
-    .bpp-image img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      opacity: 0;
-      animation: cycleNoTransition 5s steps(1, end) infinite;
-    }
-    /* Adjust delays so that the 5 images cycle evenly over 5s */
-    .bpp-image img:nth-child(1) { animation-delay: 0s; }
-    .bpp-image img:nth-child(2) { animation-delay: 1s; }
-    .bpp-image img:nth-child(3) { animation-delay: 2s; }
-    .bpp-image img:nth-child(4) { animation-delay: 3s; }
-    .bpp-image img:nth-child(5) { animation-delay: 4s; }
-    
-    /* Layout for feature items */
-    .feature-item {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      text-align: center;
-      height: 100%;
-    }
-    
-    /* Fixed-size feature description */
-    .feature-description {
-      width: 100%;
-      height: 3em;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-    }
-    
-    /* Hide carousel navigation controls */
-    .carousel-control-prev, .carousel-control-next {
-      display: none;
-    }
-    
-    /* Styling for the steps carousel text */
-    .step-item {
-      text-align: center;
-    }
-    .step-item p {
-      margin-bottom: 10px;
-      font-size: 1.2em;
-    }
+/* Base styling for links with a moving, slightly desaturated rainbow */
+/* Base styling: white text when not hovered */
+a {
+  color: rgb(255, 85, 85);
+  font-weight: normal;
+  font-family: 'Outfit', 'Raleway', sans-serif;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+/* On hover/focus, apply the animated, slightly desaturated rainbow */
+a:hover,
+a:focus {
+  background-image: linear-gradient(
+    90deg,
+    hsl(0, 50%, 50%),
+    hsl(60, 50%, 50%),
+    hsl(120, 50%, 50%),
+    hsl(180, 50%, 50%),
+    hsl(240, 50%, 50%),
+    hsl(300, 50%, 50%),
+    hsl(360, 50%, 50%)
+  );
+  background-size: 400%;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: rainbow 10s linear infinite;
+}
+
+@keyframes rainbow {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 400%;
+  }
+}
+
+
+a:hover,
+a:focus {
+  -webkit-text-stroke: 0;
+  text-shadow: none;
+}
+
+/* Headers with explicit text sizes */
+h1 {
+  text-align: center;
+  font-family: 'Outfit', 'Raleway', sans-serif;
+  font-size: 5rem;
+}
+h2 {
+  text-align: center;
+  font-family: 'Outfit', 'Raleway', sans-serif;
+  font-size: 4rem;
+}
+h3 {
+  text-align: center;
+  font-family: 'Outfit', 'Raleway', sans-serif;
+  font-size: 2rem;
+}
+h4 {
+  text-align: center;
+  font-family: 'Outfit', 'Raleway', sans-serif;
+  font-size: 2rem;
+}
+h5 {
+  text-align: center;
+  font-family: 'Outfit', 'Raleway', sans-serif;
+  font-size: 1.25rem;
+}
+h6 {
+  text-align: center;
+  font-family: 'Outfit', 'Raleway', sans-serif;
+  font-size: 1rem;
+}
+
+/* Main content container */
+.content-container {
+  background: url('https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/pattern3.svg')
+    repeat;
+  background-size: 100px 100px;
+  font-family: 'Outfit', 'Raleway', sans-serif;
+  padding: 5px;
+  font-size: 20px;
+  color: white;
+  text-shadow: -0.1em 0 0 black, 0.1em 0 0 black, 0 -0.1em 0 black, 0 0.1em 0 black,
+    -0.07em -0.07em 0 black, 0.07em -0.07em 0 black, -0.07em 0.07em 0 black,
+    0.07em 0.07em 0 black, 0.07em 0.07em 0.2em rgba(0, 0, 0, 0.7);
+  border-radius: 15px;
+  margin: 0;
+  text-align: center;
+}
+
+/* Paragraph styling */
+p {
+  font-size: 1.5em;
+  line-height: 1.5;
+}
+
+/* Rounded containers */
+.rounded-video,
+.rounded-carousel {
+  border-radius: 15px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.rounded-video {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* Carousel sizing for feature carousel */
+.rounded-carousel {
+  width: 100%;
+  height: 30em;
+  margin: 0;
+}
+.carousel-inner > .carousel-item {
+  height: 50%;
+}
+
+/* ------------------------------------------------------------------ */
+/* Combined Carousel Item Styling for Feature and Step Carousels      */
+/* ------------------------------------------------------------------ */
+
+/* Both feature and step items will use the same flex layout */
+.feature-item,
+.step-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5em;
+  text-align: center;
+}
+
+/* Combined text styling for both carousels */
+.feature-text,
+.step-item p {
+  margin-bottom: 0.5em;
+}
+
+/* ------------------------------------------------------------------ */
+/* Combined Image Styling for Carousels                             */
+/* ------------------------------------------------------------------ */
+
+/* For feature items, images are wrapped in a container.
+   For step items, the image is directly inside the item.
+   We use a container style only for feature images. */
+.feature-image:not(.bpp-image) {
+  position: relative;
+  width: 100%;
+  height: 35em;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+/* BPP image container remains unchanged */
+.bpp-image {
+  position: relative;
+  width: 100%;
+  height: 35em;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+/* Both feature (non-BPP) images and step images share these rules */
+.feature-image:not(.bpp-image) img,
+.step-item img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  object-position: top center;
+  border-radius: 15px;
+  background-color: transparent;
+}
+
+/* BPP images with animation */
+.bpp-image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  animation: cycleNoTransition 5s steps(1, end) infinite;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 15px;
+  background-color: transparent;
+  object-position: center;
+}
+
+/* Keyframes for BPP images animation */
+@keyframes cycleNoTransition {
+  0%, 20% {
+    opacity: 1;
+  }
+  20.01%, 100% {
+    opacity: 0;
+  }
+}
+
+/* Animation delays for BPP images */
+.bpp-image img:nth-child(1) {
+  animation-delay: 0s;
+}
+.bpp-image img:nth-child(2) {
+  animation-delay: 1s;
+}
+.bpp-image img:nth-child(3) {
+  animation-delay: 2s;
+}
+.bpp-image img:nth-child(4) {
+  animation-delay: 3s;
+}
+.bpp-image img:nth-child(5) {
+  animation-delay: 4s;
+}
+
+/* ------------------------------------------------------------------ */
+/* Custom styling for Steps Carousel                                */
+/* ------------------------------------------------------------------ */
+
+/* Override fixed heights so the steps carousel fits its content */
+#stepsCarousel {
+  height: auto !important;
+}
+
+#stepsCarousel .carousel-inner > .carousel-item {
+  height: auto !important;
+}
+
+/* Position the step carousel indicators at the bottom of the image */
+#stepsCarousel .carousel-indicators {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  padding: 0;
+  z-index: 15;
+}
   </style>
 </head>
 <body>
