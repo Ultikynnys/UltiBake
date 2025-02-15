@@ -14,6 +14,11 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   
   <style>
+    /* Universal text stroke for all text */
+    * {
+      -webkit-text-stroke: 1px black;
+    }
+    
     /* Base styling */
     body {
       background-color: #111;
@@ -33,6 +38,13 @@
     }
     p {
       text-align: center;
+    }
+    /* Under Construction Notice */
+    .under-construction {
+      color: red;
+      text-align: center;
+      font-size: 1.2rem;
+      margin-bottom: 20px;
     }
     /* Styling for carousel items */
     .carousel-item {
@@ -65,17 +77,22 @@
       width: 100%;
       height: 100%;
     }
+    /* Add padding to carousels */
+    .carousel {
+      padding: 20px;
+    }
   </style>
 </head>
 <body>
   <div class="content-container">
     <h1>Ultibake Documentation</h1>
+    <p class="under-construction">This page is under construction.</p>
     <p>Welcome to the Ultibake documentation page. Explore the different baking techniques below.</p>
     
     <!-- Decal Baking Carousel -->
     <section class="my-5">
       <h2>Decal Baking</h2>
-      <div id="carouselDecalBaking" class="carousel slide" data-bs-ride="carousel">
+      <div id="carouselDecalBaking" class="carousel slide">
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#carouselDecalBaking" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
           <button type="button" data-bs-target="#carouselDecalBaking" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -90,7 +107,7 @@
           <div class="carousel-item">
             <div class="item-text">Decal Baking Tutorial Video</div>
             <div class="video-container">
-              <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Decal Baking Video" frameborder="0" allowfullscreen></iframe>
+              <iframe src="https://www.youtube.com/embed/aqz-KE-bpKQ" title="Decal Baking Video" frameborder="0" allowfullscreen></iframe>
             </div>
           </div>
         </div>
@@ -108,7 +125,7 @@
     <!-- High to Low Baking Carousel -->
     <section class="my-5">
       <h2>High to Low Baking</h2>
-      <div id="carouselHighToLow" class="carousel slide" data-bs-ride="carousel">
+      <div id="carouselHighToLow" class="carousel slide">
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#carouselHighToLow" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
           <button type="button" data-bs-target="#carouselHighToLow" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -123,7 +140,7 @@
           <div class="carousel-item">
             <div class="item-text">High to Low Baking Tutorial Video</div>
             <div class="video-container">
-              <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="High to Low Baking Video" frameborder="0" allowfullscreen></iframe>
+              <iframe src="https://www.youtube.com/embed/aqz-KE-bpKQ" title="High to Low Baking Video" frameborder="0" allowfullscreen></iframe>
             </div>
           </div>
         </div>
@@ -141,7 +158,7 @@
     <!-- Multi Object Baking Carousel -->
     <section class="my-5">
       <h2>Multi Object Baking</h2>
-      <div id="carouselMultiObject" class="carousel slide" data-bs-ride="carousel">
+      <div id="carouselMultiObject" class="carousel slide">
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#carouselMultiObject" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
           <button type="button" data-bs-target="#carouselMultiObject" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -156,7 +173,7 @@
           <div class="carousel-item">
             <div class="item-text">Multi Object Baking Tutorial Video</div>
             <div class="video-container">
-              <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Multi Object Baking Video" frameborder="0" allowfullscreen></iframe>
+              <iframe src="https://www.youtube.com/embed/aqz-KE-bpKQ" title="Multi Object Baking Video" frameborder="0" allowfullscreen></iframe>
             </div>
           </div>
         </div>
@@ -174,7 +191,7 @@
     <!-- Special Bake Types Carousel -->
     <section class="my-5">
       <h2>Special Bake Types</h2>
-      <div id="carouselSpecialBake" class="carousel slide" data-bs-ride="carousel">
+      <div id="carouselSpecialBake" class="carousel slide">
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#carouselSpecialBake" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
           <button type="button" data-bs-target="#carouselSpecialBake" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -189,7 +206,7 @@
           <div class="carousel-item">
             <div class="item-text">Special Bake Types Tutorial Video</div>
             <div class="video-container">
-              <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Special Bake Types Video" frameborder="0" allowfullscreen></iframe>
+              <iframe src="https://www.youtube.com/embed/aqz-KE-bpKQ" title="Special Bake Types Video" frameborder="0" allowfullscreen></iframe>
             </div>
           </div>
         </div>
