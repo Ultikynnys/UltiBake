@@ -391,7 +391,7 @@ p {
         <div class="carousel-item">
           <div class="p-4 d-flex feature-item flex-column">
             <div class="feature-text">
-              <h3 >Decal Baking</h3>
+              <h3>Decal Baking</h3>
               <div class="feature-description">
                 Apply decals to your desired object's surface.<br>
                 Support for decal addons like <a href="https://blendermarket.com/products/ultistamp" target="_blank">UltiStamp</a>
@@ -406,7 +406,7 @@ p {
         <div class="carousel-item">
           <div class="p-4 d-flex feature-item flex-column">
             <div class="feature-text">
-              <h3 >High to Low Baking</h3>
+              <h3>High to Low Baking</h3>
               <div class="feature-description">
                 Transfer surface details from high-poly to low-poly meshes.
               </div>
@@ -416,11 +416,11 @@ p {
             </div>
           </div>
         </div>
-        <!-- Slide 9: Bake Post Processing -->
+        <!-- Slide 8: Bake Post Processing -->
         <div class="carousel-item">
           <div class="p-4 d-flex feature-item flex-column">
             <div class="feature-text">
-              <h3 >Bake Post Processing</h3>
+              <h3>Bake Post Processing</h3>
               <div class="feature-description">
                 Apply antialiasing, denoising, sharpening and <br>
                 configured in the profile
@@ -431,11 +431,11 @@ p {
             </div>
           </div>
         </div>
-        <!-- Slide 10: Finalize -->
+        <!-- Slide 9: Finalize -->
         <div class="carousel-item">
           <div class="p-4 d-flex feature-item flex-column">
             <div class="feature-text">
-              <h3 >Finalize</h3>
+              <h3>Finalize</h3>
               <div class="feature-description">
                 Automatically setup textures for quick export
               </div>
@@ -445,11 +445,11 @@ p {
             </div>
           </div>
         </div>
-        <!-- Slide 11: UDIM Visualizer -->
+        <!-- Slide 10: UDIM Visualizer -->
         <div class="carousel-item">
           <div class="p-4 d-flex feature-item flex-column">
             <div class="feature-text">
-              <h3 >UDIM Visualizer</h3>
+              <h3>UDIM Visualizer</h3>
               <div class="feature-description">
                 See how the resolution will be defined per UDIM tile
               </div>
@@ -459,11 +459,11 @@ p {
             </div>
           </div>
         </div>
-        <!-- Slide 12: UDIMs -->
+        <!-- Slide 11: UDIMs -->
         <div class="carousel-item">
           <div class="p-4 d-flex feature-item flex-column">
             <div class="feature-text">
-              <h3 >UDIMs</h3>
+              <h3>UDIMs</h3>
               <div class="feature-description">
                 UDIMs are detected automatically from the mesh UVs
               </div>
@@ -485,7 +485,7 @@ p {
       </button>
     </div>   
   
-    <h2 >Simple to use</h2>
+    <h2>Simple to use</h2>
     <!-- Steps Carousel -->
     <div id="stepsCarousel" class="carousel slide rounded-carousel" data-bs-pause="hover">
       <div class="carousel-indicators">
@@ -538,13 +538,56 @@ p {
       </button>
     </div>
     
-    <h2 >Documentation</h2>
-    <p>Access the add-on's documentation, including videos and detailed explanations:</p>
-    <p>
-      <a href="" target="_blank">Ultibake Documentation[Under Construction]</a>
-    </p>
+    <!-- REPLACED the old Documentation section with this new Video Carousel -->
+    <h2>Documentation</h2>
+    <div id="documentationCarousel" class="carousel slide rounded-carousel" data-bs-pause="hover">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#documentationCarousel" data-bs-slide-to="0" class="active" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#documentationCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      </div>
+      <div class="carousel-inner">
+        <!-- Slide 1: Quick start Video -->
+        <div class="carousel-item active">
+          <div class="p-4 d-flex flex-column align-items-center">
+            <h3>Quick start</h3>
+            <!-- Use a responsive "ratio" container for YouTube -->
+            <div class="ratio ratio-16x9" style="max-width: 800px;">
+              <iframe 
+                src="https://www.youtube.com/embed/_gE_KFakj5Q" 
+                title="Quick start" 
+                frameborder="0" 
+                allowfullscreen>
+              </iframe>
+            </div>
+          </div>
+        </div>
+        <!-- Slide 2: High to Low + Decals Video -->
+        <div class="carousel-item">
+          <div class="p-4 d-flex flex-column align-items-center">
+            <h3>High to Low + Decals</h3>
+            <div class="ratio ratio-16x9" style="max-width: 800px;">
+              <iframe 
+                src="https://www.youtube.com/embed/5VbmDDsLJUQ" 
+                title="High to Low + Decals" 
+                frameborder="0" 
+                allowfullscreen>
+              </iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Carousel Controls for Documentation Carousel -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#documentationCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#documentationCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
     
-    <h2 >Support</h2>
+    <h2>Support</h2>
     <p>If you have any questions, issues, or suggestions, join our Discord group:</p>
     <p>
       <a href="https://discord.gg/Pm7TDf2rV5" target="_blank">https://discord.gg/Pm7TDf2rV5</a>
