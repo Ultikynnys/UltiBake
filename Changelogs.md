@@ -258,3 +258,6 @@
     * Normalized Position baking now can be split to R G B channels
     * Bake progress now visible inside Blender
     * Added Ability to stop the bake on non-Windows Machines with ESC
+
+>## 1.9.2 - Hotfix 16/02/2025
+    * diffuse baking with broken normal fixed
