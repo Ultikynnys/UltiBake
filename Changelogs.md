@@ -261,3 +261,7 @@
 
 >## 1.9.2 - Hotfix 16/02/2025
     * diffuse baking with broken normal fixed
+
+
+>## 1.9.4 - Hotfix 16/02/2025
+    * antialias no longer makes alpha channel bakes darker
