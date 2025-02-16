@@ -265,3 +265,8 @@
 
 >## 1.9.4 - Hotfix 16/02/2025
     * antialias no longer makes alpha channel bakes darker
+
+
+>## 1.9.11 - Hotfix 17/02/2025
+    * Normal map baking works fine now
+    * Decals to Low baking works without high object now
