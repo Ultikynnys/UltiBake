@@ -270,3 +270,7 @@
 >## 1.9.11 - Hotfix 17/02/2025
     * Normal map baking works fine now
     * Decals to Low baking works without high object now
+
+
+>## 1.9.12 - Hotfix 18/02/2025
+    * Decal baking doesn't suffer from cage distortions
