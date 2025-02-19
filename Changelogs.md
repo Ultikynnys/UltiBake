@@ -274,3 +274,7 @@
 
 >## 1.9.12 - Hotfix 18/02/2025
     * Decal baking doesn't suffer from cage distortions
+
+
+>## 1.9.14 - Hotfix 18/02/2025
+    * mesh data reset for invalid decals result better decal stability
