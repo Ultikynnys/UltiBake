@@ -23,6 +23,10 @@
       transition: all 0.3s ease;
     }
 
+    ul.mb-3 li {
+  margin-bottom: 1rem; /* Adjust the value as needed */
+}
+
     a:hover,
     a:focus {
       background-image: linear-gradient(
@@ -52,6 +56,8 @@
       -webkit-text-stroke: 0;
       text-shadow: none;
     }
+
+
 
     /* New rainbow-text class for animated rainbow header */
     .rainbow-text {
@@ -214,11 +220,11 @@
     <h2 class="rainbow-text">What Is This?</h2>
     <p>A projection-based Decal add-on that includes more than 100 presets for most use cases.</p>
     <!-- Removed auto-scrolling attribute (data-bs-ride) -->
-    <div id="introCarousel" class="carousel slide rounded-carousel mb-3">
+    <div id="introCarousel" class="carousel slide rounded-carousel mb-3 mx-auto" style="width: 100%;">
       <div class="carousel-inner">
         <div class="carousel-item active">
           <img src="https://assets.superhivemarket.com/cache/037a4ef518d6f4627dc92b17af27f4cc.webp" 
-               alt="Decal add-on preview" class="d-block w-0">
+               alt="Decal add-on preview" class="d-block w-100">
         </div>
       </div>
     </div>
