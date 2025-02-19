@@ -1,7 +1,7 @@
 >## 1.1.0 - INITIAL PUBLIC RELEASE
     * WOOOOO
 
-    
+
 >## 1.1.1 - Feature
     * Timeline controls
 
@@ -34,7 +34,7 @@
     * selection error fixes
     * shape key support
 
->## 1.2.20 - 1/3/2025 Big Update
+>## 1.2.20 - 2/19/2025 Big Update
     * UI rework
     * Added Action Snap
     * Added Animation Clamp
