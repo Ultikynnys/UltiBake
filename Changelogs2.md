@@ -1,5 +1,3 @@
-# Changelogs
-
 >## 1.1.0 - INITIAL PUBLIC RELEASE
 
 >## 1.1.1 - Feature
@@ -34,7 +32,6 @@
     * selection error fixes
     * shape key support
 
-
 >## 1.2.20 - 1/3/2025 Big Update
     * UI rework
     * Added Action Snap
@@ -43,4 +40,3 @@
     * Added Motion Path toggle
     * Added In-place Pose mirroring(Way to mirror stuff that doesn't have a left or right side)
     * fixed various bugs
-    * 
