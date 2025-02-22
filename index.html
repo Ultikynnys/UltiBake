@@ -137,7 +137,7 @@
     }
 
     p {
-      font-size: 1.5em;
+      font-size: 1em;
       line-height: 1.5;
     }
 
@@ -170,7 +170,6 @@
       flex-direction: column;
       justify-content: flex-start;
       align-items: center;
-      gap: 0.5em;
       text-align: center;
     }
     .feature-text,
@@ -220,7 +219,7 @@
     }
 
     /* Carousel control buttons using variables */
-    .carousel-control-prev,
+    .carousel-control-prev, 
     .carousel-control-next {
       width: var(--control-width);
       opacity: 0.8;
@@ -288,7 +287,7 @@
       <div class="carousel-inner">
         <!-- Slide 1: Bake Visualizer -->
         <div class="carousel-item active">
-          <div class="p-4 d-flex feature-item flex-column">
+          <div class="py-4 px-0 d-flex feature-item flex-column">
             <div class="feature-text">
               <h3>Bake Visualizer</h3>
               <p>See your baked textures before you bake them!</p>
@@ -300,7 +299,7 @@
         </div>
         <!-- Slide 2: Multi Object Baking -->
         <div class="carousel-item">
-          <div class="p-4 d-flex feature-item flex-column">
+          <div class="py-4 px-0 d-flex feature-item flex-column">
             <div class="feature-text">
               <h3>Multi Object Baking</h3>
               <p>Bake entire collections simultaneously.</p>
@@ -312,10 +311,10 @@
         </div>
         <!-- Slide 3: Profiles -->
         <div class="carousel-item">
-          <div class="p-4 d-flex feature-item flex-column">
+          <div class="py-4 px-0 d-flex feature-item flex-column">
             <div class="feature-text">
               <h3>Profiles</h3>
-              <p>Create your own bake setup profile.<br>You can also save/load to external files</p>
+              <p>Create your own bake setup profile. You can also save/load to external files</p>
             </div>
             <div class="feature-image">
               <img src="https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/Profile2.webp" alt="Profiles">
@@ -324,7 +323,7 @@
         </div>
         <!-- Slide 4: Multi Texture Baking -->
         <div class="carousel-item">
-          <div class="p-4 d-flex feature-item flex-column">
+          <div class="py-4 px-0 d-flex feature-item flex-column">
             <div class="feature-text">
               <h3>Multi Texture Baking</h3>
               <p>Bake multiple textures with a single click.</p>
@@ -336,7 +335,7 @@
         </div>
         <!-- Slide 5: Channel Packing -->
         <div class="carousel-item">
-          <div class="p-4 d-flex feature-item flex-column">
+          <div class="py-4 px-0 d-flex feature-item flex-column">
             <div class="feature-text">
               <h3 class="ext">Channel Packing</h3>
               <p>Bake a different surface property<br>to each channel in the RGBA Channels</p>
@@ -348,7 +347,7 @@
         </div>
         <!-- Slide 6: Decal Baking -->
         <div class="carousel-item">
-          <div class="p-4 d-flex feature-item flex-column">
+          <div class="py-4 px-0 d-flex feature-item flex-column">
             <div class="feature-text">
               <h3>Decal Baking</h3>
               <p>Apply decals to your desired object's surface.<br>Support for decal addons like <a href="https://blendermarket.com/products/ultistamp" target="_blank">UltiStamp</a></p>
@@ -360,7 +359,7 @@
         </div>
         <!-- Slide 7: High to Low Baking -->
         <div class="carousel-item">
-          <div class="p-4 d-flex feature-item flex-column">
+          <div class="py-4 px-0 d-flex feature-item flex-column">
             <div class="feature-text">
               <h3>High to Low Baking</h3>
               <p>Transfer surface details from high-poly to low-poly meshes.</p>
@@ -372,7 +371,7 @@
         </div>
         <!-- Slide 8: Bake Post Processing -->
         <div class="carousel-item">
-          <div class="p-4 d-flex feature-item flex-column">
+          <div class="py-4 px-0 d-flex feature-item flex-column">
             <div class="feature-text">
               <h3>Bake Post Processing</h3>
               <p>Apply antialiasing, denoising, sharpening and<br>configured in the profile</p>
@@ -384,7 +383,7 @@
         </div>
         <!-- Slide 9: Finalize -->
         <div class="carousel-item">
-          <div class="p-4 d-flex feature-item flex-column">
+          <div class="py-4 px-0 d-flex feature-item flex-column">
             <div class="feature-text">
               <h3>Finalize</h3>
               <p>Automatically setup textures for quick export</p>
@@ -396,7 +395,7 @@
         </div>
         <!-- Slide 10: UDIM Visualizer -->
         <div class="carousel-item">
-          <div class="p-4 d-flex feature-item flex-column">
+          <div class="py-4 px-0 d-flex feature-item flex-column">
             <div class="feature-text">
               <h3>UDIM Visualizer</h3>
               <p>See how the resolution will be defined per UDIM tile</p>
@@ -408,7 +407,7 @@
         </div>
         <!-- Slide 11: UDIMs -->
         <div class="carousel-item">
-          <div class="p-4 d-flex feature-item flex-column">
+          <div class="py-4 px-0 d-flex feature-item flex-column">
             <div class="feature-text">
               <h3>UDIMs</h3>
               <p>UDIMs are detected automatically from the mesh UVs</p>
@@ -488,8 +487,8 @@
       </div>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <div class="p-4 d-flex flex-column align-items-center">
-            <h3>Quick start</h3>
+          <div class="py-4 px-0 d-flex flex-column align-items-center">
+            <p>Quick start</p>
             <div class="ratio ratio-16x9 mx-auto">
               <iframe 
                 src="https://www.youtube.com/embed/_gE_KFakj5Q" 
@@ -501,8 +500,8 @@
           </div>
         </div>
         <div class="carousel-item">
-          <div class="p-4 d-flex flex-column align-items-center">
-            <h3>High to Low + Decals</h3>
+          <div class="py-4 px-0 d-flex flex-column align-items-center">
+            <p>High to Low + Decals</p>
             <div class="ratio ratio-16x9 mx-auto">
               <iframe 
                 src="https://www.youtube.com/embed/5VbmDDsLJUQ" 
