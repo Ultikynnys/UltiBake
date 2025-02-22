@@ -16,288 +16,260 @@
   <script>
     document.addEventListener("DOMContentLoaded", function() {
       document.querySelectorAll('.carousel-item img').forEach(img => {
-        // Apply a transition for smooth transform changes
-        img.style.transition = "transform 0.2s ease, transform-origin 0.2s ease";
+        // Smooth transition on transform changes
+        img.style.transition = "none";
   
-        // Update the transform origin based on mouse position
+        // Update transform origin based on mouse position
         img.addEventListener("mousemove", function(e) {
           const rect = img.getBoundingClientRect();
-          const x = e.clientX - rect.left;
-          const y = e.clientY - rect.top;
-          const xPercent = (x / rect.width) * 100;
-          const yPercent = (y / rect.height) * 100;
+          const xPercent = ((e.clientX - rect.left) / rect.width) * 100;
+          const yPercent = ((e.clientY - rect.top) / rect.height) * 100;
           img.style.transformOrigin = `${xPercent}% ${yPercent}%`;
         });
   
-        // Zoom in on mouse enter
-        img.addEventListener("mouseenter", function() {
-          img.style.transform = "scale(1.25)";
-        });
-  
-        // Reset zoom on mouse leave
-        img.addEventListener("mouseleave", function() {
-          img.style.transform = "scale(1)";
-        });
+        // Zoom in on mouse enter and reset on leave
+        img.addEventListener("mouseenter", function() { img.style.transform = "scale(1.3)"; });
+        img.addEventListener("mouseleave", function() { img.style.transform = "scale(1)"; });
       });
     });
   </script>
   
   <style>
-/* Base styling for links with a moving, slightly desaturated rainbow */
-a {
-  color: rgb(255, 85, 85);
-  font-weight: normal;
-  font-family: 'Outfit', 'Raleway', sans-serif;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
+    :root {
+      --main-font: 'Outfit', 'Raleway', sans-serif;
+      --control-width: 10%;
+      --control-icon-size: 50px;
+      --content-bg: url('https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/PatternX.png');
+      --content-bg-size: 512px 512px;
+    }
 
-a:hover,
-a:focus {
-  background-image: linear-gradient(
-    90deg,
-    hsl(0, 50%, 50%),
-    hsl(60, 50%, 50%),
-    hsl(120, 50%, 50%),
-    hsl(180, 50%, 50%),
-    hsl(240, 50%, 50%),
-    hsl(300, 50%, 50%),
-    hsl(360, 50%, 50%)
-  );
-  background-size: 400%;
-  color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
-  animation: rainbow 10s linear infinite;
-}
+    /* Base styling for links */
+    a {
+      color: rgb(255, 85, 85);
+      font-family: var(--main-font);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    a:hover,
+    a:focus {
+      background-image: linear-gradient(
+        90deg,
+        hsl(0, 50%, 50%),
+        hsl(60, 50%, 50%),
+        hsl(120, 50%, 50%),
+        hsl(180, 50%, 50%),
+        hsl(240, 50%, 50%),
+        hsl(300, 50%, 50%),
+        hsl(360, 50%, 50%)
+      );
+      background-size: 400%;
+      color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+      animation: rainbow 10s linear infinite;
+    }
+    @keyframes rainbow {
+      0% { background-position: 0%; }
+      100% { background-position: 400%; }
+    }
+    a:hover,
+    a:focus {
+      -webkit-text-stroke: 0;
+      text-shadow: none;
+    }
 
-@keyframes rainbow {
-  0% { background-position: 0%; }
-  100% { background-position: 400%; }
-}
+    .rainbow-text {
+      background-image: linear-gradient(
+        90deg,
+        hsl(0, 50%, 50%),
+        hsl(60, 50%, 50%),
+        hsl(120, 50%, 50%),
+        hsl(180, 50%, 50%),
+        hsl(240, 50%, 50%),
+        hsl(300, 50%, 50%),
+        hsl(360, 50%, 50%)
+      );
+      background-size: 400%;
+      color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+      animation: rainbow 10s linear infinite;
+      text-shadow: none;
+    }
 
-a:hover,
-a:focus {
-  -webkit-text-stroke: 0;
-  text-shadow: none;
-}
+    /* Headers */
+    h1, h2, h3, h4, h5, h6 {
+      text-align: center;
+      font-family: var(--main-font);
+    }
+    h1 { font-size: 5rem; }
+    h2 { font-size: 4rem; }
+    h3, h4 { font-size: 2rem; }
+    h5 { font-size: 1.25rem; }
+    h6 { font-size: 1rem; }
 
-/* Rainbow-text class for animated rainbow header */
-.rainbow-text {
-  background-image: linear-gradient(
-    90deg,
-    hsl(0, 50%, 50%),
-    hsl(60, 50%, 50%),
-    hsl(120, 50%, 50%),
-    hsl(180, 50%, 50%),
-    hsl(240, 50%, 50%),
-    hsl(300, 50%, 50%),
-    hsl(360, 50%, 50%)
-  );
-  background-size: 400%;
-  color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
-  animation: rainbow 10s linear infinite;
-  text-shadow: none;
-}
 
-/* Headers with explicit text sizes */
-h1 {
-  text-align: center;
-  font-family: 'Outfit', 'Raleway', sans-serif;
-  font-size: 5rem;
-}
-h2 {
-  text-align: center;
-  font-family: 'Outfit', 'Raleway', sans-serif;
-  font-size: 4rem;
-}
-h3, h4 {
-  text-align: center;
-  font-family: 'Outfit', 'Raleway', sans-serif;
-  font-size: 2rem;
-}
-h5 {
-  text-align: center;
-  font-family: 'Outfit', 'Raleway', sans-serif;
-  font-size: 1.25rem;
-}
-h6 {
-  text-align: center;
-  font-family: 'Outfit', 'Raleway', sans-serif;
-  font-size: 1rem;
-}
+      .video-container {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+  }
 
-/* Main content container */
-.content-container {
-  background: url('https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/PatternX.png') repeat;
-  background-size: 512px 512px;
-  font-family: 'Outfit', 'Raleway', sans-serif;
-  padding: 5px;
-  font-size: 20px;
-  color: white;
-  text-shadow: -0.1em 0 0 black, 0.1em 0 0 black, 0 -0.1em 0 black, 0 0.1em 0 black,
-    -0.07em -0.07em 0 black, 0.07em -0.07em 0 black, -0.07em 0.07em 0 black,
-    0.07em 0.07em 0 black, 0.07em 0.07em 0.2em rgba(0, 0, 0, 0.7);
-  border-radius: 15px;
-  margin: 0;
-  text-align: center;
-}
+  @media (max-width: 600px) {
+    .video-container {
+      max-width: 100%;
+    }
+  }
+    /* Main content container */
+    .content-container {
+      background: var(--content-bg) repeat;
+      background-size: var(--content-bg-size);
+      font-family: var(--main-font);
+      padding: 5px;
+      font-size: 20px;
+      color: white;
+      text-shadow: -0.1em 0 0 black, 0.1em 0 0 black, 0 -0.1em 0 black, 0 0.1em 0 black,
+                   -0.07em -0.07em 0 black, 0.07em -0.07em 0 black, -0.07em 0.07em 0 black,
+                   0.07em 0.07em 0 black, 0.07em 0.07em 0.2em rgba(0, 0, 0, 0.7);
+      border-radius: 15px;
+      margin: 0;
+      text-align: center;
+    }
 
-/* Paragraph styling */
-p {
-  font-size: 1.5em;
-  line-height: 1.5;
-}
+    p {
+      font-size: 1.5em;
+      line-height: 1.5;
+    }
 
-/* Rounded containers */
-.rounded-video,
-.rounded-carousel {
-  border-radius: 15px;
-  overflow: hidden;
-  cursor: pointer;
-}
-.rounded-video {
-  max-width: 100%;
-  margin: 0 auto;
-}
+    .support-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0.5rem;
+      word-break: break-word;
+    }
 
-/* Carousel sizing for feature carousel */
-.rounded-carousel {
-  width: auto;
-  height: 100%;
-  margin: 0;
-}
-.carousel-inner > .carousel-item {
-  height: 1%;
-}
+    /* Rounded container styling */
+    .rounded-video,
+    .rounded-carousel {
+      border-radius: 15px;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .rounded-video { max-width: 100%; margin: 0 auto; }
+    .rounded-carousel {
+      width: auto;
+      height: 100%;
+      margin: 0;
+    }
+    .carousel-inner > .carousel-item { height: 1%; }
 
-/* Combined Carousel Item Styling for Feature and Step Carousels */
-.feature-item,
-.step-item {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 0.5em;
-  text-align: center;
-}
+    /* Carousel item styling */
+    .feature-item,
+    .step-item {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 0.5em;
+      text-align: center;
+    }
+    .feature-text,
+    .step-item p {
+      margin-bottom: 0.5em;
+    }
 
-.feature-text,
-.step-item p {
-  margin-bottom: 0.5em;
-}
+    .feature-image {
+      position: relative;
+      width: 100%;
+      height: auto;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+    }
+    /* Updated rule for feature images to scale horizontally */
+    .feature-image img,
+    .step-item img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      object-position: top center;
+      border-radius: 15px;
+      background-color: transparent;
+      transition: transform 0.3s ease;
+    }
 
-/* Combined Image Styling for Carousels */
-.feature-image {
-  position: relative;
-  width: 100%;
-  height: auto;
-  overflow: hidden;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-}
+    /* Carousel containers */
+    #stepsCarousel,
+    #featuresCarousel {
+      position: relative;
+    }
+    #stepsCarousel .carousel-inner > .carousel-item,
+    #featuresCarousel .carousel-inner > .carousel-item {
+      height: auto !important;
+    }
+    #stepsCarousel .carousel-indicators,
+    #featuresCarousel .carousel-indicators {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      margin: 0;
+      padding: 0;
+      z-index: 15;
+    }
 
-.feature-image img,
-.step-item img {
-  width: auto;
-  height: auto;
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-  object-position: top center;
-  border-radius: 15px;
-  background-color: transparent;
-  transition: transform 0.3s ease;
-}
+    /* Carousel control buttons using variables */
+    .carousel-control-prev,
+    .carousel-control-next {
+      width: var(--control-width);
+      opacity: 0.8;
+      transition: opacity 0.3s ease;
+    }
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      width: var(--control-icon-size);
+      height: var(--control-icon-size);
+      background-size: var(--control-icon-size) var(--control-icon-size);
+    }
+    .carousel-control-prev:hover,
+    .carousel-control-next:hover {
+      opacity: 1;
+    }
 
-/* Custom styling for Steps Carousel */
-#stepsCarousel {
-  height: auto !important;
-}
-
-#stepsCarousel .carousel-inner > .carousel-item {
-  height: auto !important;
-}
-
-#stepsCarousel .carousel-indicators {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  margin: 0;
-  padding: 0;
-  z-index: 15;
-}
-
-#featuresCarousel {
-  position: relative;
-}
-
-#featuresCarousel .carousel-indicators {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  margin: 0;
-  padding: 0;
-  z-index: 15;
-}
-
-/* Carousel control buttons positioning */
-.carousel-control-prev,
-.carousel-control-next {
-  width: 5%;
-  opacity: 0.8;
-  transition: opacity 0.3s ease;
-}
-
-.carousel-control-prev:hover,
-.carousel-control-next:hover {
-  opacity: 1;
-}
-
-/* Changelog Box styling */
-#changelog-box {
-  border: 2px solid #555;
-  max-height: 400px; /* Adjust height as needed to show roughly 3 entries */
-  overflow-y: auto;
-  padding: 1rem;
-  margin-top: 1rem;
-  background-color: #222;
-  color: white;
-}
-
-/* Each update in its own smaller box */
-.changelog-entry {
-  border: 1px solid #666;
-  padding: 0.5rem;
-  margin-bottom: 1rem;
-  border-radius: 5px;
-}
-
-/* Update items now styled with darker text instead of a darker background */
-.update-item {
-  color: #ccc;
-  padding: 0.3rem;
-  margin-left: 20px;
-  border-radius: 3px;
-  font-size: 0.8em; /* Reduced font size for changelog items */
-}
+    /* Changelog styling */
+    #changelog-box {
+      border: 2px solid #555;
+      max-height: 400px;
+      overflow-y: auto;
+      padding: 1rem;
+      margin-top: 1rem;
+      background-color: #222;
+      color: white;
+    }
+    .changelog-entry {
+      border: 1px solid #666;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      border-radius: 5px;
+    }
+    .update-item {
+      color: #ccc;
+      padding: 0.3rem;
+      margin-left: 20px;
+      border-radius: 3px;
+      font-size: 0.8em;
+    }
   </style>
 </head>
 <body>
   <div class="content-container">
-    
     <p>
       <strong>Ultibake</strong> transforms Blender baking with a modular design inspired by Substance Painter and Marmoset Toolbag—making texture and decal baking effortless.
     </p>
     
-    
     <h2>Features</h2>
-    <!-- Features Carousel -->
+    <!-- Features Carousel (default Bootstrap functionality) -->
     <div id="featuresCarousel" class="carousel slide rounded-carousel features-carousel" data-bs-pause="hover">
       <div class="carousel-indicators">
         <button type="button" data-bs-target="#featuresCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -313,16 +285,13 @@ p {
         <button type="button" data-bs-target="#featuresCarousel" data-bs-slide-to="10" aria-label="Slide 11"></button>
         <button type="button" data-bs-target="#featuresCarousel" data-bs-slide-to="11" aria-label="Slide 12"></button>
       </div>
-      
       <div class="carousel-inner">
         <!-- Slide 1: Bake Visualizer -->
         <div class="carousel-item active">
           <div class="p-4 d-flex feature-item flex-column">
             <div class="feature-text">
               <h3>Bake Visualizer</h3>
-              <div class="feature-description">
-                See your baked textures before you bake them!
-              </div>
+              <p>See your baked textures before you bake them!</p>
             </div>
             <div class="feature-image">
               <img src="https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/VISUALIZER2.webp" alt="Bake Visualizer">
@@ -334,9 +303,7 @@ p {
           <div class="p-4 d-flex feature-item flex-column">
             <div class="feature-text">
               <h3>Multi Object Baking</h3>
-              <div class="feature-description">
-                Bake entire collections simultaneously.
-              </div>
+              <p>Bake entire collections simultaneously.</p>
             </div>
             <div class="feature-image">
               <img src="https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/hightolowN.webp" alt="Multi Object Baking">
@@ -348,10 +315,7 @@ p {
           <div class="p-4 d-flex feature-item flex-column">
             <div class="feature-text">
               <h3>Profiles</h3>
-              <div class="feature-description">
-                Create your own bake setup profile.<br>
-                You can also save/load to external files
-              </div>
+              <p>Create your own bake setup profile.<br>You can also save/load to external files</p>
             </div>
             <div class="feature-image">
               <img src="https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/Profile2.webp" alt="Profiles">
@@ -363,9 +327,7 @@ p {
           <div class="p-4 d-flex feature-item flex-column">
             <div class="feature-text">
               <h3>Multi Texture Baking</h3>
-              <div class="feature-description">
-                Bake multiple textures with a single click.
-              </div>
+              <p>Bake multiple textures with a single click.</p>
             </div>
             <div class="feature-image">
               <img src="https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/MultiTexture.png" alt="Multi Texture Baking">
@@ -377,9 +339,7 @@ p {
           <div class="p-4 d-flex feature-item flex-column">
             <div class="feature-text">
               <h3 class="ext">Channel Packing</h3>
-              <div class="feature-description">
-                Bake a different surface property <br> to each channel in the RGBA Channels
-              </div>
+              <p>Bake a different surface property<br>to each channel in the RGBA Channels</p>
             </div>
             <div class="feature-image">
               <img src="https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/Channelpack2.webp" alt="Channel Packing">
@@ -391,10 +351,7 @@ p {
           <div class="p-4 d-flex feature-item flex-column">
             <div class="feature-text">
               <h3>Decal Baking</h3>
-              <div class="feature-description">
-                Apply decals to your desired object's surface.<br>
-                Support for decal addons like <a href="https://blendermarket.com/products/ultistamp" target="_blank">UltiStamp</a>
-              </div>
+              <p>Apply decals to your desired object's surface.<br>Support for decal addons like <a href="https://blendermarket.com/products/ultistamp" target="_blank">UltiStamp</a></p>
             </div>
             <div class="feature-image">
               <img src="https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/Decals2.webp" alt="Decal Baking">
@@ -406,9 +363,7 @@ p {
           <div class="p-4 d-flex feature-item flex-column">
             <div class="feature-text">
               <h3>High to Low Baking</h3>
-              <div class="feature-description">
-                Transfer surface details from high-poly to low-poly meshes.
-              </div>
+              <p>Transfer surface details from high-poly to low-poly meshes.</p>
             </div>
             <div class="feature-image">
               <img src="https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/superman.webp" alt="High to Low Baking">
@@ -420,10 +375,7 @@ p {
           <div class="p-4 d-flex feature-item flex-column">
             <div class="feature-text">
               <h3>Bake Post Processing</h3>
-              <div class="feature-description">
-                Apply antialiasing, denoising, sharpening and <br>
-                configured in the profile
-              </div>
+              <p>Apply antialiasing, denoising, sharpening and<br>configured in the profile</p>
             </div>
             <div class="feature-image">
               <img src="https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/ppmov.webp" alt="Special Bakes">
@@ -435,9 +387,7 @@ p {
           <div class="p-4 d-flex feature-item flex-column">
             <div class="feature-text">
               <h3>Finalize</h3>
-              <div class="feature-description">
-                Automatically setup textures for quick export
-              </div>
+              <p>Automatically setup textures for quick export</p>
             </div>
             <div class="feature-image">
               <img src="https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/finalize.webp" alt="Finalize">
@@ -449,9 +399,7 @@ p {
           <div class="p-4 d-flex feature-item flex-column">
             <div class="feature-text">
               <h3>UDIM Visualizer</h3>
-              <div class="feature-description">
-                See how the resolution will be defined per UDIM tile
-              </div>
+              <p>See how the resolution will be defined per UDIM tile</p>
             </div>
             <div class="feature-image">
               <img src="https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/udimvis2.webp" alt="UDIM Visualizer">
@@ -463,9 +411,7 @@ p {
           <div class="p-4 d-flex feature-item flex-column">
             <div class="feature-text">
               <h3>UDIMs</h3>
-              <div class="feature-description">
-                UDIMs are detected automatically from the mesh UVs
-              </div>
+              <p>UDIMs are detected automatically from the mesh UVs</p>
             </div>
             <div class="feature-image">
               <img src="https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/udimabke.webp" alt="UDIMs">
@@ -473,7 +419,6 @@ p {
           </div>
         </div>
       </div>
-      <!-- Carousel Controls for Features Carousel -->
       <button class="carousel-control-prev" type="button" data-bs-target="#featuresCarousel" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
@@ -482,10 +427,9 @@ p {
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
       </button>
-    </div>   
-  
+    </div>
+    
     <h2>Simple to use</h2>
-    <!-- Steps Carousel -->
     <div id="stepsCarousel" class="carousel slide rounded-carousel" data-bs-pause="hover">
       <div class="carousel-indicators">
         <button type="button" data-bs-target="#stepsCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Step 1"></button>
@@ -526,7 +470,6 @@ p {
           </div>
         </div>
       </div>
-      <!-- Carousel Controls for Steps Carousel -->
       <button class="carousel-control-prev" type="button" data-bs-target="#stepsCarousel" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
@@ -537,7 +480,6 @@ p {
       </button>
     </div>
     
-    <!-- REPLACED the old Documentation section with this new Video Carousel -->
     <h2>Videos</h2>
     <div id="documentationCarousel" class="carousel slide rounded-carousel" data-bs-pause="hover">
       <div class="carousel-indicators">
@@ -545,12 +487,10 @@ p {
         <button type="button" data-bs-target="#documentationCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
       </div>
       <div class="carousel-inner">
-        <!-- Slide 1: Quick start Video -->
         <div class="carousel-item active">
           <div class="p-4 d-flex flex-column align-items-center">
             <h3>Quick start</h3>
-            <!-- Use a responsive "ratio" container for YouTube -->
-            <div class="ratio ratio-16x9" style="max-width: 800px;">
+            <div class="ratio ratio-16x9 mx-auto">
               <iframe 
                 src="https://www.youtube.com/embed/_gE_KFakj5Q" 
                 title="Quick start" 
@@ -560,11 +500,10 @@ p {
             </div>
           </div>
         </div>
-        <!-- Slide 2: High to Low + Decals Video -->
         <div class="carousel-item">
           <div class="p-4 d-flex flex-column align-items-center">
             <h3>High to Low + Decals</h3>
-            <div class="ratio ratio-16x9" style="max-width: 800px;">
+            <div class="ratio ratio-16x9 mx-auto">
               <iframe 
                 src="https://www.youtube.com/embed/5VbmDDsLJUQ" 
                 title="High to Low + Decals" 
@@ -575,7 +514,6 @@ p {
           </div>
         </div>
       </div>
-      <!-- Carousel Controls for Documentation Carousel -->
       <button class="carousel-control-prev" type="button" data-bs-target="#documentationCarousel" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
@@ -587,14 +525,12 @@ p {
     </div>
     
     <h2>Support</h2>
-    <p>If you have any questions, issues, or suggestions, join our Discord group:</p>
-    <p>
-      <a href="https://discord.gg/Pm7TDf2rV5" target="_blank">https://discord.gg/Pm7TDf2rV5</a>
-    </p>
+    <div class="support-container">
+      <p>If you have any questions, issues, or suggestions, join our Discord group:</p>
+      <p><a href="https://discord.gg/Pm7TDf2rV5" target="_blank">https://discord.gg/Pm7TDf2rV5</a></p>
+    </div>
     
-    <!-- Changelog Header Outside the Box -->
     <h2 class="ext">Changelog</h2>
-    <!-- Changelog Box (Now the last element) -->
     <div id="changelog-box">
       <p>Loading latest changes...</p>
     </div>
@@ -602,96 +538,50 @@ p {
   
   <!-- Bootstrap 5 Bundle with Popper (JS) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Fitty Library for auto-resizing text -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/fitty/2.3.6/fitty.min.js"></script>
   
   <script>
-    // Initialize fitty on feature descriptions
-    fitty('.feature-description', {
-      minSize: 12,
-      maxSize: 36,
-      multiLine: false
-    });
-    
-    // Make every carousel clickable to move to the next slide
-    document.querySelectorAll('.carousel').forEach(function(carousel) {
-      carousel.style.cursor = 'pointer';
-      carousel.addEventListener('click', function(e) {
-        // Ensure that a control button click doesn't trigger the next slide
-        if (e.target.closest('.carousel-control-prev') || e.target.closest('.carousel-control-next')) {
-          return;
-        }
-        var instance = bootstrap.Carousel.getInstance(carousel);
-        if (!instance) {
-          instance = new bootstrap.Carousel(carousel);
-        }
-        instance.next();
-      });
-    });
-    
-    // Fetch and parse all changelog entries from the Markdown file
+    // Fetch and parse changelog entries using DRY principles
     const changelogUrl = 'https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/Changelogs.md';
-    
     fetch(changelogUrl)
       .then(response => response.text())
       .then(text => {
-        // Split entries by double newlines and reverse the array so the newest entries come first
-        let entries = text.trim().split(/\n\s*\n/).reverse();
+        const entries = text.trim().split(/\n\s*\n/).reverse();
         let html = "";
-        
         entries.forEach(entry => {
-          // Remove any leading '>' characters and trim the entry
+          // Remove leading '>' and split lines
           entry = entry.replace(/^>\s*/, '');
-          let lines = entry.split('\n');
-          
-          // Process the header line
-          let headerLine = lines[0].trim();
-          let headerText = headerLine.startsWith("##") ? headerLine.replace(/^##\s*/, '') : headerLine;
-          
-          // Determine header color based on keywords
-          let lowerHeader = headerText.toLowerCase();
-          let categories = [];
-          if(lowerHeader.includes("bug") || lowerHeader.includes("fix")){
-            categories.push("red");
-          }
-          if(lowerHeader.includes("improvement") || lowerHeader.includes("addition") || lowerHeader.includes("optimization") || lowerHeader.includes("update") || lowerHeader.includes("ures") || lowerHeader.includes("stability") ){
-            categories.push("Green");
-          }
-          if(lowerHeader.includes("rework") || lowerHeader.includes("change")){
-            categories.push("blue");
-          }
-          // If multiple categories match, or none, default to white
-          let headerColor = (categories.length === 1) ? categories[0] : "white";
-          
+          const lines = entry.split('\n');
+          const headerLine = lines[0].trim();
+          const headerText = headerLine.startsWith("##") ? headerLine.replace(/^##\s*/, '') : headerLine;
+          const lowerHeader = headerText.toLowerCase();
+          const categories = [];
+          if (lowerHeader.includes("bug") || lowerHeader.includes("fix")) categories.push("red");
+          if (lowerHeader.includes("improvement") || lowerHeader.includes("addition") || lowerHeader.includes("optimization") ||
+              lowerHeader.includes("update") || lowerHeader.includes("ures") || lowerHeader.includes("stability")) categories.push("Green");
+          if (lowerHeader.includes("rework") || lowerHeader.includes("change")) categories.push("blue");
+          const headerColor = (categories.length === 1) ? categories[0] : "white";
+  
           let headerHtml = "";
           if (headerLine.startsWith("##")) {
-            if(lowerHeader.includes("version increment")){
-              headerHtml = `<h5 class="rainbow-text">${headerText}</h5>`;
-            } else {
-              headerHtml = `<h5 style="color: ${headerColor};">${headerText}</h5>`;
-            }
+            headerHtml = lowerHeader.includes("version increment")
+              ? `<h5 class="rainbow-text">${headerText}</h5>`
+              : `<h5 style="color: ${headerColor};">${headerText}</h5>`;
           } else {
-            if(lowerHeader.includes("version increment")){
-              headerHtml = `<p class="rainbow-text">${headerText}</p>`;
-            } else {
-              headerHtml = `<p style="color: ${headerColor};">${headerText}</p>`;
-            }
+            headerHtml = lowerHeader.includes("version increment")
+              ? `<p class="rainbow-text">${headerText}</p>`
+              : `<p style="color: ${headerColor};">${headerText}</p>`;
           }
-          
-          // Process the remaining lines without bullet points,
-          // wrapping lines that start with "*" in a paragraph with the "update-item" class.
+  
           let contentHtml = "";
           for (let i = 1; i < lines.length; i++) {
-            let line = lines[i].trim();
+            const line = lines[i].trim();
             if (line.startsWith("*")) {
-              let item = line.replace(/^\*\s*/, '');
-              contentHtml += `<p class="update-item">${item}</p>`;
+              contentHtml += `<p class="update-item">${line.replace(/^\*\s*/, '')}</p>`;
             } else if (line !== "") {
               contentHtml += `<p>${line}</p>`;
             }
           }
-          
+  
           html += `<div class="changelog-entry mb-3">${headerHtml}${contentHtml}</div>`;
         });
         document.getElementById("changelog-box").innerHTML = html;
