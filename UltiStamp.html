@@ -24,8 +24,8 @@
     }
 
     ul.mb-3 li {
-  margin-bottom: 1rem; /* Adjust the value as needed */
-}
+      margin-bottom: 1rem; /* Adjust the value as needed */
+    }
 
     a:hover,
     a:focus {
@@ -56,8 +56,6 @@
       -webkit-text-stroke: 0;
       text-shadow: none;
     }
-
-
 
     /* New rainbow-text class for animated rainbow header */
     .rainbow-text {
@@ -125,7 +123,7 @@
 
     /* Paragraph styling */
     p {
-      font-size: 1.5em;
+      font-size: 1em;
       line-height: 1.5;
     }
 
@@ -183,9 +181,8 @@
 
     .feature-image img,
     .step-item img {
-      width: auto;
-      height: 100%;
-      max-width: 100%;
+      width: 100%;
+      height: auto;
       object-fit: contain;
       object-position: top center;
       border-radius: 15px;
@@ -211,26 +208,19 @@
       padding: 0;
       z-index: 15;
     }
+
+    /* Increase z-index for carousel control buttons so they sit above the indicators */
+    .carousel-control-prev,
+    .carousel-control-next {
+      z-index: 20;
+    }
   </style>
 </head>
 <body style="background-color: rgba(255, 255, 255, 0);">
   <div class="container-fluid my-3 content-container">
 
-    <!-- Introduction Section -->
-    <h2 class="rainbow-text">What Is This?</h2>
-    <p>A projection-based Decal add-on that includes more than 100 presets for most use cases.</p>
-    <!-- Removed auto-scrolling attribute (data-bs-ride) -->
-    <div id="introCarousel" class="carousel slide rounded-carousel mb-3 mx-auto" style="width: 100%;">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="https://assets.superhivemarket.com/cache/037a4ef518d6f4627dc92b17af27f4cc.webp" 
-               alt="Decal add-on preview" class="d-block w-100">
-        </div>
-      </div>
-    </div>
-
     <!-- Features Section -->
-    <h1 class="rainbow-text">Features</h1>
+    <h1>Features</h1>
     <ul class="list-unstyled mb-3">
       <li>Preset packs are included, offering more than 100 decals in total. (More added with each update)</li>
       <li>Full PBR decals that can be applied to any material.</li>
@@ -242,9 +232,19 @@
     </ul>
 
     <!-- Showcase Carousel -->
-    <h1 class="rainbow-text">Showcase</h1>
-    <!-- Removed auto-scrolling attribute (data-bs-ride) -->
+    <h1>Showcase</h1>
     <div id="featuresCarousel" class="carousel slide rounded-carousel mb-3">
+      <!-- Carousel Indicators for Features -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#featuresCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#featuresCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#featuresCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#featuresCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        <button type="button" data-bs-target="#featuresCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+        <button type="button" data-bs-target="#featuresCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
+        <button type="button" data-bs-target="#featuresCarousel" data-bs-slide-to="6" aria-label="Slide 7"></button>
+        <button type="button" data-bs-target="#featuresCarousel" data-bs-slide-to="7" aria-label="Slide 8"></button>
+      </div>
       <div class="carousel-inner">
         <!-- Carousel Item 1 -->
         <div class="carousel-item active">
@@ -252,7 +252,7 @@
             <h3>Easily clickable empty handles and radial menu buttons</h3>
             <div class="feature-image">
               <img src="https://assets.superhivemarket.com/cache/6689514acd2a4bcedcc54bd4d3929be4.webp" 
-                   alt="Clickable handles" class="d-block w-20">
+                   alt="Clickable handles" class="d-block w-100">
             </div>
           </div>
         </div>
@@ -262,7 +262,7 @@
             <h3>Advanced decals with alpha masking and full PBR</h3>
             <div class="feature-image">
               <img src="https://assets.superhivemarket.com/cache/c2bc74ff0ee30d588fb8b67d424371a3.webp" 
-                   alt="Advanced decals" class="d-block w-20">
+                   alt="Advanced decals" class="d-block w-100">
             </div>
           </div>
         </div>
@@ -272,7 +272,7 @@
             <h3>A great way to add more detail to existing props</h3>
             <div class="feature-image">
               <img src="https://assets.superhivemarket.com/cache/d93123ac21101ca34aee5643844588c6.webp" 
-                   alt="Detail enhancement" class="d-block w-20">
+                   alt="Detail enhancement" class="d-block w-100">
             </div>
           </div>
         </div>
@@ -282,7 +282,7 @@
             <h3>Supports emissive decals</h3>
             <div class="feature-image">
               <img src="https://assets.superhivemarket.com/cache/d0c935b0540ebd9c916ed5c811f88f80.webp" 
-                   alt="Emissive decals" class="d-block w-20">
+                   alt="Emissive decals" class="d-block w-100">
             </div>
           </div>
         </div>
@@ -292,7 +292,7 @@
             <h3>Add decals to transparent materials</h3>
             <div class="feature-image">
               <img src="https://assets.superhivemarket.com/cache/c115c532252a9126b0ecd120461181f2.webp" 
-                   alt="Transparent material decals" class="d-block w-20">
+                   alt="Transparent material decals" class="d-block w-100">
             </div>
           </div>
         </div>
@@ -302,7 +302,7 @@
             <h3>Scale Decal UVs for seamless decals</h3>
             <div class="feature-image">
               <img src="https://assets.superhivemarket.com/cache/1fc0cab7af6ca7de8022208b81e9dfc3.webp" 
-                   alt="Scale decal UVs" class="d-block w-20">
+                   alt="Scale decal UVs" class="d-block w-100">
             </div>
           </div>
         </div>
@@ -312,7 +312,7 @@
             <h3>Bake your decals into textures with Ultibake</h3>
             <div class="feature-image">
               <img src="https://assets.superhivemarket.com/cache/5d27e14527e75651dbafc568acbde26f.png" 
-                   alt="Bake decals with Ultibake" class="d-block w-20">
+                   alt="Bake decals with Ultibake" class="d-block w-100">
             </div>
           </div>
         </div>
@@ -322,7 +322,7 @@
             <h3>Change the HSV of the stamps</h3>
             <div class="feature-image">
               <img src="https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/color2.webp" 
-                   alt="Bake decals with Ultibake" class="d-block w-20">
+                   alt="Change HSV" class="d-block w-100">
             </div>
           </div>
         </div>
@@ -338,15 +338,27 @@
     </div>
 
     <!-- How to Use Carousel -->
-    <h1 class="rainbow-text">How to Use</h1>
-    <!-- Removed auto-scrolling attribute (data-bs-ride) -->
+    <h1>How to Use</h1>
     <div id="stepsCarousel" class="carousel slide rounded-carousel mb-3">
+      <!-- Carousel Indicators for Steps -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#stepsCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#stepsCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#stepsCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#stepsCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        <button type="button" data-bs-target="#stepsCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+        <button type="button" data-bs-target="#stepsCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
+        <button type="button" data-bs-target="#stepsCarousel" data-bs-slide-to="6" aria-label="Slide 7"></button>
+        <button type="button" data-bs-target="#stepsCarousel" data-bs-slide-to="7" aria-label="Slide 8"></button>
+        <button type="button" data-bs-target="#stepsCarousel" data-bs-slide-to="8" aria-label="Slide 9"></button>
+        <button type="button" data-bs-target="#stepsCarousel" data-bs-slide-to="9" aria-label="Slide 10"></button>
+      </div>
       <div class="carousel-inner">
         <!-- Carousel Step 1 -->
         <div class="carousel-item active">
           <div class="step-item">
             <img src="https://assets.superhivemarket.com/cache/787371203f6e42c45ccb5263a36736f6.png" 
-                 alt="Step 1" class="d-block w-20">
+                 alt="Step 1" class="d-block w-100">
             <p>Step 1: Initial interface overview.</p>
           </div>
         </div>
@@ -354,7 +366,7 @@
         <div class="carousel-item">
           <div class="step-item">
             <img src="https://assets.superhivemarket.com/cache/4c7214903625768101b9d12844c9472c.png" 
-                 alt="Step 2" class="d-block w-20">
+                 alt="Step 2" class="d-block w-100">
             <p>Step 2: Begin decal creation process.</p>
           </div>
         </div>
@@ -362,7 +374,7 @@
         <div class="carousel-item">
           <div class="step-item">
             <img src="https://assets.superhivemarket.com/cache/8663c2a79915693d122bb086e409aa7e.png" 
-                 alt="Step 3" class="d-block w-20">
+                 alt="Step 3" class="d-block w-100">
             <p>Step 3: Duplicate or remove decals using keyboard shortcuts.</p>
           </div>
         </div>
@@ -370,7 +382,7 @@
         <div class="carousel-item">
           <div class="step-item">
             <img src="https://assets.superhivemarket.com/cache/0b8ee1e394e7371fdeb8cf616dbc85b4.png" 
-                 alt="Step 4" class="d-block w-20">
+                 alt="Step 4" class="d-block w-100">
             <p>Step 4: More detailed usage of the interface.</p>
           </div>
         </div>
@@ -378,7 +390,7 @@
         <div class="carousel-item">
           <div class="step-item">
             <img src="https://assets.superhivemarket.com/cache/33768a6f9fc80b2b51727ab758521e01.png" 
-                 alt="Step 5" class="d-block w-20">
+                 alt="Step 5" class="d-block w-100">
             <p>Step 5: Decal creation is performed by clicking the Create Decal button from the Radial Menu using <strong>Ctrl+R</strong> (by default). Remove decals with <strong>X or Del</strong> and duplicate them with <strong>Shift+D</strong>.</p>
           </div>
         </div>
@@ -386,7 +398,7 @@
         <div class="carousel-item">
           <div class="step-item">
             <img src="https://assets.superhivemarket.com/cache/3ac4d398d8a1cdd40b95e3fccd67f66a.webp" 
-                 alt="Step 6" class="d-block w-20">
+                 alt="Step 6" class="d-block w-100">
             <p>Step 6: Load the included preset packs to use them.</p>
           </div>
         </div>
@@ -394,7 +406,7 @@
         <div class="carousel-item">
           <div class="step-item">
             <img src="https://assets.superhivemarket.com/cache/e37f26b6c702b49c7cd3ec9241623ee0.webp" 
-                 alt="Step 7" class="d-block w-20">
+                 alt="Step 7" class="d-block w-100">
             <p>Step 7: Move the decal to the top by clicking the "Move Stamp to Front" button.</p>
           </div>
         </div>
@@ -402,7 +414,7 @@
         <div class="carousel-item">
           <div class="step-item">
             <img src="https://assets.superhivemarket.com/cache/6365b4a2bd15f12c8e6b3598ce8423d0.webp" 
-                 alt="Step 8" class="d-block w-20">
+                 alt="Step 8" class="d-block w-100">
             <p>Step 8: Move decals across materials using the "Move Stamp to Active Material" button.</p>
           </div>
         </div>
@@ -410,7 +422,7 @@
         <div class="carousel-item">
           <div class="step-item">
             <img src="https://assets.superhivemarket.com/cache/8e8ac9a0e7cd5c148db12f6d8518877b.webp" 
-                 alt="Step 9" class="d-block w-20">
+                 alt="Step 9" class="d-block w-100">
             <p>Step 9: If you break the material, use the "Fix Stamps" button to fix any stamps on the selected object.</p>
           </div>
         </div>
@@ -418,11 +430,10 @@
         <div class="carousel-item">
           <div class="step-item">
             <img src="https://assets.superhivemarket.com/cache/a73249a528a64665a077ea7094e83ea5.webp" 
-                 alt="Step 10" class="d-block w-20">
+                 alt="Step 10" class="d-block w-100">
             <p>Step 10: Final adjustments and confirmations.</p>
           </div>
         </div>
-        
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#stepsCarousel" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
