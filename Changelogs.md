@@ -282,3 +282,6 @@
 
 >## 1.9.15 - Hotfix 22/02/2025
     * Temporary image nodes are now removed from materials
+
+>## 1.9.16 - Hotfix 23/02/2025
+    * Progress bar now doesn't start with previous bake information
