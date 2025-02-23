@@ -15,21 +15,44 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", function() {
-      document.querySelectorAll('.carousel-item img').forEach(img => {
-        // Smooth transition on transform changes
-        img.style.transition = "none";
-  
-        // Update transform origin based on mouse position
-        img.addEventListener("mousemove", function(e) {
-          const rect = img.getBoundingClientRect();
+      // Apply smooth zoom effects to both images and videos inside carousel items
+      document.querySelectorAll('.carousel-item img, .carousel-item video').forEach(media => {
+        media.style.transition = "none";
+        media.addEventListener("mousemove", function(e) {
+          const rect = media.getBoundingClientRect();
           const xPercent = ((e.clientX - rect.left) / rect.width) * 100;
           const yPercent = ((e.clientY - rect.top) / rect.height) * 100;
-          img.style.transformOrigin = `${xPercent}% ${yPercent}%`;
+          media.style.transformOrigin = `${xPercent}% ${yPercent}%`;
         });
-  
-        // Zoom in on mouse enter and reset on leave
-        img.addEventListener("mouseenter", function() { img.style.transform = "scale(1.3)"; });
-        img.addEventListener("mouseleave", function() { img.style.transform = "scale(1)"; });
+        media.addEventListener("mouseenter", function() { media.style.transform = "scale(1.3)"; });
+        media.addEventListener("mouseleave", function() { media.style.transform = "scale(1)"; });
+      });
+
+      // Features carousel: autoplay video on active slide (starting at time 0) and pause videos in inactive slides.
+      var featuresCarouselElement = document.getElementById('featuresCarousel');
+
+      // On page load, play the video in the first (active) slide
+      var activeVideo = featuresCarouselElement.querySelector('.carousel-item.active video');
+      if (activeVideo) {
+          activeVideo.currentTime = 0;
+          activeVideo.play();
+      }
+
+      // Before the slide transition starts, pause the video on the current slide.
+      featuresCarouselElement.addEventListener('slide.bs.carousel', function (event) {
+        var currentVideo = featuresCarouselElement.querySelector('.carousel-item.active video');
+        if (currentVideo) {
+          currentVideo.pause();
+        }
+      });
+
+      // After the slide transition ends, reset and play the video on the new active slide.
+      featuresCarouselElement.addEventListener('slid.bs.carousel', function (event) {
+        var newActiveVideo = featuresCarouselElement.querySelector('.carousel-item.active video');
+        if (newActiveVideo) {
+          newActiveVideo.currentTime = 0;
+          newActiveVideo.play();
+        }
       });
     });
   </script>
@@ -108,32 +131,26 @@
     h5 { font-size: 1.25rem; }
     h6 { font-size: 1rem; }
 
-    h1 { font-size: 5rem; }
-h2 { font-size: 4rem; }
-h3, h4 { font-size: 2rem; }
-h5 { font-size: 1.25rem; }
-h6 { font-size: 1rem; }
-
-@media (max-width: 600px) {
-  h1 { font-size: 3rem; }
-  h2 { font-size: 2.5rem; }
-  h3, h4 { font-size: 1.75rem; }
-  h5 { font-size: 1.1rem; }
-  h6 { font-size: 0.9rem; }
-}
-
-
-      .video-container {
-    max-width: 800px;
-    width: 100%;
-    margin: 0 auto;
-  }
-
-  @media (max-width: 600px) {
-    .video-container {
-      max-width: 100%;
+    @media (max-width: 600px) {
+      h1 { font-size: 3rem; }
+      h2 { font-size: 2.5rem; }
+      h3, h4 { font-size: 1.75rem; }
+      h5 { font-size: 1.1rem; }
+      h6 { font-size: 0.9rem; }
     }
-  }
+
+    .video-container {
+      max-width: 800px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 600px) {
+      .video-container {
+        max-width: 100%;
+      }
+    }
+
     /* Main content container */
     .content-container {
       background: var(--content-bg) repeat;
@@ -204,9 +221,11 @@ h6 { font-size: 1rem; }
       align-items: flex-start;
       justify-content: center;
     }
-    /* Updated rule for feature images to scale horizontally */
+    /* Target both images and videos */
     .feature-image img,
-    .step-item img {
+    .feature-image video,
+    .step-item img,
+    .step-item video {
       width: 100%;
       height: auto;
       object-fit: contain;
@@ -236,7 +255,7 @@ h6 { font-size: 1rem; }
       z-index: 15;
     }
 
-    /* Carousel control buttons using variables */
+    /* Carousel control buttons */
     .carousel-control-prev, 
     .carousel-control-next {
       width: var(--control-width);
@@ -288,9 +307,8 @@ h6 { font-size: 1rem; }
       Baking is a crucial step in the asset creation pipeline, enabling the export of surface properties as textures. This addon is designed to enhance your workflow by incorporating industry-standard features inspired by Marmoset Toolbag and Substance Painter.
     </p>
     
-    
     <h2 style="font-family: 'Digitalt';">Features</h2>
-    <!-- Features Carousel (default Bootstrap functionality) -->
+    <!-- Features Carousel -->
     <div id="featuresCarousel" class="carousel slide rounded-carousel features-carousel" data-bs-pause="hover">
       <div class="carousel-indicators">
         <button type="button" data-bs-target="#featuresCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -299,12 +317,6 @@ h6 { font-size: 1rem; }
         <button type="button" data-bs-target="#featuresCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
         <button type="button" data-bs-target="#featuresCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
         <button type="button" data-bs-target="#featuresCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
-        <button type="button" data-bs-target="#featuresCarousel" data-bs-slide-to="6" aria-label="Slide 7"></button>
-        <button type="button" data-bs-target="#featuresCarousel" data-bs-slide-to="7" aria-label="Slide 8"></button>
-        <button type="button" data-bs-target="#featuresCarousel" data-bs-slide-to="8" aria-label="Slide 9"></button>
-        <button type="button" data-bs-target="#featuresCarousel" data-bs-slide-to="9" aria-label="Slide 10"></button>
-        <button type="button" data-bs-target="#featuresCarousel" data-bs-slide-to="10" aria-label="Slide 11"></button>
-        <button type="button" data-bs-target="#featuresCarousel" data-bs-slide-to="11" aria-label="Slide 12"></button>
       </div>
       <div class="carousel-inner">
         <!-- Slide 1: Bake Visualizer -->
@@ -315,61 +327,14 @@ h6 { font-size: 1rem; }
               <p>See your baked textures before you bake them!</p>
             </div>
             <div class="feature-image">
-              <img src="https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/VISUALIZER2.webp" alt="Bake Visualizer">
+              <video controls muted loop playsinline style="width: 100%; border-radius: 15px;">
+                <source src="https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/Clips/Visual.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
             </div>
           </div>
         </div>
-        <!-- Slide 2: Multi Object Baking -->
-        <div class="carousel-item">
-          <div class="py-4 px-0 d-flex feature-item flex-column">
-            <div class="feature-text">
-              <h3 style="font-family: 'Digitalt';">Multi Object Baking</h3>
-              <p>Bake entire collections simultaneously.</p>
-            </div>
-            <div class="feature-image">
-              <img src="https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/hightolowN.webp" alt="Multi Object Baking">
-            </div>
-          </div>
-        </div>
-        <!-- Slide 3: Profiles -->
-        <div class="carousel-item">
-          <div class="py-4 px-0 d-flex feature-item flex-column">
-            <div class="feature-text">
-              <h3 style="font-family: 'Digitalt';">Profiles</h3>
-              <p>Create your own bake setup profile. You can also <strong>save/load</strong> to external files for other projects.</p>
-            </div>
-            <div class="feature-image">
-              <img src="https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/Profile2.webp" alt="Profiles">
-            </div>
-          </div>
-        </div>
-        <!-- Slide 4: Multi Texture Baking -->
-        <div class="carousel-item">
-          <div class="py-4 px-0 d-flex feature-item flex-column">
-            <div class="feature-text">
-              <h3 style="font-family: 'Digitalt';">Multi Texture Baking</h3>
-              <p>Bake multiple textures with a single click.</p>
-            </div>
-            <div class="feature-image">
-              <img src="https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/MultiTexture.png" alt="Multi Texture Baking">
-            </div>
-          </div>
-        </div>
-        <!-- Slide 5: Channel Packing -->
-        <div class="carousel-item">
-          <div class="py-4 px-0 d-flex feature-item flex-column">
-            <div class="feature-text">
-              <h3 class="ext" style="font-family: 'Digitalt';">Channel Packing</h3>
-              <p>
-                Bake a different surface property to each channel in the <span style="display: inline-block; color: rgb(255, 0, 0);">R</span><span style="display: inline-block; color: rgb(0, 255, 51);">G</span><span style="display: inline-block; color: blue;">B</span><span style="display: inline-block; color: rgb(255, 255, 255);">A</span> Channels
-              </p>
-            </div>
-            <div class="feature-image">
-              <img src="https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/Channelpack2.webp" alt="Channel Packing">
-            </div>
-          </div>
-        </div>
-        <!-- Slide 6: Decal Baking -->
+        <!-- Slide 2: Decal Baking -->
         <div class="carousel-item">
           <div class="py-4 px-0 d-flex feature-item flex-column">
             <div class="feature-text">
@@ -377,23 +342,44 @@ h6 { font-size: 1rem; }
               <p>Apply decals to your desired object's surface.<br>Support for decal addons like <a href="https://blendermarket.com/products/ultistamp" target="_blank">UltiStamp</a></p>
             </div>
             <div class="feature-image">
-              <img src="https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/Decals2.webp" alt="Decal Baking">
+              <video controls muted loop playsinline style="width: 100%; border-radius: 15px;">
+                <source src="https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/Clips/Decal.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
             </div>
           </div>
         </div>
-        <!-- Slide 7: High to Low Baking -->
+        <!-- Slide 3: Multi Object High to Low Baking -->
         <div class="carousel-item">
           <div class="py-4 px-0 d-flex feature-item flex-column">
             <div class="feature-text">
-              <h3 style="font-family: 'Digitalt';">High to Low Baking</h3>
+              <h3 style="font-family: 'Digitalt';">Multi Object High to Low Baking</h3>
               <p>Transfer surface details from high-poly to low-poly meshes.</p>
             </div>
             <div class="feature-image">
-              <img src="https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/superman.webp" alt="High to Low Baking">
+              <video controls muted loop playsinline style="width: 100%; border-radius: 15px;">
+                <source src="https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/Clips/Multiobject.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
             </div>
           </div>
         </div>
-        <!-- Slide 8: Bake Post Processing -->
+        <!-- Slide 4: Profiles -->
+        <div class="carousel-item">
+          <div class="py-4 px-0 d-flex feature-item flex-column">
+            <div class="feature-text">
+              <h3 style="font-family: 'Digitalt';">Profiles</h3>
+              <p>Create your own bake setup profile. You can also <strong>save/load</strong> to external files for other projects.</p>
+            </div>
+            <div class="feature-image">
+              <video controls muted loop playsinline style="width: 100%; border-radius: 15px;">
+                <source src="https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/Clips/Profile.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </div>
+        <!-- Slide 5: Bake Post Processing -->
         <div class="carousel-item">
           <div class="py-4 px-0 d-flex feature-item flex-column">
             <div class="feature-text">
@@ -401,43 +387,25 @@ h6 { font-size: 1rem; }
               <p>Apply antialiasing, denoising, sharpening and<br>configured in the profile</p>
             </div>
             <div class="feature-image">
-              <img src="https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/ppmov.webp" alt="Special Bakes">
+              <video controls muted loop playsinline style="width: 100%; border-radius: 15px;">
+                <source src="https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/Clips/PP.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
             </div>
           </div>
         </div>
-        <!-- Slide 9: Finalize -->
+        <!-- Slide 6: UDIM Baking -->
         <div class="carousel-item">
           <div class="py-4 px-0 d-flex feature-item flex-column">
             <div class="feature-text">
-              <h3 style="font-family: 'Digitalt';">Finalize</h3>
-              <p>Automatically setup textures for quick export</p>
+              <h3 style="font-family: 'Digitalt';">UDIM Baking</h3>
+              <p>Visualize your UDIM resolution before baking. Otherwise UDIMs are automatically detected from UVs</p>
             </div>
             <div class="feature-image">
-              <img src="https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/finalize.webp" alt="Finalize">
-            </div>
-          </div>
-        </div>
-        <!-- Slide 10: UDIM Visualizer -->
-        <div class="carousel-item">
-          <div class="py-4 px-0 d-flex feature-item flex-column">
-            <div class="feature-text">
-              <h3 style="font-family: 'Digitalt';">UDIM Visualizer</h3>
-              <p>See how the resolution will be defined per UDIM tile</p>
-            </div>
-            <div class="feature-image">
-              <img src="https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/udimvis2.webp" alt="UDIM Visualizer">
-            </div>
-          </div>
-        </div>
-        <!-- Slide 11: UDIMs -->
-        <div class="carousel-item">
-          <div class="py-4 px-0 d-flex feature-item flex-column">
-            <div class="feature-text">
-              <h3 style="font-family: 'Digitalt';">UDIMs</h3>
-              <p>UDIMs are detected automatically from the mesh UVs</p>
-            </div>
-            <div class="feature-image">
-              <img src="https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/udimabke.webp" alt="UDIMs">
+              <video controls muted loop playsinline style="width: 100%; border-radius: 15px;">
+                <source src="https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/Clips/UDIM.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
             </div>
           </div>
         </div>
