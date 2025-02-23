@@ -15,8 +15,8 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", function() {
-      // Apply smooth zoom effects to both images and videos inside carousel items
-      document.querySelectorAll('.carousel-item img, .carousel-item video').forEach(media => {
+      // Apply smooth zoom effects only to images inside carousel items, excluding videos.
+      document.querySelectorAll('.carousel-item img').forEach(media => {
         media.style.transition = "none";
         media.addEventListener("mousemove", function(e) {
           const rect = media.getBoundingClientRect();
@@ -221,7 +221,7 @@
       align-items: flex-start;
       justify-content: center;
     }
-    /* Target both images and videos */
+    /* Target both images and videos for styling, but zoom effect is now only on images */
     .feature-image img,
     .feature-image video,
     .step-item img,
@@ -339,7 +339,7 @@
           <div class="py-4 px-0 d-flex feature-item flex-column">
             <div class="feature-text">
               <h3 style="font-family: 'Digitalt';">Decal Baking</h3>
-              <p>Apply decals to your desired object's surface.<br>Support for decal addons like decalMACHINE,DecalMaster,TrimFlow,Sanctus Library and <a href="https://blendermarket.com/products/ultistamp" target="_blank">UltiStamp</a></p>
+              <p><strong> Unique feature on this addon! </strong>Apply decals to your desired object's surface.<br>Support for decal addons like decalMACHINE,DecalMaster,TrimFlow,Sanctus Library and <a href="https://blendermarket.com/products/ultistamp" target="_blank">UltiStamp</a></p>
             </div>
             <div class="feature-image">
               <video controls muted loop playsinline style="width: 100%; border-radius: 15px;">
@@ -354,7 +354,7 @@
           <div class="py-4 px-0 d-flex feature-item flex-column">
             <div class="feature-text">
               <h3 style="font-family: 'Digitalt';">Multi Object High to Low Baking</h3>
-              <p>Transfer surface details from high-poly to low-poly meshes.</p>
+              <p>Transfer surface details from high-poly to low-poly meshes. You can bake as many high to low combinations as you wish <strong>with one click!!</strong></p>
             </div>
             <div class="feature-image">
               <video controls muted loop playsinline style="width: 100%; border-radius: 15px;">
@@ -384,7 +384,7 @@
           <div class="py-4 px-0 d-flex feature-item flex-column">
             <div class="feature-text">
               <h3 style="font-family: 'Digitalt';">Bake Post Processing</h3>
-              <p>Apply antialiasing, denoising, sharpening and<br>configured in the profile</p>
+              <p>Apply antialiasing, denoising, sharpening and <strong>more</strong><br>configured in the profile</p>
             </div>
             <div class="feature-image">
               <video controls muted loop playsinline style="width: 100%; border-radius: 15px;">
@@ -399,7 +399,7 @@
           <div class="py-4 px-0 d-flex feature-item flex-column">
             <div class="feature-text">
               <h3 style="font-family: 'Digitalt';">UDIM Baking</h3>
-              <p>Visualize your UDIM resolution before baking. Otherwise UDIMs are automatically detected from UVs</p>
+              <p>Visualize your UDIM resolution before baking. UDIMs are <strong>automatically detected</strong> from UVs</p>
             </div>
             <div class="feature-image">
               <video controls muted loop playsinline style="width: 100%; border-radius: 15px;">
