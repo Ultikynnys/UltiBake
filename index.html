@@ -149,7 +149,11 @@ h6 { font-size: 1rem; }
       margin: 0;
       text-align: center;
     }
-
+    @font-face {
+      font-family: 'Digitalt';
+      src: url('Digitalt.otf') format('opentype'),
+           url('Digitalt.ttf') format('truetype');
+    }
     p {
       font-size: 1em;
       line-height: 1.5;
@@ -277,7 +281,9 @@ h6 { font-size: 1rem; }
 </head>
 <body>
   <div class="content-container">
-    <h1>UltiBake</h1>
+    <h1 style="font-family: 'Digitalt';">
+      <span style="color: red;">ULTI</span><span style="color: white;">BAKE</span>
+    </h1>
     <p>
       Baking is a crucial step in the asset creation pipeline, enabling the export of surface properties as textures. This addon is designed to enhance your workflow by incorporating industry-standard features inspired by Marmoset Toolbag and Substance Painter.
     </p>
