@@ -88,7 +88,7 @@
       --control-width: 10%;
       --control-icon-size: 50px;
       --content-bg: url('https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/patternV.png');
-      --content-bg-size: 512px 512px;
+      --content-bg-size: 64px 64px;
     }
 
     /* Base styling for links */
@@ -176,6 +176,21 @@
       }
     }
 
+    /* 
+      Make the background pan at a 45 degree angle slowly.
+      We'll animate the background-position diagonally.
+    */
+    @keyframes diagonal-pan {
+      0% {
+        background-position: 0 0;
+      }
+      100% {
+        /* This can be adjusted for speed / distance; 
+           the pattern repeats, so a percentage shift or pixel shift works. */
+        background-position: 100% 100%;
+      }
+    }
+
     /* Main content container */
     .content-container {
       background: var(--content-bg) repeat;
@@ -190,7 +205,11 @@
       border-radius: 15px;
       margin: 0;
       text-align: center;
+
+      /* The actual animation */
+      animation: diagonal-pan 1200s linear infinite;
     }
+
     @font-face {
       font-family: 'Digitalt';
       src: url('https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/Digitalt.otf') format('opentype'),
