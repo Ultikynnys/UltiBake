@@ -8,25 +8,23 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Raleway:ital,wght@0,500;1,500&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Raleway:ital,wght@0,500;1,500&display=swap"
+    rel="stylesheet"
+  />
   
   <!-- Bootstrap 5 CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
 
   <script>
     document.addEventListener("DOMContentLoaded", function() {
-      // Apply smooth zoom effects only to images inside carousel items, excluding videos.
-      document.querySelectorAll('.carousel-item img').forEach(media => {
-        media.style.transition = "none";
-        media.addEventListener("mousemove", function(e) {
-          const rect = media.getBoundingClientRect();
-          const xPercent = ((e.clientX - rect.left) / rect.width) * 100;
-          const yPercent = ((e.clientY - rect.top) / rect.height) * 100;
-          media.style.transformOrigin = `${xPercent}% ${yPercent}%`;
-        });
-        media.addEventListener("mouseenter", function() { media.style.transform = "scale(1.3)"; });
-        media.addEventListener("mouseleave", function() { media.style.transform = "scale(1)"; });
-      });
+      /*
+       * Zoom effect code was removed, since there are no images 
+       * and the smooth zoom is redundant.
+       */
 
       // Features carousel: autoplay video on active slide (starting at time 0) and pause videos in inactive slides.
       var featuresCarouselElement = document.getElementById('featuresCarousel');
@@ -52,6 +50,33 @@
         if (newActiveVideo) {
           newActiveVideo.currentTime = 0;
           newActiveVideo.play();
+        }
+      });
+
+      // Steps carousel: autoplay video on active slide (starting at time 0) and pause videos in inactive slides.
+      var stepsCarouselElement = document.getElementById('stepsCarousel');
+
+      // On page load, play the video in the first (active) slide
+      var activeStepsVideo = stepsCarouselElement.querySelector('.carousel-item.active video');
+      if (activeStepsVideo) {
+          activeStepsVideo.currentTime = 0;
+          activeStepsVideo.play();
+      }
+
+      // Before the slide transition starts, pause the video on the current slide.
+      stepsCarouselElement.addEventListener('slide.bs.carousel', function (event) {
+        var currentStepsVideo = stepsCarouselElement.querySelector('.carousel-item.active video');
+        if (currentStepsVideo) {
+          currentStepsVideo.pause();
+        }
+      });
+
+      // After the slide transition ends, reset and play the video on the new active slide.
+      stepsCarouselElement.addEventListener('slid.bs.carousel', function (event) {
+        var newActiveStepsVideo = stepsCarouselElement.querySelector('.carousel-item.active video');
+        if (newActiveStepsVideo) {
+          newActiveStepsVideo.currentTime = 0;
+          newActiveStepsVideo.play();
         }
       });
     });
@@ -221,7 +246,11 @@
       align-items: flex-start;
       justify-content: center;
     }
-    /* Target both images and videos for styling, but zoom effect is now only on images */
+
+    /*
+      Removed "transition: transform 0.3s ease;" because
+      zooming is no longer necessary (no images).
+    */
     .feature-image img,
     .feature-image video,
     .step-item img,
@@ -232,7 +261,6 @@
       object-position: top center;
       border-radius: 15px;
       background-color: transparent;
-      transition: transform 0.3s ease;
     }
 
     /* Carousel containers */
@@ -311,12 +339,44 @@
     <!-- Features Carousel -->
     <div id="featuresCarousel" class="carousel slide rounded-carousel features-carousel" data-bs-pause="hover">
       <div class="carousel-indicators">
-        <button type="button" data-bs-target="#featuresCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#featuresCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#featuresCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        <button type="button" data-bs-target="#featuresCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
-        <button type="button" data-bs-target="#featuresCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
-        <button type="button" data-bs-target="#featuresCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
+        <button
+          type="button"
+          data-bs-target="#featuresCarousel"
+          data-bs-slide-to="0"
+          class="active"
+          aria-current="true"
+          aria-label="Slide 1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#featuresCarousel"
+          data-bs-slide-to="1"
+          aria-label="Slide 2"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#featuresCarousel"
+          data-bs-slide-to="2"
+          aria-label="Slide 3"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#featuresCarousel"
+          data-bs-slide-to="3"
+          aria-label="Slide 4"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#featuresCarousel"
+          data-bs-slide-to="4"
+          aria-label="Slide 5"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#featuresCarousel"
+          data-bs-slide-to="5"
+          aria-label="Slide 6"
+        ></button>
       </div>
       <div class="carousel-inner">
         <!-- Slide 1: Bake Visualizer -->
@@ -414,11 +474,21 @@
           </div>
         </div>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#featuresCarousel" data-bs-slide="prev">
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#featuresCarousel"
+        data-bs-slide="prev"
+      >
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
       </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#featuresCarousel" data-bs-slide="next">
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#featuresCarousel"
+        data-bs-slide="next"
+      >
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
       </button>
@@ -427,10 +497,32 @@
     <h2 style="font-family: 'Digitalt';">Simple to use</h2>
     <div id="stepsCarousel" class="carousel slide rounded-carousel" data-bs-pause="hover">
       <div class="carousel-indicators">
-        <button type="button" data-bs-target="#stepsCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Step 1"></button>
-        <button type="button" data-bs-target="#stepsCarousel" data-bs-slide-to="1" aria-label="Step 2"></button>
-        <button type="button" data-bs-target="#stepsCarousel" data-bs-slide-to="2" aria-label="Step 3"></button>
-        <button type="button" data-bs-target="#stepsCarousel" data-bs-slide-to="3" aria-label="Step 4"></button>
+        <button
+          type="button"
+          data-bs-target="#stepsCarousel"
+          data-bs-slide-to="0"
+          class="active"
+          aria-current="true"
+          aria-label="Step 1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#stepsCarousel"
+          data-bs-slide-to="1"
+          aria-label="Step 2"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#stepsCarousel"
+          data-bs-slide-to="2"
+          aria-label="Step 3"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#stepsCarousel"
+          data-bs-slide-to="3"
+          aria-label="Step 4"
+        ></button>
       </div>
       <div class="carousel-inner">
         <div class="carousel-item active">
@@ -446,32 +538,45 @@
           <div class="step-item">
             <p>Step 2: Select your objects to bake by creating a bake set</p>
             <video controls muted loop playsinline style="width: 100%; border-radius: 15px;">
-            <source src="https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/Clips/assignment.mov" type="video/mp4">
-          </video>
+              <source src="https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/Clips/assignment.mov" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
           </div>
         </div>
         <div class="carousel-item">
           <div class="step-item">
             <p>Step 3: Set up your bake profile and Save it</p>
             <video controls muted loop playsinline style="width: 100%; border-radius: 15px;">
-            <source src="https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/Clips/profile.mov" type="video/mp4">
-          </video>
+              <source src="https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/Clips/profile.mov" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
           </div>
         </div>
         <div class="carousel-item">
           <div class="step-item">
-            <p>Step 4: Assign the Profile, Bake Textures and Export</p>
+            <p>Step 4: Assign the Profile, Bake Textures and Finalize</p>
             <video controls muted loop playsinline style="width: 100%; border-radius: 15px;">
-            <source src="https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/Clips/finalize.mov" type="video/mp4">
-          </video>
+              <source src="https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/Clips/finalize.mov" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
           </div>
         </div>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#stepsCarousel" data-bs-slide="prev">
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#stepsCarousel"
+        data-bs-slide="prev"
+      >
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
       </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#stepsCarousel" data-bs-slide="next">
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#stepsCarousel"
+        data-bs-slide="next"
+      >
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
       </button>
@@ -480,9 +585,25 @@
     <h2 style="font-family: 'Digitalt';">Videos</h2>
     <div id="documentationCarousel" class="carousel slide rounded-carousel" data-bs-pause="hover">
       <div class="carousel-indicators">
-        <button type="button" data-bs-target="#documentationCarousel" data-bs-slide-to="0" class="active" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#documentationCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#documentationCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button
+          type="button"
+          data-bs-target="#documentationCarousel"
+          data-bs-slide-to="0"
+          class="active"
+          aria-label="Slide 1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#documentationCarousel"
+          data-bs-slide-to="1"
+          aria-label="Slide 2"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#documentationCarousel"
+          data-bs-slide-to="2"
+          aria-label="Slide 3"
+        ></button>
       </div>
       <div class="carousel-inner">
         <div class="carousel-item active">
@@ -490,9 +611,9 @@
             <p>Quick start</p>
             <div class="ratio ratio-16x9 mx-auto">
               <iframe 
-                src="https://www.youtube.com/embed/_gE_KFakj5Q" 
-                title="Quick start" 
-                frameborder="0" 
+                src="https://www.youtube.com/embed/_gE_KFakj5Q"
+                title="Quick start"
+                frameborder="0"
                 allowfullscreen>
               </iframe>
             </div>
@@ -503,9 +624,9 @@
             <p>High to Low + Decals</p>
             <div class="ratio ratio-16x9 mx-auto">
               <iframe 
-                src="https://www.youtube.com/embed/5VbmDDsLJUQ" 
-                title="High to Low + Decals" 
-                frameborder="0" 
+                src="https://www.youtube.com/embed/5VbmDDsLJUQ"
+                title="High to Low + Decals"
+                frameborder="0"
                 allowfullscreen>
               </iframe>
             </div>
@@ -516,20 +637,30 @@
             <p>Combining Materials and Textures. Also shows how to setup a UV</p>
             <div class="ratio ratio-16x9 mx-auto">
               <iframe 
-                src="https://www.youtube.com/embed/CSWeFICRiWk" 
-                title="Combining Materials and Textures" 
-                frameborder="0" 
+                src="https://www.youtube.com/embed/CSWeFICRiWk"
+                title="Combining Materials and Textures"
+                frameborder="0"
                 allowfullscreen>
               </iframe>
             </div>
           </div>
         </div>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#documentationCarousel" data-bs-slide="prev">
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#documentationCarousel"
+        data-bs-slide="prev"
+      >
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
       </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#documentationCarousel" data-bs-slide="next">
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#documentationCarousel"
+        data-bs-slide="next"
+      >
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
       </button>
@@ -548,7 +679,9 @@
   </div>
   
   <!-- Bootstrap 5 Bundle with Popper (JS) -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+  ></script>
   
   <script>
     // Fetch and parse changelog entries using DRY principles
