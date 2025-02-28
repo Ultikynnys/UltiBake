@@ -285,3 +285,6 @@
 
 >## 1.9.16 - Hotfix 23/02/2025
     * Progress bar now doesn't start with previous bake information
+
+>## 1.9.17 - Hotfix 28/02/2025
+    * Decals no longer cast AO or Shadows
