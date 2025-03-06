@@ -13,109 +13,15 @@
   <!-- Bootstrap 5 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   
-  <style>
-    /* Base styling for links with a moving, slightly desaturated rainbow */
-    a {
-      color: rgb(255, 85, 85);
-      font-weight: normal;
-      font-family: 'Outfit', 'Raleway', sans-serif;
-      text-decoration: none;
-      transition: all 0.3s ease;
-    }
-    a:hover,
-    a:focus {
-      background-image: linear-gradient(
-        90deg,
-        hsl(0, 50%, 50%),
-        hsl(60, 50%, 50%),
-        hsl(120, 50%, 50%),
-        hsl(180, 50%, 50%),
-        hsl(240, 50%, 50%),
-        hsl(300, 50%, 50%),
-        hsl(360, 50%, 50%)
-      );
-      background-size: 400%;
-      color: transparent;
-      -webkit-background-clip: text;
-      background-clip: text;
-      animation: rainbow 10s linear infinite;
-    }
-    @keyframes rainbow {
-      0% { background-position: 0%; }
-      100% { background-position: 400%; }
-    }
-    a:hover,
-    a:focus {
-      -webkit-text-stroke: 0;
-      text-shadow: none;
-    }
-    
-    /* New rainbow-text class for animated rainbow header */
-    .rainbow-text {
-      background-image: linear-gradient(
-        90deg,
-        hsl(0, 50%, 50%),
-        hsl(60, 50%, 50%),
-        hsl(120, 50%, 50%),
-        hsl(180, 50%, 50%),
-        hsl(240, 50%, 50%),
-        hsl(300, 50%, 50%),
-        hsl(360, 50%, 50%)
-      );
-      background-size: 400%;
-      color: transparent;
-      -webkit-background-clip: text;
-      background-clip: text;
-      animation: rainbow 10s linear infinite;
-      text-shadow: none;
-    }
-    
-    /* Headers with responsive text sizes using clamp() */
-    h1, h2, h3 {
-      text-align: center;
-      font-family: 'Outfit', 'Raleway', sans-serif;
-    }
-    h1 { font-size: clamp(2rem, 5vw, 5rem); }
-    h2 { font-size: clamp(1.5rem, 4vw, 4rem); }
-    h3 { font-size: clamp(1rem, 2.5vw, 2rem); }
-    
-    /* Main content container */
-    .content-container {
-      background-color: white;
-      background: url('https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/patternB.svg') repeat;
-      background-size: 100px 100px;
-      font-family: 'Outfit', 'Raleway', sans-serif;
-      padding: 5px;
-      font-size: 20px;
-      color: white;
-      text-shadow: -0.1em 0 0 black, 0.1em 0 0 black, 0 -0.1em 0 black, 0 0.1em 0 black,
-                   -0.07em -0.07em 0 black, 0.07em -0.07em 0 black, -0.07em 0.07em 0 black,
-                   0.07em 0.07em 0 black, 0.07em 0.07em 0.2em rgba(0, 0, 0, 0.7);
-      border-radius: 15px;
-      margin: 0;
-      text-align: center;
-    }
-    
-    /* Paragraph styling with responsive font-size */
-    p {
-      font-size: clamp(1rem, 2vw, 1.5rem);
-      line-height: 1.5;
-    }
-    
-    /* Carousel container styling */
-    .rounded-carousel {
-      border-radius: 15px;
-      overflow: hidden;
-      margin: 2rem auto;
-    }
-  </style>
+  <!-- Link to external CSS file -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body style="background-color: rgba(255, 255, 255, 0);">
   <div class="container-fluid my-3 content-container">
     <!-- Introduction -->
-    <h1>What Is This?</h1>
+    <h1>Ultitools</h1>
     <p>
-      Ultitools is an add-on that includes various tools, showcased below. For any problems or suggestions, join the 
+      This is an add-on that includes various tools, showcased below. For any problems or suggestions, join the 
       <a href="https://discord.gg/Xh7eB5Rn5b" target="_blank" style="font-family: sans-serif; background-color: transparent;">
         Discord channel
       </a>.
