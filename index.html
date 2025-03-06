@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
   <meta property="og:type" content="website">
-<meta property="og:url" content="https://ultikynnys.github.io/UltiBake">
-<meta property="og:title" content="UltiBake">
-<meta property="og:description" content="A brief description of UltiBake.">
-<meta property="og:image" content="https://ultikynnys.github.io/UltiBake/path-to-preview-image.jpg">
+  <meta property="og:url" content="https://ultikynnys.github.io/UltiBake">
+  <meta property="og:title" content="UltiBake">
+  <meta property="og:description" content="A brief description of UltiBake.">
+  <meta property="og:image" content="https://ultikynnys.github.io/UltiBake/path-to-preview-image.jpg">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ultibake Showcase</title>
@@ -26,11 +26,6 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", function() {
-      /*
-       * Zoom effect code was removed, since there are no images 
-       * and the smooth zoom is redundant.
-       */
-
       // Features carousel: autoplay video on active slide (starting at time 0) and pause videos in inactive slides.
       var featuresCarouselElement = document.getElementById('featuresCarousel');
 
@@ -92,13 +87,14 @@
       --main-font: 'Outfit', 'Raleway', sans-serif;
       --control-width: 10%;
       --control-icon-size: 50px;
-      --content-bg: url('https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/patternV.png');
+      /* Scrolling background image — keep as is, but we can lighten it if needed. */
+      --content-bg: url('https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/patternB.svg');
       --content-bg-size: 64px 64px;
     }
 
     /* Base styling for links */
     a {
-      color: rgb(255, 85, 85);
+      color: rgb(200, 70, 70);
       font-family: var(--main-font);
       text-decoration: none;
       transition: all 0.3s ease;
@@ -113,8 +109,7 @@
         hsl(180, 50%, 50%),
         hsl(240, 50%, 50%),
         hsl(300, 50%, 50%),
-        hsl(360, 50%, 50%)
-      );
+        hsl(360, 50%, 50%));
       background-size: 400%;
       color: transparent;
       -webkit-background-clip: text;
@@ -124,11 +119,6 @@
     @keyframes rainbow {
       0% { background-position: 0%; }
       100% { background-position: 400%; }
-    }
-    a:hover,
-    a:focus {
-      -webkit-text-stroke: 0;
-      text-shadow: none;
     }
 
     .rainbow-text {
@@ -140,8 +130,7 @@
         hsl(180, 50%, 50%),
         hsl(240, 50%, 50%),
         hsl(300, 50%, 50%),
-        hsl(360, 50%, 50%)
-      );
+        hsl(360, 50%, 50%));
       background-size: 400%;
       color: transparent;
       -webkit-background-clip: text;
@@ -154,6 +143,7 @@
     h1, h2, h3, h4, h5, h6 {
       text-align: center;
       font-family: var(--main-font);
+      color: #333;
     }
     h1 { font-size: 5rem; }
     h2 { font-size: 4rem; }
@@ -169,12 +159,12 @@
       h6 { font-size: 0.9rem; }
     }
 
+    /* Video container responsiveness */
     .video-container {
       max-width: 800px;
       width: 100%;
       margin: 0 auto;
     }
-
     @media (max-width: 600px) {
       .video-container {
         max-width: 100%;
@@ -182,16 +172,13 @@
     }
 
     /* 
-      Make the background pan at a 45 degree angle slowly.
-      We'll animate the background-position diagonally.
+      Keep the background pattern and animate it diagonally.
     */
     @keyframes diagonal-pan {
       0% {
         background-position: 0 0;
       }
       100% {
-        /* This can be adjusted for speed / distance; 
-           the pattern repeats, so a percentage shift or pixel shift works. */
         background-position: 100% 100%;
       }
     }
@@ -203,15 +190,13 @@
       font-family: var(--main-font);
       padding: 5px;
       font-size: 20px;
-      color: white;
-      text-shadow: -0.1em 0 0 black, 0.1em 0 0 black, 0 -0.1em 0 black, 0 0.1em 0 black,
-                   -0.07em -0.07em 0 black, 0.07em -0.07em 0 black, -0.07em 0.07em 0 black,
-                   0.07em 0.07em 0 black, 0.07em 0.07em 0.2em rgba(0, 0, 0, 0.7);
+      /* Light-mode text color */
+      color: #333;
+      /* Remove heavy dark shadow, you can keep a slight shadow if desired */
+      text-shadow: none; 
       border-radius: 15px;
       margin: 0;
       text-align: center;
-
-      /* The actual animation */
       animation: diagonal-pan 1200s linear infinite;
     }
 
@@ -220,9 +205,11 @@
       src: url('https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/Digitalt.otf') format('opentype'),
            url('https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/Digitalt.ttf') format('truetype');
     }
+
     p {
       font-size: 1em;
       line-height: 1.5;
+      color: #333; /* Dark text color */
     }
 
     .support-container {
@@ -247,7 +234,7 @@
     }
     .carousel-inner > .carousel-item { height: 1%; }
 
-    /* Carousel item styling */
+    /* Feature and Step item styling */
     .feature-item,
     .step-item {
       display: flex;
@@ -259,6 +246,7 @@
     .feature-text,
     .step-item p {
       margin-bottom: 0.5em;
+      color: #333;
     }
 
     .feature-image {
@@ -270,11 +258,6 @@
       align-items: flex-start;
       justify-content: center;
     }
-
-    /*
-      Removed "transition: transform 0.3s ease;" because
-      zooming is no longer necessary (no images).
-    */
     .feature-image img,
     .feature-image video,
     .step-item img,
@@ -325,24 +308,25 @@
       opacity: 1;
     }
 
-    /* Changelog styling */
+    /* Changelog styling in light mode */
     #changelog-box {
-      border: 2px solid #555;
+      border: 2px solid #ccc;
       max-height: 400px;
       overflow-y: auto;
       padding: 1rem;
       margin-top: 1rem;
-      background-color: #222;
-      color: white;
+      background-color: #f9f9f9; 
+      color: #333; 
     }
     .changelog-entry {
-      border: 1px solid #666;
+      border: 1px solid #ddd;
       padding: 0.5rem;
       margin-bottom: 1rem;
       border-radius: 5px;
+      background-color: #fff;
     }
     .update-item {
-      color: #ccc;
+      color: #444;
       padding: 0.3rem;
       margin-left: 20px;
       border-radius: 3px;
@@ -353,10 +337,14 @@
 <body>
   <div class="content-container">
     <h1 style="font-family: 'Digitalt';">
-      <span style="color: rgba(255, 0, 0, 0.582);">ULTI</span><span style="color: white;">BAKE</span>
+      <span style="color: rgba(255, 0, 0, 0.582);">ULTI</span><span style="color: #333;">BAKE</span>
     </h1>
     <p>
-      <strong>Ultibake</strong> is an all-in-one baking solution for Blender. <strong>Baking</strong>  is the act of turning surface details into textures. The modular design philosophy allows for easy baking of textures, <strong>decals</strong>, high to low poly, UDIMs and more, with the added benefit of <strong>saving your setups for later use</strong> using <strong>Profiles</strong>, like in Substance Painter.
+      <strong>Ultibake</strong> is an all-in-one baking solution for Blender.
+      <strong>Baking</strong> is the act of turning surface details into textures.
+      The modular design philosophy allows for easy baking of textures, <strong>decals</strong>,
+      high to low poly, UDIMs and more, with the added benefit of
+      <strong>saving your setups for later use</strong> using <strong>Profiles</strong>, like in Substance Painter.
     </p>
     
     <h2 style="font-family: 'Digitalt';">Features</h2>
@@ -708,7 +696,7 @@
   ></script>
   
   <script>
-    // Fetch and parse changelog entries using DRY principles
+    // Fetch and parse changelog entries
     const changelogUrl = 'https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/Changelogs.md';
     fetch(changelogUrl)
       .then(response => response.text())
@@ -727,8 +715,8 @@
           if (lowerHeader.includes("improvement") || lowerHeader.includes("addition") || lowerHeader.includes("optimization") ||
               lowerHeader.includes("update") || lowerHeader.includes("ures") || lowerHeader.includes("stability")) categories.push("Green");
           if (lowerHeader.includes("rework") || lowerHeader.includes("change")) categories.push("blue");
-          const headerColor = (categories.length === 1) ? categories[0] : "white";
-  
+          const headerColor = (categories.length === 1) ? categories[0] : "#333";
+
           let headerHtml = "";
           if (headerLine.startsWith("##")) {
             headerHtml = lowerHeader.includes("version increment")
@@ -739,7 +727,7 @@
               ? `<p class="rainbow-text">${headerText}</p>`
               : `<p style="color: ${headerColor};">${headerText}</p>`;
           }
-  
+
           let contentHtml = "";
           for (let i = 1; i < lines.length; i++) {
             const line = lines[i].trim();
@@ -749,7 +737,7 @@
               contentHtml += `<p>${line}</p>`;
             }
           }
-  
+
           html += `<div class="changelog-entry mb-3">${headerHtml}${contentHtml}</div>`;
         });
         document.getElementById("changelog-box").innerHTML = html;
