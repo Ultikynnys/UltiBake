@@ -13,8 +13,16 @@
   <!-- Bootstrap 5 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   
-  <!-- Link to external CSS file -->
+  <!-- External CSS file -->
   <link rel="stylesheet" href="style.css" />
+
+  <!-- Inline style override to show carousel controls -->
+  <style>
+    .carousel-control-prev,
+    .carousel-control-next {
+      display: block !important;
+    }
+  </style>
 </head>
 <body style="background-color: rgba(255, 255, 255, 0);">
   <div class="container-fluid my-3 content-container">
@@ -218,10 +226,8 @@
     // Listen for carousel slide events to update text if the group changes
     var imageCarousel = document.getElementById('imageCarousel');
     imageCarousel.addEventListener('slide.bs.carousel', function (event) {
-      // event.relatedTarget is the upcoming active slide
       var nextSlide = event.relatedTarget;
       const newGroup = nextSlide.getAttribute('data-group');
-      // Compare with the current slide's group; if different, update the text
       var currentSlide = document.querySelector('#imageCarousel .carousel-item.active');
       var currentGroup = currentSlide ? currentSlide.getAttribute('data-group') : null;
       if (newGroup !== currentGroup) {
