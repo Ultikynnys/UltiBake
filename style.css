@@ -104,14 +104,15 @@ h6 { font-size: rem; }
   text-overflow: ellipsis;
   margin: 0;
   line-height: 1.2;
-  min-height: calc(2 * 1.2em);
+  min-height: calc(2.5em);
 }
 
 .carousel-item h3 {
   font-size: clamp(2rem, 2vw, 3rem);
+  
 }
 .carousel-item p {
-  font-size: clamp(1.5rem, 1.6vw, 2rem);
+  font-size: clamp(1.2rem, 1.6vw, 1.7rem);
 }
 
 /* Base paragraph styling */
