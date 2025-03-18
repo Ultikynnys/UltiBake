@@ -112,7 +112,7 @@ h6 { font-size: rem; }
   
 }
 .carousel-item p {
-  font-size: clamp(1.2rem, 1.6vw, 1.7rem);
+  font-size: clamp(1.1rem, 1.6vw, 1.7rem);
 }
 
 /* Base paragraph styling */
