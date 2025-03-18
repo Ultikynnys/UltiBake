@@ -98,27 +98,29 @@ h6 { font-size: rem; }
 .carousel-item h3,
 .carousel-item p {
   display: -webkit-box;
-  -webkit-line-clamp: 2; /* limit to 2 lines */
+  -webkit-line-clamp: 3; /* limit to 2 lines */
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
   margin: 0;
-  line-height: 1.2;
-  min-height: calc(2.5em);
+  line-height: 1.;
+  min-height: calc(4.5em);
 }
 
 .carousel-item h3 {
-  font-size: clamp(2rem, 2vw, 3rem);
+  font-size: clamp(1.5rem, 2vw, 2.2rem);
+  min-height: calc(1.5em);
   
 }
 .carousel-item p {
-  font-size: clamp(1.1rem, 1.6vw, 1.7rem);
+  font-size: clamp(0.8rem, 2vw, 2rem);
 }
 
 /* Base paragraph styling */
 p {
-  font-size: 1em;
+  font-size: clamp(0.8rem, 2vw, 2rem);
   line-height: 1.5;
+  
   color: #333; /* Dark text color */
 }
 
