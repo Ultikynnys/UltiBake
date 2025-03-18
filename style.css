@@ -1,268 +1,289 @@
 :root {
-    --main-font: 'Outfit', 'Raleway', sans-serif;
-    --control-width: 10%;
-    --control-icon-size: 50px;
-    /* Scrolling background image (lightmode keeps the pattern) */
-    --content-bg: url('https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/patternB.svg');
-    --content-bg-size: 64px 64px;
-  }
-  
-  /* Base styling for links */
-  a {
-    color: rgb(200, 70, 70);
-    font-family: var(--main-font);
-    text-decoration: none;
-    transition: all 0.3s ease;
-  }
-  
-  a:hover,
-  a:focus {
-    background-image: linear-gradient(
-      90deg,
-      hsl(0, 50%, 50%),
-      hsl(60, 50%, 50%),
-      hsl(120, 50%, 50%),
-      hsl(180, 50%, 50%),
-      hsl(240, 50%, 50%),
-      hsl(300, 50%, 50%),
-      hsl(360, 50%, 50%)
-    );
-    background-size: 400%;
-    color: transparent;
-    -webkit-background-clip: text;
-    background-clip: text;
-    animation: rainbow 10s linear infinite;
-  }
-  
-  @keyframes rainbow {
-    0% { background-position: 0%; }
-    100% { background-position: 400%; }
-  }
-  
-  .rainbow-text {
-    background-image: linear-gradient(
-      90deg,
-      hsl(0, 50%, 50%),
-      hsl(60, 50%, 50%),
-      hsl(120, 50%, 50%),
-      hsl(180, 50%, 50%),
-      hsl(240, 50%, 50%),
-      hsl(300, 50%, 50%),
-      hsl(360, 50%, 50%)
-    );
-    background-size: 400%;
-    color: transparent;
-    -webkit-background-clip: text;
-    background-clip: text;
-    animation: rainbow 10s linear infinite;
-    text-shadow: none;
-  }
-  
-  /* Headers */
-  h1, h2, h3, h4, h5, h6 {
-    text-align: center;
-    font-family: var(--main-font);
-    color: #333;
-  }
-  
-  h1 { font-size: 5rem; }
-  h2 { font-size: 4rem; }
-  h3, h4 { font-size: 2rem; }
-  h5 { font-size: 1.25rem; }
-  h6 { font-size: 1rem; }
-  
-  @media (max-width: 600px) {
-    h1 { font-size: 3rem; }
-    h2 { font-size: 2.5rem; }
-    h3, h4 { font-size: 1.75rem; }
-    h5 { font-size: 1.1rem; }
-    h6 { font-size: 0.9rem; }
-  }
-  
-  /* Video container responsiveness */
+  --main-font: 'Outfit', 'Raleway', sans-serif;
+  --control-width: 10%;
+  --control-icon-size: 50px;
+  /* Scrolling background image (lightmode keeps the pattern) */
+  --content-bg: url('https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/patternB.svg');
+  --content-bg-size: 64px 64px;
+}
+
+/* Base styling for links */
+a {
+  color: rgb(200, 70, 70);
+  font-family: var(--main-font);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+a:hover,
+a:focus {
+  background-image: linear-gradient(
+    90deg,
+    hsl(0, 50%, 50%),
+    hsl(60, 50%, 50%),
+    hsl(120, 50%, 50%),
+    hsl(180, 50%, 50%),
+    hsl(240, 50%, 50%),
+    hsl(300, 50%, 50%),
+    hsl(360, 50%, 50%)
+  );
+  background-size: 400%;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: rainbow 10s linear infinite;
+}
+
+@keyframes rainbow {
+  0% { background-position: 0%; }
+  100% { background-position: 400%; }
+}
+
+.rainbow-text {
+  background-image: linear-gradient(
+    90deg,
+    hsl(0, 50%, 50%),
+    hsl(60, 50%, 50%),
+    hsl(120, 50%, 50%),
+    hsl(180, 50%, 50%),
+    hsl(240, 50%, 50%),
+    hsl(300, 50%, 50%),
+    hsl(360, 50%, 50%)
+  );
+  background-size: 400%;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: rainbow 10s linear infinite;
+  text-shadow: none;
+}
+
+/* Custom font face for 'Digitalt' */
+@font-face {
+  font-family: 'Digitalt';
+  src: url('https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/Digitalt.otf') format('opentype'),
+       url('https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/Digitalt.ttf') format('truetype');
+}
+
+/* Headers */
+h1, h2, h3, h4, h5, h6 {
+  text-align: center;
+  font-family: var(--main-font);
+  color: #333;
+}
+
+h1 {
+  font-family: 'Digitalt', var(--main-font), sans-serif;
+  font-size: 5rem;
+}
+h2 {
+  font-family: 'Digitalt', var(--main-font), sans-serif;
+  font-size: 4rem;
+}
+h3, h4 {
+  font-size: 2rem;
+}
+h5 { font-size: 1.25rem; }
+h6 { font-size: 1rem; }
+
+@media (max-width: 600px) {
+  h1 { font-size: 3rem; }
+  h2 { font-size: 2.5rem; }
+  h3, h4 { font-size: 1.75rem; }
+  h5 { font-size: 1.1rem; }
+  h6 { font-size: 0.9rem; }
+}
+
+/* Two-line clamp for carousel headings and paragraphs with dynamic font scaling.
+   Added line-height and min-height to enforce a two-line tall container. */
+.carousel-item h3,
+.carousel-item p {
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* limit to 2 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+  line-height: 1.2;
+  min-height: calc(2 * 1.2em);
+}
+
+.carousel-item h3 {
+  font-size: clamp(1rem, 2vw, 1.4rem);
+}
+.carousel-item p {
+  font-size: clamp(0.9rem, 1.6vw, 1.1rem);
+}
+
+/* Base paragraph styling */
+p {
+  font-size: 1.5em;
+  line-height: 1.5;
+  color: #333; /* Dark text color */
+}
+
+/* Video container responsiveness */
+.video-container {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+}
+@media (max-width: 600px) {
   .video-container {
-    max-width: 800px;
-    width: 100%;
-    margin: 0 auto;
+    max-width: 100%;
   }
-  @media (max-width: 600px) {
-    .video-container {
-      max-width: 100%;
-    }
-  }
-  
-  /* Animate background diagonally */
-  @keyframes diagonal-pan {
-    0% {
-      background-position: 0 0;
-    }
-    100% {
-      background-position: 100% 100%;
-    }
-  }
-  
-  /* Main content container */
-  .content-container {
-    background: var(--content-bg) repeat;
-    background-size: var(--content-bg-size);
-    font-family: var(--main-font);
-    padding: 5px;
-    font-size: 20px;
-    color: #333; /* Dark text for light mode */
-    text-shadow: none; /* Remove heavy shadows */
-    border-radius: 15px;
-    margin: 0;
-    text-align: center;
-    animation: diagonal-pan 1200s linear infinite;
-  }
-  
-  /* Custom font face */
-  @font-face {
-    font-family: 'Digitalt';
-    src: url('https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/Digitalt.otf') format('opentype'),
-         url('https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/Digitalt.ttf') format('truetype');
-  }
-  
-  p {
-    font-size: 1.5em;
-    line-height: 1.5;
-    color: #333; /* Dark text color */
-  }
-  
-  /* Support container */
-  .support-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0.5rem;
-    word-break: break-word;
-  }
-  
-  /* Rounded container styling */
-  .rounded-video,
-  .rounded-carousel {
-    border-radius: 15px;
-    overflow: hidden;
-    cursor: pointer;
-  }
-  
-  .rounded-video { 
-    max-width: 100%; 
-    margin: 0 auto; 
-  }
-  .rounded-carousel {
-    width: auto;
-    height: 100%;
-    margin: 0;
-  }
-  
-  .carousel-inner > .carousel-item { 
-    height: 1%; 
-  }
-  
-  /* Feature and Step item styling */
-  .feature-item,
-  .step-item {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    text-align: center;
-  }
-  
-  .feature-text,
-  .step-item p {
-    margin-bottom: 0.5em;
-    color: #333;
-  }
-  
-  .feature-image {
-    position: relative;
-    width: 100%;
-    height: auto;
-    overflow: hidden;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-  }
-  
-  .feature-image img,
-  .feature-image video,
-  .step-item img,
-  .step-item video {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    object-position: top center;
-    border-radius: 15px;
-    background-color: transparent;
-  }
-  
-  /* Carousel containers */
-  #stepsCarousel,
-  #featuresCarousel {
-    position: relative;
-  }
-  
-  #stepsCarousel .carousel-inner > .carousel-item,
-  #featuresCarousel .carousel-inner > .carousel-item {
-    height: auto !important;
-  }
-  
-  #stepsCarousel .carousel-indicators,
-  #featuresCarousel .carousel-indicators {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    margin: 0;
-    padding: 0;
-    z-index: 15;
-  }
-  
-  /* Carousel control buttons */
-  .carousel-control-prev, 
-  .carousel-control-next {
-    width: var(--control-width);
-    opacity: 0.8;
-    transition: opacity 0.3s ease;
-  }
-  
-  .carousel-control-prev-icon,
-  .carousel-control-next-icon {
-    width: var(--control-icon-size);
-    height: var(--control-icon-size);
-    background-size: var(--control-icon-size) var(--control-icon-size);
-  }
-  
-  .carousel-control-prev:hover,
-  .carousel-control-next:hover {
-    opacity: 1;
-  }
-  
-  /* Changelog styling (light mode) */
-  #changelog-box {
-    border: 2px solid #ccc;
-    max-height: 400px;
-    overflow-y: auto;
-    padding: 1rem;
-    margin-top: 1rem;
-    background-color: #f9f9f9;
-    color: #333;
-  }
-  
-  .changelog-entry {
-    border: 1px solid #ddd;
-    padding: 0.5rem;
-    margin-bottom: 1rem;
-    border-radius: 5px;
-    background-color: #fff;
-  }
-  
-  .update-item {
-    color: #444;
-    padding: 0.3rem;
-    margin-left: 20px;
-    border-radius: 3px;
-    font-size: 0.8em;
-  }
-  
+}
+
+/* Animate background diagonally */
+@keyframes diagonal-pan {
+  0% { background-position: 0 0; }
+  100% { background-position: 100% 100%; }
+}
+
+/* Main content container */
+.content-container {
+  background: var(--content-bg) repeat;
+  background-size: var(--content-bg-size);
+  font-family: var(--main-font);
+  padding: 5px;
+  font-size: 20px;
+  color: #333;
+  text-shadow: none;
+  border-radius: 15px;
+  margin: 0;
+  text-align: center;
+  animation: diagonal-pan 1200s linear infinite;
+}
+
+/* Support container */
+.support-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0.5rem;
+  word-break: break-word;
+}
+
+/* Rounded containers */
+.rounded-video,
+.rounded-carousel {
+  border-radius: 15px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.rounded-video {
+  max-width: 100%;
+  margin: 0 auto;
+}
+.rounded-carousel {
+  width: auto;
+  height: 100%;
+  margin: 0;
+}
+.carousel-inner > .carousel-item {
+  height: 1%;
+}
+
+/* Feature / step item styling */
+.feature-item,
+.step-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+}
+.feature-text,
+.step-item p {
+  margin-bottom: 0.5em;
+  color: #333;
+}
+.feature-image {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.feature-image img,
+.feature-image video,
+.step-item img,
+.step-item video {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  object-position: top center;
+  border-radius: 15px;
+  background-color: transparent;
+}
+
+/* Positioning for step/features carousels */
+#stepsCarousel,
+#featuresCarousel {
+  position: relative;
+}
+#stepsCarousel .carousel-inner > .carousel-item,
+#featuresCarousel .carousel-inner > .carousel-item {
+  height: auto !important;
+}
+/* Move the dot indicators inside the video container by raising them from the bottom */
+#stepsCarousel .carousel-indicators,
+#featuresCarousel .carousel-indicators {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  padding: 0;
+  z-index: 15;
+}
+
+/* Hide arrow-based controls to use only dot indicators */
+.carousel-control-prev,
+.carousel-control-next {
+  display: none !important;
+}
+
+/* Dot indicators styling: perfectly round, larger, with custom colors */
+.carousel-indicators button {
+  appearance: none;
+  display: inline-block;
+  width: 25px !important;
+  height: 25px !important;
+  aspect-ratio: 1 / 1;
+  padding: 0;
+  margin: 4px;
+  border: none;
+  border-radius: 50%;
+  background-color: #fff;
+  transition: background-color 0.3s ease;
+}
+.carousel-indicators .active,
+.carousel-indicators button:hover {
+  background-color: #ffcccc;
+}
+
+/* Changelog styling (light mode) */
+#changelog-box {
+  border: 2px solid #ccc;
+  max-height: 400px;
+  overflow-y: auto;
+  padding: 1rem;
+  margin-top: 1rem;
+  background-color: #f9f9f9;
+  color: #333;
+}
+.changelog-entry {
+  border: 1px solid #ddd;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  background-color: #fff;
+}
+.update-item {
+  color: #444;
+  padding: 0.3rem;
+  margin-left: 20px;
+  border-radius: 3px;
+  font-size: 0.8em;
+}
