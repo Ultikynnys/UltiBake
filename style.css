@@ -83,7 +83,7 @@ h3, h4 {
   font-size: 2rem;
 }
 h5 { font-size: 1.25rem; }
-h6 { font-size: 1rem; }
+h6 { font-size: rem; }
 
 @media (max-width: 600px) {
   h1 { font-size: 3rem; }
@@ -108,15 +108,15 @@ h6 { font-size: 1rem; }
 }
 
 .carousel-item h3 {
-  font-size: clamp(1rem, 2vw, 2.4rem);
+  font-size: clamp(2rem, 2vw, 3rem);
 }
 .carousel-item p {
-  font-size: clamp(0.9rem, 1.6vw, 1.5rem);
+  font-size: clamp(1.5rem, 1.6vw, 2rem);
 }
 
 /* Base paragraph styling */
 p {
-  font-size: 1.5em;
+  font-size: 1em;
   line-height: 1.5;
   color: #333; /* Dark text color */
 }
