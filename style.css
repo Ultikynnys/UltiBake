@@ -154,7 +154,6 @@ p {
   border-radius: 15px;
   margin: 0;
   text-align: center;
-  animation: diagonal-pan 1200s linear infinite;
 }
 
 /* Support container */
