@@ -92,6 +92,10 @@
     </h1>
     <p>
       <strong>Ultibake</strong> is an all-in-one baking solution for Blender.
+      <video class="rounded-video" controls muted loop playsinline style="width: 100%; height: auto; display: block; margin: 1rem 0;">
+        <source src="Fastshowcase.mov" type="video/quicktime">
+        Your browser does not support the video tag.
+      </video>
       <strong>Baking</strong> is the act of turning surface details into textures.
       The modular design philosophy allows for easy baking of textures, <strong>decals</strong>,
       high to low poly, UDIMs and more, with the added benefit of
@@ -396,11 +400,11 @@
           let headerHtml = "";
           if (headerLine.startsWith("##")) {
             headerHtml = lowerHeader.includes("version increment")
-              ? `<h5 class="rainbow-text">${headerText}</h5>`
+              ? `<h5 class="rainbow-text">${headerText}</h5>` 
               : `<h5 style="color: ${headerColor};">${headerText}</h5>`;
           } else {
             headerHtml = lowerHeader.includes("version increment")
-              ? `<p class="rainbow-text">${headerText}</p>`
+              ? `<p class="rainbow-text">${headerText}</p>` 
               : `<p style="color: ${headerColor};">${headerText}</p>`;
           }
 
