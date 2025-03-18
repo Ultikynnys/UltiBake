@@ -288,3 +288,6 @@
 
 >## 1.9.17 - Hotfix 28/02/2025
     * Decals no longer cast AO or Shadows
+
+>## 1.9.20 - Addition 18/03/2025
+    * Bent Normal Bake type added
