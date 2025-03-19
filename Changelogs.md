@@ -291,3 +291,6 @@
 
 >## 1.9.20 - Addition 18/03/2025
     * Bent Normal Bake type added
+
+>## 1.9.21 - Hotfix 19/03/2025
+    * Bent Normal tangent space bakes correctly now
