@@ -15,13 +15,31 @@
   
   <!-- Link to external CSS file -->
   <link rel="stylesheet" href="style.css" />
+  
+  <!-- Override CSS for responsive video container -->
+  <style>
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 ratio */
+      height: 0;
+      overflow: hidden;
+      width: 100%;
+      max-width: none;
+    }
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
 </head>
 <body style="background-color: rgba(255, 255, 255, 0);">
   <div class="container-fluid my-3 content-container">
     <h1>UltiStamp</h1>
     <p>This addon lets you easily apply <strong>decals</strong> to your <strong>Blender</strong> meshes, 
-    similar to <strong>Substance Painter</strong>. With built-in <strong><a href="https://blendermarket.com/products/ultibake" target="_blank">
-    Ultibake</a></strong> support, these decals can be baked directly into your textures for seamless export 
+    similar to <strong>Substance Painter</strong>. With built-in <strong><a href="https://blendermarket.com/products/ultibake" target="_blank">Ultibake</a></strong> support, these decals can be baked directly into your textures for seamless export 
     to <strong>game engines</strong>. The addon offers over 100 <strong>PBR</strong> decals, customizable preset packs, 
     and the ability to create new decals from any image. For support or suggestions, join the developer’s 
     <strong><a href="https://discord.gg/Pm7TDf2rV5" target="_blank">Discord</a></strong>.</p>
@@ -132,103 +150,35 @@
       </button>
     </div>
 
-    <!-- How to Use Carousel -->
+    <!-- How to Use Carousel with YouTube Videos -->
     <h1>How to Use</h1>
     <div id="stepsCarousel" class="carousel slide rounded-carousel mb-3">
-      <!-- Carousel Indicators for Steps -->
+      <!-- Carousel Indicators for YouTube Videos -->
       <div class="carousel-indicators">
-        <button type="button" data-bs-target="#stepsCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#stepsCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#stepsCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        <button type="button" data-bs-target="#stepsCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
-        <button type="button" data-bs-target="#stepsCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
-        <button type="button" data-bs-target="#stepsCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
-        <button type="button" data-bs-target="#stepsCarousel" data-bs-slide-to="6" aria-label="Slide 7"></button>
-        <button type="button" data-bs-target="#stepsCarousel" data-bs-slide-to="7" aria-label="Slide 8"></button>
-        <button type="button" data-bs-target="#stepsCarousel" data-bs-slide-to="8" aria-label="Slide 9"></button>
-        <button type="button" data-bs-target="#stepsCarousel" data-bs-slide-to="9" aria-label="Slide 10"></button>
+        <button type="button" data-bs-target="#stepsCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Start Guide"></button>
+        <button type="button" data-bs-target="#stepsCarousel" data-bs-slide-to="1" aria-label="Baking Guide"></button>
       </div>
       <div class="carousel-inner">
-        <!-- Carousel Step 1 -->
+        <!-- Start Guide Video -->
         <div class="carousel-item active">
           <div class="step-item">
-            <p class="step-text">Step 1: Initial interface overview.</p>
-            <img src="https://assets.superhivemarket.com/cache/787371203f6e42c45ccb5263a36736f6.png" 
-                 alt="Step 1" class="d-block w-100">
+            <h3>Start Guide</h3>
+            <div class="video-container">
+              <iframe src="https://www.youtube.com/embed/hWIO-FiaHsQ" 
+                      title="Start Guide" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                      allowfullscreen></iframe>
+            </div>
           </div>
         </div>
-        <!-- Carousel Step 2 -->
+        <!-- Baking Guide Video -->
         <div class="carousel-item">
           <div class="step-item">
-            <p class="step-text">Step 2: Begin decal creation process.</p>
-            <img src="https://assets.superhivemarket.com/cache/4c7214903625768101b9d12844c9472c.png" 
-                 alt="Step 2" class="d-block w-100">
-          </div>
-        </div>
-        <!-- Carousel Step 3 -->
-        <div class="carousel-item">
-          <div class="step-item">
-            <p class="step-text">Step 3: Duplicate or remove decals using keyboard shortcuts.</p>
-            <img src="https://assets.superhivemarket.com/cache/8663c2a79915693d122bb086e409aa7e.png" 
-                 alt="Step 3" class="d-block w-100">
-          </div>
-        </div>
-        <!-- Carousel Step 4 -->
-        <div class="carousel-item">
-          <div class="step-item">
-            <p class="step-text">Step 4: More detailed usage of the interface.</p>
-            <img src="https://assets.superhivemarket.com/cache/0b8ee1e394e7371fdeb8cf616dbc85b4.png" 
-                 alt="Step 4" class="d-block w-100">
-          </div>
-        </div>
-        <!-- Carousel Step 5 -->
-        <div class="carousel-item">
-          <div class="step-item">
-            <p class="step-text">
-              Step 5: Decal creation is performed by clicking the Create Decal button from the Radial Menu using <strong>Ctrl+R</strong> (by default). Remove decals with <strong>X or Del</strong> and duplicate them with <strong>Shift+D</strong>.
-            </p>
-            <img src="https://assets.superhivemarket.com/cache/33768a6f9fc80b2b51727ab758521e01.png" 
-                 alt="Step 5" class="d-block w-100">
-          </div>
-        </div>
-        <!-- Carousel Step 6 -->
-        <div class="carousel-item">
-          <div class="step-item">
-            <p class="step-text">Step 6: Load the included preset packs to use them.</p>
-            <img src="https://assets.superhivemarket.com/cache/3ac4d398d8a1cdd40b95e3fccd67f66a.webp" 
-                 alt="Step 6" class="d-block w-100">
-          </div>
-        </div>
-        <!-- Carousel Step 7 -->
-        <div class="carousel-item">
-          <div class="step-item">
-            <p class="step-text">Step 7: Move the decal to the top by clicking the "Move Stamp to Front" button.</p>
-            <img src="https://assets.superhivemarket.com/cache/e37f26b6c702b49c7cd3ec9241623ee0.webp" 
-                 alt="Step 7" class="d-block w-100">
-          </div>
-        </div>
-        <!-- Carousel Step 8 -->
-        <div class="carousel-item">
-          <div class="step-item">
-            <p class="step-text">Step 8: Move decals across materials using the "Move Stamp to Active Material" button.</p>
-            <img src="https://assets.superhivemarket.com/cache/6365b4a2bd15f12c8e6b3598ce8423d0.webp" 
-                 alt="Step 8" class="d-block w-100">
-          </div>
-        </div>
-        <!-- Carousel Step 9 -->
-        <div class="carousel-item">
-          <div class="step-item">
-            <p class="step-text">Step 9: If you break the material, use the "Fix Stamps" button to fix any stamps on the selected object.</p>
-            <img src="https://assets.superhivemarket.com/cache/8e8ac9a0e7cd5c148db12f6d8518877b.webp" 
-                 alt="Step 9" class="d-block w-100">
-          </div>
-        </div>
-        <!-- Carousel Step 10 -->
-        <div class="carousel-item">
-          <div class="step-item">
-            <p class="step-text">Step 10: Final adjustments and confirmations.</p>
-            <img src="https://assets.superhivemarket.com/cache/a73249a528a64665a077ea7094e83ea5.webp" 
-                 alt="Step 10" class="d-block w-100">
+            <h3>Baking Guide</h3>
+            <div class="video-container">
+              <iframe src="https://www.youtube.com/embed/xXyf7oBT0rg" 
+                      title="Baking Guide" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                      allowfullscreen></iframe>
+            </div>
           </div>
         </div>
       </div>
@@ -241,18 +191,75 @@
         <span class="visually-hidden">Next</span>
       </button>
     </div>
-
+    
+    <!-- Dynamic Changelog -->
+    <h2 class="ext">Changelog</h2>
+    <div id="changelog-box">
+      <p>Loading latest changes...</p>
+    </div>
   </div>
 
-  <!-- Bootstrap 5 JS Bundle -->
+  <!-- Bootstrap 5 JS Bundle with Popper (JS) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   
-  <!-- Debug snippet to print the vertical height of the page -->
+  <!-- Fetch and parse changelog entries -->
   <script>
-    window.addEventListener('load', function() {
-      const verticalHeight = document.documentElement.scrollHeight;
-      console.log("Vertical height of the page: " + verticalHeight + "px");
-    });
+    const changelogUrl = 'https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/UltiStampLogs.md';
+    fetch(changelogUrl)
+      .then(response => response.text())
+      .then(text => {
+        const entries = text.trim().split(/\n\s*\n/).reverse();
+        let html = "";
+        entries.forEach(entry => {
+          // Remove leading '>'
+          entry = entry.replace(/^>\s*/, '');
+          const lines = entry.split('\n');
+          const headerLine = lines[0].trim();
+          const headerText = headerLine.startsWith("##") 
+            ? headerLine.replace(/^##\s*/, '') 
+            : headerLine;
+          const lowerHeader = headerText.toLowerCase();
+          const categories = [];
+          if (lowerHeader.includes("bug") || lowerHeader.includes("fix")) categories.push("red");
+          if (lowerHeader.includes("improvement") || lowerHeader.includes("addition") || 
+              lowerHeader.includes("optimization") || lowerHeader.includes("update") ||
+              lowerHeader.includes("ures") || lowerHeader.includes("stability")) {
+            categories.push("Green");
+          }
+          if (lowerHeader.includes("rework") || lowerHeader.includes("change")) {
+            categories.push("blue");
+          }
+          const headerColor = (categories.length === 1) ? categories[0] : "#333";
+
+          let headerHtml = "";
+          if (headerLine.startsWith("##")) {
+            headerHtml = lowerHeader.includes("version increment")
+              ? `<h5 class="rainbow-text">${headerText}</h5>` 
+              : `<h5 style="color: ${headerColor};">${headerText}</h5>`;
+          } else {
+            headerHtml = lowerHeader.includes("version increment")
+              ? `<p class="rainbow-text">${headerText}</p>` 
+              : `<p style="color: ${headerColor};">${headerText}</p>`;
+          }
+
+          let contentHtml = "";
+          for (let i = 1; i < lines.length; i++) {
+            const line = lines[i].trim();
+            if (line.startsWith("*")) {
+              contentHtml += `<p class="update-item">${line.replace(/^\*\s*/, '')}</p>`;
+            } else if (line !== "") {
+              contentHtml += `<p>${line}</p>`;
+            }
+          }
+
+          html += `<div class="changelog-entry mb-3">${headerHtml}${contentHtml}</div>`;
+        });
+        document.getElementById("changelog-box").innerHTML = html;
+      })
+      .catch(error => {
+        document.getElementById("changelog-box").innerHTML = "<p>Error loading changelog.</p>";
+        console.error("Error fetching changelog:", error);
+      });
   </script>
 </body>
 </html>
