@@ -294,3 +294,8 @@
 
 >## 1.9.21 - Hotfix 19/03/2025
     * Bent Normal tangent space bakes correctly now
+
+
+>## 1.9.23 - Hotfix 31/03/2025
+    * Button added to clear baked texture folder
+    * Bake folder filesize now displayed
