@@ -42,3 +42,7 @@
     * Added Motion Path toggle
     * Added In-place Pose mirroring(Way to mirror stuff that doesn't have a left or right side)
     * fixed various bugs
+
+>## 1.2.22 - 3/4/2025 Hotfix Blender 4.4 Compatiability
+    * New UIList added for action slots
+    * Cycles toggle moved to slots
