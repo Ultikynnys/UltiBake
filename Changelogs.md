@@ -299,3 +299,9 @@
 >## 1.9.23 - Addition 31/03/2025
     * Button added to clear baked texture folder
     * Bake folder filesize now displayed
+
+>## 1.9.24 - Addition 3/04/2025
+    * API call added bpy.ops.api.run_ultibake()
+
+
+    
