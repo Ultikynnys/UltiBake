@@ -1,259 +1,428 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ultibake Documentation</title>
-  
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Raleway:ital,wght@0,500;1,500&display=swap" rel="stylesheet" />
-  
-  <!-- Bootstrap 5 CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-  
-  <style>
-    /* Base styling with a subtle stroke effect via text-shadow */
-    body {
-      background-color: #111;
-      color: white;
-      font-family: 'Outfit', 'Raleway', sans-serif;
-      font-size: 18px;
-      font-weight: 500;
-      text-shadow: 0.8px 0.8px 0 #000, -0.8px -0.8px 0 #000, 0.8px -0.8px 0 #000, -0.8px 0.8px 0 #000;
-    }
-    .content-container {
-      background: url('https://raw.githubusercontent.com/Ultikynnys/UltiBake/refs/heads/main/pattern3.svg') repeat;
-      background-size: 100px 100px;
-      padding-left: 25%;
-      padding-right: 25%;
-      border-radius: 15px;
-      margin: 20px;
-    }
-    h1, h2 {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    h1 {
-      font-size: 3rem;
-      font-weight: 700;
-    }
-    h2 {
-      font-size: 2.5rem;
-      font-weight: 600;
-    }
-    p {
-      text-align: center;
-    }
-    /* Under Construction Notice */
-    .under-construction {
-      color: red;
-      text-align: center;
-      font-size: 1.2rem;
-      margin-bottom: 20px;
-    }
-    /* Styling for carousel items */
-    .carousel-item {
-      padding: 20px;
-    }
-    .item-text {
-      margin-bottom: 1em;
-      text-align: center;
-      font-size: 1.5rem;
-      font-weight: bold;
-    }
-    /* Limit carousel images to a maximum width of 50% of the viewport */
-    .carousel img {
-      border-radius: 15px;
-      width: 100%;
-      height: auto;
-      max-width: 50vw;
-      display: block;
-      margin: 0 auto;
-    }
-    /* Video container for a responsive 16:9 ratio */
-    .video-container {
-      position: relative;
-      width: 100%;
-      padding-bottom: 56.25%; /* 16:9 */
-      height: 0;
-      overflow: hidden;
-      border-radius: 15px;
-    }
-    .video-container iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-    /* Add padding to carousels */
-    .carousel {
-      padding: 20px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultibake Extension - API Documentation</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="content-container">
-    <h1>Ultibake Documentation</h1>
-    <p class="under-construction">This page is under construction.</p>
-    <p>Welcome to the Ultibake documentation page. Explore the different baking techniques below.</p>
-    
-    <!-- Decal Baking Carousel -->
-    <section class="my-5">
-      <h2>Decal Baking</h2>
-      <div id="carouselDecalBaking" class="carousel slide">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselDecalBaking" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselDecalBaking" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselDecalBaking" data-bs-slide-to="2" aria-label="Slide 3"></button>
+
+    <header>
+       <div class="header-main-title">
+            <h1>Extension - API Operators</h1>
+            <p>Documentation for operators designed for scripting and automation within the Ultibake extension.</p>
+            <p>Last Updated: Thursday, April 3, 2025</p>
         </div>
-        <div class="carousel-inner">
-          <!-- Slide 1: Image -->
-          <div class="carousel-item active">
-            <div class="item-text">Decal Baking Example Image</div>
-            <img src="https://via.placeholder.com/800x400?text=Decal+Baking+Image" alt="Decal Baking Image">
-          </div>
-          <!-- Slide 2: Video -->
-          <div class="carousel-item">
-            <div class="item-text">Decal Baking Tutorial Video</div>
-            <div class="video-container">
-              <iframe src="https://www.youtube.com/embed/aqz-KE-bpKQ" title="Decal Baking Video" frameborder="0" allowfullscreen></iframe>
+        <div class="header-logo">
+            <div class="logo-font">
+                <span class="logo-part1">ULTI</span><span class="logo-part2">BAKE</span>
             </div>
-          </div>
-          <!-- Slide 3: Chapter Example with Text on Left and Image on Right -->
-          <div class="carousel-item">
-            <div class="row align-items-center">
-              <div class="col-md-6 text-start">
-                <h3>Chapter 1: Getting Started</h3>
-                <p>
-                  Welcome to the first chapter on Decal Baking. In this section, we explore the essential techniques that help in creating stunning decal effects on your baked creations. Detailed instructions, tips, and tricks are provided to ensure you achieve a professional finish. Follow these steps carefully to master the art of decal baking.
+        </div>
+    </header>
+
+    <section class="usage-guidance">
+        <h2>Using Operators in Scripts (Blender Workflow)</h2>
+        <p>
+            Blender often allows you to discover the Python command associated with an action by right-clicking on a UI element (like a button or menu item) and selecting an option like "Copy Python Command" or "Edit Source". This is a great way to learn how Blender performs operations internally.
+            <strong>Important: To ensure options like "Edit Source" or potentially "Copy Python Command" are visible when right-clicking UI elements, make sure "Developer Extras" is enabled in Blender's Preferences (Edit -> Preferences -> Interface -> Display section).</strong>
+        </p>
+        <p>
+            However, directly using these copied commands in your own scripts might not always work as expected. Some operators rely heavily on the specific context they are run from (e.g., mouse position, active window type), require complex internal setup, or operate 'modally' (taking over user input temporarily). These factors can make the raw, copied command unsuitable for reliable execution within a script.
+        </p>
+        <p>
+            The API operators documented on this page (like <code>api.run_ultibake</code> below) are specifically designed as <strong>script-friendly wrappers</strong>. They handle the necessary setup or context internally, providing a stable interface that you can reliably call from your Python scripts using <code>bpy.ops.[idname](...)</code>.
+        </p>
+        <p>
+            Therefore, if an Ultibake operation needs to be scripted and has a corresponding API wrapper listed here, you should <strong>use the documented API wrapper</strong>. If a specific Ultibake operator or function is *not* documented here as requiring an API wrapper, you can generally assume that the command copied directly from the Blender UI is suitable for direct use in scripts. Read the sections below for details on how to modify Bake Set parameters or manage sets/units before running an operator.
+        </p>
+    </section>
+
+    <section class="disclaimer">
+        <p>
+            <strong>Audience & Scope:</strong> This documentation details specific API operators intended for <strong>advanced users</strong> who wish to automate Ultibake workflows using Python scripting.
+        </p>
+        <p>
+            For information on standard extension usage, features, and general setup, please refer to the main <strong>product page</strong>:
+            <a href="https://blendermarket.com/products/ultibake" target="_blank" rel="noopener noreferrer">blendermarket.com/products/ultibake</a>.
+        </p>
+         <p>
+            These wrapped API operators are created <strong>only when necessary</strong> to provide a stable scripting interface for complex operations where Blender's raw operators might be unreliable in scripts. More API wrappers may be added in future updates as needed.
+        </p>
+        <p>
+            For additional help, questions, or community support regarding Ultibake, please join our Discord channel:
+            <a href="https://discord.com/invite/Pm7TDf2rV5" target="_blank" rel="noopener noreferrer">discord.com/invite/Pm7TDf2rV5</a>.
+        </p>
+    </section>
+
+    <main>
+
+        <section id="api-operators">
+             <h2>API Operators</h2>
+            <p>This section lists the available script-friendly API operators provided by Ultibake.</p>
+            <article class="api-operator">
+                <h3>Run Ultibake (API)</h3>
+                 <p class="description">
+                    Executes the main background baking process provided by the Ultibake extension.
+                    This is a wrapper around the core baking logic (`sna.bake_sets_118ea`). Call this operator *after* configuring Bake Set parameters as needed (see Parameter Assignment section below). For preparing meshes for export after baking, see the Finalize operator in the next section.
                 </p>
-              </div>
-              <div class="col-md-6">
-                <img src="https://via.placeholder.com/400x300?text=Chapter+Image" alt="Chapter Example Image" class="img-fluid rounded">
-              </div>
-            </div>
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselDecalBaking" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselDecalBaking" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
-    </section>
-    
-    <!-- High to Low Baking Carousel -->
-    <section class="my-5">
-      <h2>High to Low Baking</h2>
-      <div id="carouselHighToLow" class="carousel slide">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselHighToLow" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselHighToLow" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        </div>
-        <div class="carousel-inner">
-          <!-- Slide 1: Image -->
-          <div class="carousel-item active">
-            <div class="item-text">High to Low Baking Example Image</div>
-            <img src="https://via.placeholder.com/800x400?text=High+to+Low+Baking+Image" alt="High to Low Baking Image">
-          </div>
-          <!-- Slide 2: Video -->
-          <div class="carousel-item">
-            <div class="item-text">High to Low Baking Tutorial Video</div>
-            <div class="video-container">
-              <iframe src="https://www.youtube.com/embed/aqz-KE-bpKQ" title="High to Low Baking Video" frameborder="0" allowfullscreen></iframe>
-            </div>
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselHighToLow" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselHighToLow" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
-    </section>
-    
-    <!-- Multi Object Baking Carousel -->
-    <section class="my-5">
-      <h2>Multi Object Baking</h2>
-      <div id="carouselMultiObject" class="carousel slide">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselMultiObject" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselMultiObject" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        </div>
-        <div class="carousel-inner">
-          <!-- Slide 1: Image -->
-          <div class="carousel-item active">
-            <div class="item-text">Multi Object Baking Example Image</div>
-            <img src="https://via.placeholder.com/800x400?text=Multi+Object+Baking+Image" alt="Multi Object Baking Image">
-          </div>
-          <!-- Slide 2: Video -->
-          <div class="carousel-item">
-            <div class="item-text">Multi Object Baking Tutorial Video</div>
-            <div class="video-container">
-              <iframe src="https://www.youtube.com/embed/aqz-KE-bpKQ" title="Multi Object Baking Video" frameborder="0" allowfullscreen></iframe>
-            </div>
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselMultiObject" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselMultiObject" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
-    </section>
-    
-    <!-- Special Bake Types Carousel -->
-    <section class="my-5">
-      <h2>Special Bake Types</h2>
-      <div id="carouselSpecialBake" class="carousel slide">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselSpecialBake" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselSpecialBake" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        </div>
-        <div class="carousel-inner">
-          <!-- Slide 1: Image -->
-          <div class="carousel-item active">
-            <div class="item-text">Special Bake Types Example Image</div>
-            <img src="https://via.placeholder.com/800x400?text=Special+Bake+Types+Image" alt="Special Bake Types Image">
-          </div>
-          <!-- Slide 2: Video -->
-          <div class="carousel-item">
-            <div class="item-text">Special Bake Types Tutorial Video</div>
-            <div class="video-container">
-              <iframe src="https://www.youtube.com/embed/aqz-KE-bpKQ" title="Special Bake Types Video" frameborder="0" allowfullscreen></iframe>
-            </div>
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselSpecialBake" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselSpecialBake" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
-    </section>
-    
-  </div>
-  
-  <footer class="text-center mt-4" style="padding: 20px; background-color: #222;">
-    <p>© Ultikynnys 2025</p>
-  </footer>
-  
-  <!-- Bootstrap 5 Bundle with Popper (JS) -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+                <div class="operator-info">
+                    <strong>Operator ID (bl_idname):</strong>
+                    <code>api.run_ultibake</code>
+                </div>
+                 <h4>Parameters</h4>
+                 <div class="table-wrapper">
+                     <table>
+                           <thead>
+                            <tr>
+                                <th>Parameter Name</th>
+                                <th>Data Type</th>
+                                <th>Description</th>
+                                <th>Default Value</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>bake_set_index</code></td>
+                                <td>Integer</td>
+                                <td>
+                                    Specifies which Bake Set(s) to process.
+                                    A value of <code>-1</code> (the default) will process all available Bake Sets defined in the scene.
+                                    An integer value of <code>0</code> or greater specifies the index of a single Bake Set to process from the <code>bpy.context.scene.sna_objectsets</code> collection.
+                                </td>
+                                <td><code>-1</code></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <h4>Usage Example (Python)</h4>
+                 <pre><code class="language-python">
+# Basic execution examples (assuming parameters are already set)
+import bpy
+
+# Example 1: Run Ultibake for ALL Bake Sets (using default index -1)
+try:
+    bpy.ops.api.run_ultibake()
+    print("Ultibake bake process initiated for ALL Bake Sets.")
+except Exception as e:
+    print(f"Error running Ultibake: {e}")
+
+# Example 2: Run Ultibake for the FIRST Bake Set (index 0)
+# try:
+#    bpy.ops.api.run_ultibake(bake_set_index=0)
+#    print("Ultibake bake process initiated for Bake Set index 0.")
+# except Exception as e:
+#    print(f"Error running Ultibake: {e}")
+                </code></pre>
+                <h4>Return Value</h4>
+                <p>
+                    When called via `bpy.ops`, this operator immediately returns <code>{'FINISHED'}</code> if it successfully initiated the underlying Ultibake process. Note that the actual baking happens in the background (modal operation) and may take time to complete. The return value only indicates successful *initiation*. If the operator cannot start (e.g., due to polling conditions or if the target operator isn't registered), it will return <code>{'CANCELLED'}</code>.
+                </p>
+            </article>
+        </section>
+
+        <section id="parameter-assignment">
+            <h2>Parameter Assignment via Script</h2>
+            <p>Beyond simply running the API operators, you often need to configure the Bake Sets and Bake Units programmatically before execution. Blender provides a helpful way to find the specific Python data paths for these settings.</p>
+            <p>By <strong>right-clicking</strong> on a parameter field in the Ultibake UI (like a UV map selection dropdown, an object input field, a checkbox, or a color swatch) and choosing <strong>"Copy Full Data Path"</strong> (make sure Developer Extras are enabled), you can get the exact Python expression needed to access that property. This typically looks something like <code>bpy.context.scene.sna_objectsets[0].bakeunit[0].activeuvname</code>.</p>
+            <p>The examples below demonstrate how to use these data paths to modify common Bake Set and Bake Unit settings before calling an operator like <code>api.run_ultibake</code>. Remember that Ultibake settings are stored <strong>per Scene</strong>.</p>
+            <h4>Setting the Target UV Map</h4>
+            <p>Each Bake Unit targets a specific UV Map on the low-poly object for baking. You can change this target UV map name:</p>
+            <pre><code class="language-python">
+import bpy
+scene = bpy.context.scene # Assuming context scene is correct one
+
+# Check if Bake Sets exist and access the first one (index 0)
+if scene.sna_objectsets:
+    bake_set = scene.sna_objectsets[0]
+    # Check if Bake Units exist and access the first one (index 0)
+    if bake_set.bakeunit:
+        bake_unit = bake_set.bakeunit[0]
+        # Set the active UV map name (replace with your actual UV map name)
+        bake_unit.activeuvname = "TARGET_UVMAP_NAME"
+        print(f"Set active UV map for BU 0 in BS 0 to: {bake_unit.activeuvname}")
+            </code></pre>
+            <h4>Assigning Objects & Decals Collection</h4>
+            <p>Assign specific Blender objects or collections to the different roles within a Bake Unit:</p>
+            <pre><code class="language-python">
+# Assuming bake_unit is defined as above (scene.sna_objectsets[0].bakeunit[0])
+
+# Assign Low Poly object
+if 'Suzanne_LP' in bpy.data.objects:
+    bake_unit.low = bpy.data.objects['Suzanne_LP']
+    print(f"Assigned low poly: {bake_unit.low.name}")
+
+# Assign High Poly object
+if 'Suzanne_HP' in bpy.data.objects:
+    bake_unit.high = bpy.data.objects['Suzanne_HP']
+    print(f"Assigned high poly: {bake_unit.high.name}")
+
+# Assign Cage object
+if 'Suzanne_Cage' in bpy.data.objects:
+    bake_unit.cage = bpy.data.objects['Suzanne_Cage']
+    print(f"Assigned cage: {bake_unit.cage.name}")
+
+# Assign Decals Collection
+if 'MyDecals' in bpy.data.collections:
+    bake_unit.decals = bpy.data.collections['MyDecals']
+    print(f"Assigned decals collection: {bake_unit.decals.name}")
+            </code></pre>
+            <h4>Setting Color ID</h4>
+            <p>Set the RGB color (values 0.0 to 1.0) used by the Color ID bake type:</p>
+            <pre><code class="language-python">
+# Assuming bake_unit is defined as above
+
+# Set Color ID to pure Red
+bake_unit.color = (1.0, 0.0, 0.0)
+print(f"Set Color ID to: {bake_unit.color[:]}")
+            </code></pre>
+            <h4>Setting the Active Profile</h4>
+            <p>Select the Profile (which defines active Bake Types) by its name before baking:</p>
+             <pre><code class="language-python">
+# Assuming bake_set is defined as above (scene.sna_objectsets[0])
+
+# Replace "My_ColorID_Profile" with the exact name of your profile
+profile_name = "My_ColorID_Profile"
+# Optional: Check if profile exists in the specific bake_set if needed
+# bake_set.profiles is likely where profiles are stored per set
+bake_set.currentprofile = profile_name
+print(f"Set current profile for BS 0 to: {bake_set.currentprofile}")
+
+            </code></pre>
+            <p><em>Tip:</em> It's often easier to configure complex profiles using the UI once, save the <code>.blend</code> file, and then load that file for automated baking, especially for headless operation.</p>
+            <h4>Using Collection Mode for Low Polys</h4>
+            <p>Bake all objects within a collection as low-polys (High, Cage, Decals cannot be assigned per-object in this mode):</p>
+             <pre><code class="language-python">
+# Assuming bake_unit is defined as above
+
+# Assign the collection containing low poly objects
+low_poly_collection_name = 'MyLowPolyObjects'
+if low_poly_collection_name in bpy.data.collections:
+    bake_unit.lowcollection = bpy.data.collections[low_poly_collection_name]
+    bake_unit.usecollection = True # Enable collection mode AFTER assigning
+    print(f"Enabled collection mode using collection: {bake_unit.lowcollection.name}")
+else:
+    bake_unit.usecollection = False # Ensure it's disabled if collection missing
+    print(f"Warning: Collection '{low_poly_collection_name}' not found. Collection mode disabled.")
+            </code></pre>
+        </section>
+
+        <section id="managing-sets-units">
+            <h2>Managing Bake Sets & Units</h2>
+            <p>You can also create and delete Bake Sets and Bake Units directly via script using specific operators.</p>
+            <h4>Creating a Bake Set</h4>
+            <p>This operator adds a new Bake Set to the current scene's <code>sna_objectsets</code> collection. Remember that Ultibake settings, including Bake Sets, are stored per scene.</p>
+            <pre><code class="language-python">
+import bpy
+
+# Operator to add a new Bake Set
+bpy.ops.sna.make_a_bake_set_c7c5f()
+
+# The new Bake Set will be the last one in the list
+new_bake_set_index = len(bpy.context.scene.sna_objectsets) - 1
+print(f"Created a new Bake Set at index: {new_bake_set_index}")
+            </code></pre>
+             <h4>Deleting a Bake Set</h4>
+             <p>This operator removes a Bake Set based on its index within the <code>sna_objectsets</code> collection.</p>
+             <pre><code class="language-python">
+import bpy
+
+scene = bpy.context.scene
+bake_set_index_to_delete = -1 # Default to invalid
+
+# Example: Delete the 4th set (index 3) if it exists
+target_index = 3
+if target_index < len(scene.sna_objectsets):
+    bake_set_index_to_delete = target_index
+    print(f"Attempting to delete Bake Set at index: {bake_set_index_to_delete}")
+    # Note: Parameter name 'sna_objectsetindex' as provided
+    bpy.ops.sna.delete_this_set_547c4(sna_objectsetindex=bake_set_index_to_delete)
+else:
+    print(f"Bake Set index {target_index} does not exist, cannot delete.")
+
+             </code></pre>
+             <h4>Creating a Bake Unit</h4>
+             <p>This adds a new Bake Unit to the currently active Bake Set. The active Bake Set is determined by the scene's <code>active_bakeset</code> property (which seems to store the index).</p>
+             <pre><code class="language-python">
+import bpy
+
+scene_data = bpy.data.scenes["Scene"] # Accessing scene data directly as per user example
+
+# Example: Set the second Bake Set (index 1) as active
+target_bake_set_index = 1
+if target_bake_set_index < len(scene_data.sna_objectsets):
+     # Assuming active_bakeset stores the index
+     scene_data.active_bakeset = target_bake_set_index
+     print(f"Set active Bake Set index to: {scene_data.active_bakeset}")
+
+     # Operator to add a Bake Unit to the active Bake Set
+     bpy.ops.sna.add_bakeunit_item()
+
+     new_bake_unit_index = len(scene_data.sna_objectsets[target_bake_set_index].bakeunit) - 1
+     print(f"Added Bake Unit at index {new_bake_unit_index} to Bake Set {target_bake_set_index}")
+else:
+     print(f"Bake Set index {target_bake_set_index} does not exist.")
+
+             </code></pre>
+             <h4>Deleting a Bake Unit</h4>
+             <p>This removes the currently active Bake Unit from the currently active Bake Set. You need to set both the scene's <code>active_bakeset</code> index and the <code>active_bakeunit</code> index within that specific Bake Set first.</p>
+              <pre><code class="language-python">
+import bpy
+
+scene_data = bpy.data.scenes["Scene"] # Accessing scene data directly
+
+# Example: Delete the first Bake Unit (index 0) from the third Bake Set (index 2)
+target_bake_set_index = 2
+target_bake_unit_index = 0
+
+if target_bake_set_index < len(scene_data.sna_objectsets):
+    bake_set = scene_data.sna_objectsets[target_bake_set_index]
+    if target_bake_unit_index < len(bake_set.bakeunit):
+        # Set the active Bake Set index
+        scene_data.active_bakeset = target_bake_set_index
+        # Set the active Bake Unit index within that Bake Set
+        # Assuming property name is 'active_bakeunit' based on user info
+        bake_set.active_bakeunit = target_bake_unit_index
+
+        print(f"Set active BS={scene_data.active_bakeset}, BU={bake_set.active_bakeunit}")
+        print(f"Attempting to delete Bake Unit {target_bake_unit_index} from Bake Set {target_bake_set_index}...")
+
+        # Operator to delete the active Bake Unit in the active Bake Set
+        bpy.ops.sna.delete_bakeunit_item()
+
+        print("Deletion operator called.")
+    else:
+        print(f"Bake Unit index {target_bake_unit_index} does not exist in Bake Set {target_bake_set_index}.")
+else:
+    print(f"Bake Set index {target_bake_set_index} does not exist.")
+
+             </code></pre>
+        </section>
+
+        <section id="finalize-export">
+            <h2>Finalizing & Exporting Results</h2>
+
+            <p>After baking textures using an operator like <code>api.run_ultibake</code>, Ultibake provides a dedicated operator to prepare meshes for export: <code>bpy.ops.sna.create_finalized_meshes_b853c()</code>. </p>
+            <p>This "Finalize" operator creates **new mesh objects** based on the low-poly sources defined in your Bake Sets. These new objects typically have:</p>
+            <ul>
+                <li>A single material slot using the newly baked textures.</li>
+                <li>A name derived from the original object, the Bake Set's Texture Name, and the scene's Export Suffix (<code>{original_object_name}_{texturename}_{exportsuffix}</code>, where suffix comes from <code>bpy.context.scene.sna_finalizesuffix</code>).</li>
+                <li>All UV maps copied from the original low-poly source (you might need to clean these up later, see below).</li>
+            </ul>
+            <p>To programmatically export these finalized objects (e.g., to FBX for game engines), you first need to identify and select them. A common method is to compare the objects present in the scene before and after running the Finalize operator:</p>
+
+            <pre><code class="language-python">
+import bpy
+import os
+
+# --- 1. Get object names BEFORE finalizing ---
+objects_before = set(obj.name for obj in bpy.data.objects)
+
+# --- 2. Run the Finalize process ---
+print("Running Finalize Meshes process...")
+try:
+    # Use the specific Finalize operator
+    bpy.ops.sna.create_finalized_meshes_b853c()
+except Exception as e:
+    print(f"Error during finalize: {e}")
+print("Finalize Meshes process called.")
+
+# --- 3. Get object names AFTER finalizing ---
+objects_after = set(obj.name for obj in bpy.data.objects)
+
+# --- 4. Find the newly created objects ---
+new_object_names = objects_after - objects_before
+new_objects = [bpy.data.objects[name] for name in new_object_names if name in bpy.data.objects]
+
+if not new_objects:
+    print("No new objects detected after finalize.")
+else:
+    print(f"Detected {len(new_objects)} new objects:")
+    for obj in new_objects:
+        print(f"- {obj.name}")
+
+    # --- 5. Select the new objects ---
+    bpy.ops.object.select_all(action='DESELECT')
+    for obj in new_objects:
+        obj.select_set(True)
+    if new_objects: # Make first new object active
+         bpy.context.view_layer.objects.active = new_objects[0]
+
+    # --- 6. Export the selection ---
+    export_path = "C:/path/to/your/export/folder/exported_bake.fbx" # CHANGE THIS PATH
+    export_dir = os.path.dirname(export_path)
+    if not os.path.exists(export_dir):
+        os.makedirs(export_dir) # Create dir if it doesn't exist
+
+    print(f"Exporting {len(new_objects)} selected objects to {export_path}...")
+    try:
+        bpy.ops.export_scene.fbx(
+            filepath=export_path,
+            use_selection=True, # Export only selected
+            check_existing=True,
+            # Add other relevant FBX settings
+            object_types={'MESH'},
+            # axis_forward='-Z', axis_up='Y',
+        )
+        print("Export successful.")
+    except Exception as e:
+        print(f"Error during FBX export: {e}")
+
+            </code></pre>
+
+            <h4>Cleaning Up Extra UV Maps on Finalized Objects</h4>
+            <p>Note that the finalized objects created by <code>sna.create_finalized_meshes_b853c</code> inherit <em>all</em> UV maps from the original low-poly source. If your target platform or workflow requires only the primary UV map used for the baked textures, you may need to remove the others after finalizing but before exporting:</p>
+            <pre><code class="language-python">
+# Assuming 'new_objects' is the list of finalized objects found previously
+# Replace "UVMap" with the actual name of the UV map you want to KEEP
+primary_uv_name = "UVMap"
+
+print(f"Cleaning up UV maps on {len(new_objects)} finalized objects, keeping '{primary_uv_name}'...")
+
+for obj in new_objects:
+    # Ensure it's a mesh object with UV layers
+    if obj.type == 'MESH' and obj.data.uv_layers:
+
+        # Check if the primary map exists before attempting removal
+        if primary_uv_name not in obj.data.uv_layers:
+            print(f"  Warning: Primary UV map '{primary_uv_name}' not found on {obj.name}. Skipping UV cleanup.")
+            continue
+
+        # List UV maps to remove (iterate by index is safer when removing)
+        indices_to_remove = []
+        for i, uv_layer in enumerate(obj.data.uv_layers):
+            if uv_layer.name != primary_uv_name:
+                indices_to_remove.append(i)
+
+        # Remove layers by index, starting from the highest index to avoid shifting
+        if indices_to_remove:
+            print(f"  Removing {len(indices_to_remove)} UV map(s) from {obj.name}...")
+            indices_to_remove.sort(reverse=True) # Important: remove from end to start
+            for i in indices_to_remove:
+                try:
+                    uv_layer_to_remove = obj.data.uv_layers[i]
+                    print(f"    Removing '{uv_layer_to_remove.name}'")
+                    obj.data.uv_layers.remove(uv_layer_to_remove)
+                except Exception as e:
+                    print(f"    Error removing UV map at index {i} from {obj.name}: {e}")
+        else:
+            print(f"  No extra UV maps found on {obj.name}.")
+
+print("UV map cleanup complete.")
+            </code></pre>
+             <p>Remember to adjust the export path and FBX settings in the first example according to your needs and target platform (Unreal Engine, Unity, Godot, etc.).</p>
+
+        </section>
+
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Ultibake Extension</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+
 </body>
 </html>

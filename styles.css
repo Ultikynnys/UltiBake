@@ -1,0 +1,381 @@
+/* styles.css - Ultibake API Documentation */
+/* Final Version: Forced Dark Mode, Crimson Accents, Selective Fonts, Responsive */
+/* Generated: 2025-04-03 */
+
+/* Define the custom font */
+@font-face {
+  font-family: 'Digitalt';
+  src: url('fonts/Digitalt.otf') format('opentype'),
+       url('fonts/Digitalt.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 1. Define CSS Variables (FORCED DARK MODE) */
+:root {
+  /* --- Forced Dark Page Theme --- */
+  --body-bg: #202124;
+  --body-text: #e8eaed;
+  --header-bg: #1a1a1a;
+  --header-text: #e8eaed; /* Base header text color */
+  --accent-color: #FF6347;           /* Tomato (Used for Crimson Red borders/links in Dark Mode) */
+  --accent-color-darker: #FF7F50;      /* Coral (Used for Crimson Red headings/logo in Dark Mode) */
+  --section-bg: #2d2e30;
+  --section-border: #5f6368;
+  --section-shadow: rgba(0, 0, 0, 0.3);
+  --info-bg: #3c4043;
+  --info-border: var(--accent-color);
+  --table-head-bg: #3c4043;
+  --table-head-text: #e8eaed;
+  --table-row-even-bg: #35363a;
+  --inline-code-bg: #4a4a4f;
+  --inline-code-text: #e8eaed;
+  --blockquote-code-text: #f5c542; /* Color for bl_idname */
+  --footer-text: #9aa0a6;
+  --text-stroke-color: #111; /* Off-black stroke color */
+
+  /* --- Consistent Dark Theme for Code Blocks (Included in overall dark theme) --- */
+  --prism-bg: #2d2e30;
+  --prism-text: #e8eaed;
+  --prism-border-color: #5f6368;
+  --prism-token-comment: #9aa0a6;
+  --prism-token-keyword: #8ab4f8;
+  --prism-token-string: #a5d6a7;
+  --prism-token-function: #f06292;
+  --prism-token-number: #f5c542;
+  --prism-token-operator: #80cbc4;
+  --prism-token-punctuation: #e8eaed;
+  --prism-token-class-name: #f06292;
+}
+
+
+/* Basic Reset / Base Styles */
+body {
+  /* Use standard font stack for body */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6; margin: 0; padding: 0;
+  background-color: var(--body-bg); color: var(--body-text);
+}
+
+/* --- Header Styling --- */
+header {
+  background-color: var(--header-bg);
+  color: var(--header-text);
+  padding: 1rem 2rem;
+  border-bottom: 4px solid var(--accent-color); /* Red border */
+  display: flex;
+  align-items: center; /* Vertically align items */
+  justify-content: space-between; /* Push items apart */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens if needed */
+}
+.header-main-title {
+  /* Takes up available space on the left */
+  flex-grow: 1;
+}
+.header-logo {
+  /* Aligns logo to the right */
+  text-align: right;
+  flex-shrink: 0; /* Prevent logo from shrinking */
+  margin-left: 2rem; /* Add some space between title and logo */
+}
+header h1 {
+    margin: 0; /* Reset margin */
+    padding: 0; /* Reset padding */
+    font-size: 1.5em; /* Base size for "Extension - API Operators" */
+    line-height: 1.2;
+    color: var(--header-text); /* Base color for "Extension - API Operators" */
+    /* Inherits body font */
+}
+header p {
+    margin: 0.1em 0 0 0; /* Adjust paragraph spacing in header */
+    font-size: 0.9em;
+    opacity: 0.9;
+    /* Inherits body font */
+ }
+
+/* --- Specific Font, Size & Stroke ONLY for "ULTIBAKE" logo word --- */
+.logo-font {
+  font-family: 'Digitalt', sans-serif; /* Apply Digitalt font */
+  font-size: 3.5em; /* Adjust value (e.g., 3.0em, 4.0em) as needed */
+  display: inline-block; /* Or inline-flex */
+  vertical-align: middle; /* Align with middle of adjacent text - adjust if needed */
+  line-height: 1; /* Prevent size change affecting line height too much */
+   /* Apply stroke here */
+   text-stroke: 1.5px var(--text-stroke-color);
+  -webkit-text-stroke: 1.5px var(--text-stroke-color);
+   paint-order: stroke fill;
+}
+/* --- Specific Color for "ULTI" part --- */
+.logo-part1 {
+  color: var(--accent-color-darker); /* Apply Coral/Orange color */
+}
+/* --- Specific Color for "BAKE" part --- */
+.logo-part2 {
+   color: var(--accent-color-darker); /* Apply Coral/Orange color */
+}
+
+/* --- General Heading Styling (H2, H3, H4) --- */
+/* Selectors target headings within specific sections */
+#api-operators h2,
+#parameter-assignment h2,
+#managing-sets-units h2,
+#finalize-export h2,
+.api-operator h3,
+.usage-guidance h2,
+.api-operator h4,
+#parameter-assignment h4,
+#managing-sets-units h4,
+#finalize-export h4
+ {
+   color: var(--accent-color-darker); /* Apply accent color */
+   /* Stroke removed from general headings */
+   margin-top: 1.5em; /* Add consistent top margin */
+   margin-bottom: 0.75em;
+   padding-bottom: 0.25em;
+   border-bottom: 1px solid var(--section-border); /* Default border */
+}
+/* Reset top margin for first heading in sections */
+#api-operators > h2,
+#parameter-assignment > h2,
+#managing-sets-units > h2,
+#finalize-export > h2,
+.api-operator > h3:first-child,
+.usage-guidance > h2:first-child {
+    margin-top: 0;
+}
+/* Adjust specific heading borders */
+#api-operators h2,
+#parameter-assignment h2,
+#managing-sets-units h2,
+#finalize-export h2,
+.api-operator h3 { /* Main section titles and operator titles */
+    border-bottom-width: 2px;
+}
+/* Remove border from lowest level headings */
+.api-operator h4,
+#parameter-assignment h4,
+#managing-sets-units h4,
+#finalize-export h4 {
+    border-bottom: none;
+}
+/* Ensure standard font for all headings except logo */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+/* Re-apply Digitalt ONLY to logo via its class */
+.logo-font {
+    font-family: 'Digitalt', sans-serif;
+}
+
+
+/* --- Main Content Area --- */
+main { max-width: 960px; margin: 2rem auto; padding: 0 1rem; }
+
+/* --- Usage Guidance Section Styling --- */
+.usage-guidance {
+  max-width: 960px; margin: 2rem auto; padding: 1.5rem;
+  background-color: var(--section-bg); border: 1px solid var(--accent-color);
+  border-radius: 5px; box-shadow: 0 2px 5px var(--section-shadow);
+}
+/* h2 styled above */
+.usage-guidance p { margin-bottom: 1em; color: var(--body-text); }
+.usage-guidance p:last-child { margin-bottom: 0; }
+.usage-guidance code { font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace; background-color: var(--inline-code-bg); padding: 0.2em 0.4em; border-radius: 3px; color: var(--inline-code-text); font-size: 0.9em; }
+
+/* --- Disclaimer Section Styling --- */
+.disclaimer {
+  max-width: 960px; margin: 2rem auto; padding: 1rem 1.5rem;
+  background-color: var(--info-bg); border: 1px solid var(--info-border);
+  border-radius: 5px; font-size: 0.95em; line-height: 1.5;
+}
+.disclaimer p { margin-bottom: 0.75em; color: var(--body-text); }
+.disclaimer p:last-child { margin-bottom: 0; }
+.disclaimer a { color: var(--accent-color); text-decoration: none; }
+.disclaimer a:hover, .disclaimer a:focus { text-decoration: underline; color: var(--accent-color-darker); }
+.disclaimer code { font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace; background-color: var(--inline-code-bg); padding: 0.15em 0.3em; border-radius: 3px; color: var(--inline-code-text); font-size: 0.95em; }
+
+/* --- API Operator Section Styling (Article Wrapper) --- */
+#api-operators { margin-bottom: 2rem; } /* Space below operators section */
+.api-operator { /* Styling for individual operator block */
+  background-color: var(--section-bg); border: 1px solid var(--section-border);
+  border-radius: 5px; margin-bottom: 2rem; padding: 1.5rem;
+  box-shadow: 0 2px 5px var(--section-shadow);
+}
+/* h3, h4 styled in general heading rules */
+.description { font-style: italic; color: var(--body-text); opacity: 0.9; margin-bottom: 1rem; }
+.operator-info { background-color: var(--info-bg); padding: 0.5rem 1rem; margin-bottom: 1rem; border-radius: 4px; border-left: 4px solid var(--info-border); }
+.operator-info code { font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace; font-weight: bold; color: var(--blockquote-code-text); background-color: transparent; padding: 0; }
+
+/* --- Parameter Assignment Section Styling --- */
+#parameter-assignment,
+#managing-sets-units,
+#finalize-export {
+     margin-bottom: 2rem; /* Space below section */
+}
+#parameter-assignment p,
+#managing-sets-units p,
+#finalize-export p {
+    margin-bottom: 1em;
+}
+/* Styling for lists within finalize section */
+#parameter-assignment ul,
+#managing-sets-units ul,
+#finalize-export ul {
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+    padding-left: 2em; /* Standard list indentation */
+}
+#parameter-assignment ul li,
+#managing-sets-units ul li,
+#finalize-export ul li {
+    margin-bottom: 0.5em;
+}
+/* Styling for inline code within these sections */
+#parameter-assignment code,
+#managing-sets-units code,
+#finalize-export code,
+#parameter-assignment li code,
+#managing-sets-units li code,
+#finalize-export li code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    background-color: var(--inline-code-bg); padding: 0.2em 0.4em;
+    border-radius: 3px; color: var(--inline-code-text);
+}
+
+
+/* --- Table Styling --- */
+.table-wrapper {
+    overflow-x: auto; margin-bottom: 1rem;
+    -webkit-overflow-scrolling: touch;
+}
+table { width: 100%; border-collapse: collapse; }
+th, td { border: 1px solid var(--section-border); padding: 0.75rem; text-align: left; vertical-align: top; white-space: nowrap; }
+thead { background-color: var(--table-head-bg); }
+th { font-weight: bold; color: var(--table-head-text); }
+tbody tr:nth-child(even) { background-color: var(--table-row-even-bg); }
+td code { /* Inline code inside tables */
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    background-color: var(--inline-code-bg); padding: 0.2em 0.4em;
+    border-radius: 3px; color: var(--inline-code-text);
+    white-space: nowrap; /* Prevent inline code itself from wrapping */
+}
+
+/* --- Code Block Styling (Consistent Dark Theme) --- */
+pre[class*="language-"] { padding: 1rem; border-radius: 5px; overflow-x: auto; margin: 1rem 0; font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace; background: var(--prism-bg); color: var(--prism-text); border: 1px solid var(--prism-border-color); text-shadow: none; }
+pre[class*="language-"] code[class*="language-"] { font-family: inherit; font-size: 0.95em; color: inherit; background: none; padding: 0; text-shadow: none; }
+
+/* --- Prism Token Styling (for Python) --- */
+pre[class*="language-python"] .token.comment, pre[class*="language-python"] .token.prolog, pre[class*="language-python"] .token.doctype, pre[class*="language-python"] .token.cdata { color: var(--prism-token-comment); }
+pre[class*="language-python"] .token.punctuation { color: var(--prism-token-punctuation); }
+pre[class*="language-python"] .token.property, pre[class*="language-python"] .token.tag, pre[class*="language-python"] .token.boolean, pre[class*="language-python"] .token.number, pre[class*="language-python"] .token.constant, pre[class*="language-python"] .token.symbol, pre[class*="language-python"] .token.deleted { color: var(--prism-token-number); }
+pre[class*="language-python"] .token.selector, pre[class*="language-python"] .token.attr-name, pre[class*="language-python"] .token.string, pre[class*="language-python"] .token.char, pre[class*="language-python"] .token.builtin, pre[class*="language-python"] .token.inserted { color: var(--prism-token-string); }
+pre[class*="language-python"] .token.operator, pre[class*="language-python"] .token.entity, pre[class*="language-python"] .token.url { color: var(--prism-token-operator); }
+pre[class*="language-python"] .token.atrule, pre[class*="language-python"] .token.attr-value, pre[class*="language-python"] .token.keyword { color: var(--prism-token-keyword); }
+pre[class*="language-python"] .token.function, pre[class*="language-python"] .token.class-name { color: var(--prism-token-function); }
+
+/* --- Footer Styling --- */
+footer { text-align: center; margin-top: 3rem; padding: 1rem; color: var(--footer-text); font-size: 0.9em; }
+
+/* --- NO Media Query for Color Scheme --- */
+
+
+/* ============================================ */
+/* === RESPONSIVE STYLES (Max Width 768px) === */
+/* ============================================ */
+
+@media (max-width: 768px) {
+
+    /* --- Header Adjustments --- */
+    header {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items */
+        padding: 1rem; /* Reduce padding */
+        text-align: center; /* Center text within */
+    }
+    .header-main-title {
+        margin-bottom: 1rem; /* Add space below title block */
+    }
+    .header-logo {
+        margin-left: 0; /* Remove left margin */
+        text-align: center; /* Ensure logo is centered */
+    }
+    header h1 {
+        font-size: 1.3em; /* Slightly smaller H1 */
+    }
+    .logo-font {
+        font-size: 2.8em; /* Smaller logo on mobile */
+        margin-top: 0.5rem; /* Add some top margin if needed */
+    }
+    header p {
+        font-size: 0.85em; /* Smaller paragraph text */
+    }
+
+    /* --- Content Padding & Margins --- */
+    main,
+    .usage-guidance,
+    .disclaimer,
+    .api-operator,
+    #parameter-assignment,
+    #managing-sets-units,
+    #finalize-export { /* Added */
+        margin: 1.5rem auto; /* Reduce top/bottom margin */
+        padding: 1rem; /* Reduce padding */
+    }
+    /* Adjust container sections */
+    .usage-guidance,
+    .disclaimer,
+    #api-operators,
+    #parameter-assignment,
+    #managing-sets-units, /* Added */
+    #finalize-export {     /* Added */
+        margin-left: 1rem;  /* Add slight indent */
+        margin-right: 1rem; /* Add slight indent */
+        max-width: none; /* Allow full width minus padding */
+    }
+
+    /* --- Heading Sizes --- */
+    #api-operators h2,
+    #parameter-assignment h2,
+    #managing-sets-units h2,
+    #finalize-export h2 {
+        font-size: 1.5em;
+    }
+    .api-operator h3,
+    .usage-guidance h2
+     {
+        font-size: 1.3em;
+    }
+     .api-operator h4,
+     #parameter-assignment h4,
+     #managing-sets-units h4,
+     #finalize-export h4
+      {
+        font-size: 1.1em;
+    }
+
+    /* --- Table Adjustments --- */
+    th, td {
+        padding: 0.5rem 0.6rem; /* Reduce cell padding */
+        font-size: 0.9em; /* Smaller font in table */
+        white-space: normal; /* Allow text wrapping */
+    }
+    td code {
+        font-size: 0.95em; /* Adjust inline code size within table */
+    }
+
+    /* --- Code Block Adjustments --- */
+    pre[class*="language-"] {
+        padding: 0.8rem; /* Slightly less padding */
+    }
+    pre[class*="language-"] code[class*="language-"],
+    pre[class*="language-"] {
+        font-size: 0.85em; /* Smaller font size for code */
+    }
+
+    /* --- Footer Adjustments --- */
+    footer {
+        margin-top: 2rem;
+        font-size: 0.85em;
+    }
+}
