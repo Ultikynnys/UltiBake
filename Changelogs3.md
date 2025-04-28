@@ -47,5 +47,5 @@
     * New UIList added for action slots
     * Cycles toggle moved to slots
 
->## 1.2.23 - 3/4/2025 Fix
+>## 1.2.23 - 28/4/2025 Fix
     * Object actions now allowed to be used on Armature Objects
