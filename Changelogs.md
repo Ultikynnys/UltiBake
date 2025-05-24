@@ -304,4 +304,12 @@
     * API call added bpy.ops.api.run_ultibake()
 
 
+>## 1.9.25 - General Fixes 24/05/2025
+    * Various small bug fixes
+    * Console Progress bar now deprecated due to UI upgrade
+    * Console toggle removed
+    * Blender 3 regression fix
+    * Alpha channel channel packing fixed
+
+
     
