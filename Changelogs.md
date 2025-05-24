@@ -309,7 +309,7 @@
     * Console Progress bar now deprecated due to UI upgrade
     * Console toggle removed
     * Blender 3 regression fix
-    * Alpha channel channel packing fixed
+    * A channel packing fixed
 
 
     
