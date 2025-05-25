@@ -313,7 +313,7 @@
 
 >## 1.9.27 - Hotfix 24/05/2025
     * Saved textures which do not update after first bake
-    * Added 16-bit png baking
+    * Added 16-bit png baking (use .exr if using alpha channel packing)
 
     
 
