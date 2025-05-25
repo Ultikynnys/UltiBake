@@ -312,7 +312,7 @@
     * A channel packing fixed
 
 >## 1.9.27 - Hotfix 24/05/2025
-    * Saved textures didn't update after first bake
+    * Saved textures which do not update after first bake
     * Added 16-bit png baking
 
     
