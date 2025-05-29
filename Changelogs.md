@@ -315,7 +315,13 @@
     * Saved textures which do not update after first bake
     * Added 16-bit png baking (use .exr if using alpha channel packing)
 
-    
+
+>## 1.9.27 - Addition 26/05/2025
+    * Automatic Updates added
 
 
-    
+
+>## 1.9.34 - Addition 29/05/2025
+    * Fixing various regressions
+    * 16-bit button deprecated, all bakes are 16 bit as long as the format supports it.
+    * 20% faster bakes
