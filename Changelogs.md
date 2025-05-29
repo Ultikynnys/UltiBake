@@ -325,3 +325,8 @@
     * Fixing various regressions
     * 16-bit button deprecated, all bakes are 16 bit as long as the format supports it.
     * 20% faster bakes
+
+>## 1.9.38 - Hotfix 29/05/2025
+    * Fixed depedency crash
+    * Mesh finalize now shows non-color textures correctly
+    * Fix UI
