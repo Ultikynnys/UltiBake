@@ -330,3 +330,8 @@
     * Fixed depedency crash
     * Mesh finalize now shows non-color textures correctly
     * Fix UI
+
+>## 1.9.39 - Stability Update 31/05/2025
+    * Removed redundant systems and parameters
+    * Better stability
+    * Fixed various colorspace issues
