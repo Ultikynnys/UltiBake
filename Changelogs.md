@@ -335,3 +335,6 @@
     * Removed redundant systems and parameters
     * Better stability
     * Fixed various colorspace issues
+
+>## 1.9.44 - Stability Update 31/05/2025
+    * Hardening post bake scene to prevent crashing
