@@ -338,3 +338,9 @@
 
 >## 1.9.44 - Stability Update 31/05/2025
     * Hardening post bake scene to prevent crashing
+
+
+>## 1.9.45 - Stability Update 31/05/2025
+    * Fixed Keep Only Active UVmaps error
+    * update changelogs now visible from UI
+    
