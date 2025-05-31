@@ -347,5 +347,11 @@
 
 >## 1.9.46 - Stability Update 31/05/2025
     * Ensuring stability for updates and changelog visualization
-    
+
+
+>## 1.9.47 - Hotfix 31/05/2025
+    * Fixed Finalize not working with relative folder paths
+
+>## 1.9.48- Hotfix 31/05/2025
+    * Enforcing non-color for image nodes in finalize
     
