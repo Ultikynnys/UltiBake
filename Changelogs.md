@@ -359,5 +359,10 @@
 >## 1.9.51- Addition 31/05/2025
     * Print messages no longer get hijacked to have the [Ultibake] prefix
     * New override for controlling the use_cage parameter which affects normal skew
+
+
+>## 1.9.52- Improvement 1/06/2025
+    * use_cage override parameter now a 3-state enum
+
     
     
