@@ -354,4 +354,10 @@
 
 >## 1.9.48- Hotfix 31/05/2025
     * Enforcing non-color for image nodes in finalize
+
+
+>## 1.9.51- Addition 31/05/2025
+    * Print messages no longer get hijacked to have the [Ultibake] prefix
+    * New override for controlling the use_cage parameter which affects normal skew
+    
     
