@@ -375,3 +375,6 @@
 
 >## 1.9.57 - Hotfix 2/06/2025
     * Fixed UDIM visualizer
+
+>## 1.9.58 - Improved 2/06/2025
+    * Unified Sample Control implemented
