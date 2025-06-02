@@ -371,3 +371,7 @@
 
 >## 1.9.56 - Addition 2/06/2025
     * More tooltips added
+
+
+>## 1.9.57 - Hotfix 2/06/2025
+    * Fixed UDIM visualizer
