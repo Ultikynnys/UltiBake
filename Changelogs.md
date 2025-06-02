@@ -352,17 +352,19 @@
 >## 1.9.47 - Hotfix 31/05/2025
     * Fixed Finalize not working with relative folder paths
 
->## 1.9.48- Hotfix 31/05/2025
+>## 1.9.48 - Hotfix 31/05/2025
     * Enforcing non-color for image nodes in finalize
 
 
->## 1.9.51- Addition 31/05/2025
+>## 1.9.51 - Addition 31/05/2025
     * Print messages no longer get hijacked to have the [Ultibake] prefix
     * New override for controlling the use_cage parameter which affects normal skew
 
 
->## 1.9.52- Improvement 1/06/2025
+>## 1.9.52 - Improvement 1/06/2025
     * use_cage override parameter now a 3-state enum
 
-    
-    
+
+>## 1.9.55 - Hotfix 2/06/2025
+    * 8% faster bakes
+    * Finalize now works with UDIMs
