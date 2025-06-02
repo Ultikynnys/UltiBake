@@ -368,3 +368,6 @@
 >## 1.9.55 - Hotfix 2/06/2025
     * 8% faster bakes
     * Finalize now works with UDIMs
+
+>## 1.9.55 - Addition 2/06/2025
+    * More tooltips
