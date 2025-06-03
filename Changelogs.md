@@ -378,3 +378,7 @@
 
 >## 1.9.58 - Improvement 2/06/2025
     * Unified Sample Control implemented
+
+
+>## 1.9.60 - Improvement 3/06/2025
+    * Anisotrophic Kuwahara filtering reworked
