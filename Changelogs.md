@@ -381,4 +381,4 @@
 
 
 >## 1.9.60 - Improvement 3/06/2025
-    * Anisotrophic Kuwahara filtering reworked
+    * Anisotropic Kuwahara filtering reworked
