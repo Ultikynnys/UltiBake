@@ -382,3 +382,7 @@
 
 >## 1.9.60 - Improvement 3/06/2025
     * Anisotropic Kuwahara filtering reworked
+
+
+>## 1.9.61 - Hotfix 4/06/2025
+    * API operator re-added
