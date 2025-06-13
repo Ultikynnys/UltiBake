@@ -386,3 +386,7 @@
 
 >## 1.9.61 - Hotfix 4/06/2025
     * API operator re-added
+
+
+>## 1.9.62 - Hotfix 13/06/2025
+    * AO baking no longer affected by external objects
