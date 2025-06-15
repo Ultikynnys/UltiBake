@@ -396,3 +396,7 @@
 
 >## 1.9.64 - Hotfix 13/06/2025
     * Baked objects no longer become hidden afterwards
+
+
+>## 1.9.65 - Hotfix 13/06/2025
+    * Fixing a few residual bake visibility hiding
