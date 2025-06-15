@@ -390,3 +390,6 @@
 
 >## 1.9.62 - Hotfix 13/06/2025
     * AO baking no longer affected by external objects
+
+>## 1.9.63 - Hotfix 13/06/2025
+    * AO baking isn't affected by duplicate created during the bake
