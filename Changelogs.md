@@ -400,3 +400,7 @@
 
 >## 1.9.65 - Hotfix 13/06/2025
     * Fixing a few residual bake visibility hiding
+
+
+>## 1.9.66 - Hotfix 16/06/2025
+    * 8% performance boost
