@@ -404,3 +404,7 @@
 
 >## 1.9.66 - Hotfix 16/06/2025
     * 8% performance boost
+
+
+>## 1.9.67 - Hotfix 19/06/2025
+    * Backwards compatibility better with blender 3.3 and 3.6
