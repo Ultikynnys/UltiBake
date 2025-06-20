@@ -408,3 +408,8 @@
 
 >## 1.9.67 - Hotfix 19/06/2025
     * Backwards compatibility better with blender 3.3 and 3.6
+
+
+>## 1.9.68 - Hotfix 19/06/2025
+    * Slight performance boost on Bake Start
+
