@@ -413,3 +413,8 @@
 >## 1.9.68 - Hotfix 19/06/2025
     * Slight performance boost on Bake Start
 
+
+
+>## 1.9.69 - Hotfix 23/06/2025
+    * Console command deprecation for pre Blender 4.0
+
