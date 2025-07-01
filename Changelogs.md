@@ -418,3 +418,6 @@
 >## 1.9.69 - Hotfix 23/06/2025
     * Console command deprecation for pre Blender 4.0
 
+
+>## 1.9.70 - Addition 1/07/2025
+    * sRGB control for Base Color
