@@ -423,7 +423,7 @@
     * sRGB control for Base Color
 
 
->## 1.9.72 - Bugfixes 29/07/2025
+>## 1.9.73 - Bugfixes 29/07/2025
     * sRGB visualizer in finalize correctly detects colormode(visual bug)
     * UDIM visualizer fixed
     * Antialiasing fixed
