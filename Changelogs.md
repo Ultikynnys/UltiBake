@@ -427,3 +427,7 @@
     * sRGB visualizer in finalize correctly detects colormode(visual bug)
     * UDIM visualizer fixed
     * Antialiasing fixed
+
+
+>## 1.9.74 - Bugfixes 29/07/2025
+    * Fixed Multi Objects in collection bake that use unique active uv names.
