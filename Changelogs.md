@@ -431,3 +431,6 @@
 
 >## 1.9.74 - Bugfixes 29/07/2025
     * Fixed Multi Objects in collection bake that use unique active uv names.
+
+>## 1.9.76 - Improvement 30/07/2025
+    * Texture name no longer gets appended to finalized meshes.
