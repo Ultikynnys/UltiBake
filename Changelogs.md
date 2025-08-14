@@ -434,3 +434,6 @@
 
 >## 1.9.76 - Improvement 30/07/2025
     * Texture name no longer gets appended to finalized meshes.
+
+>## 1.9.77 - Bugfixes 14/08/2025
+    * Collection Baker UV target fixed
